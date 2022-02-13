@@ -109,6 +109,18 @@ namespace Szakdolgozat
            frmExit.ShowDialog();
 
         }
+
+        private void kilepesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmExit frmExit = new frmExit();
+            frmExit.ShowDialog();
+        }
+
+        private void felhasznaloAdminisztracioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUserAdmin frmUserAdmin = new frmUserAdmin(ConnectionString);
+            frmUserAdmin.ShowDialog();
+        }
     }
 }
 ;

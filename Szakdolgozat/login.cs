@@ -97,7 +97,7 @@ namespace Szakdolgozat
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            string a = "Frankie";
+            
             this.Close();
                   
         }
