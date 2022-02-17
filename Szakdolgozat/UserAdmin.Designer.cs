@@ -43,7 +43,7 @@
             this.tbPasswordAgain = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.lbFelhasznalokSzama = new System.Windows.Forms.Label();
+            this.Felhasznalok = new System.Windows.Forms.ListBox();
             this.gbAction.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,7 +163,7 @@
             this.gbAction.Controls.Add(this.tbPassword);
             this.gbAction.Location = new System.Drawing.Point(567, 23);
             this.gbAction.Name = "gbAction";
-            this.gbAction.Size = new System.Drawing.Size(351, 399);
+            this.gbAction.Size = new System.Drawing.Size(803, 442);
             this.gbAction.TabIndex = 11;
             this.gbAction.TabStop = false;
             // 
@@ -188,27 +188,32 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(201, 422);
+            this.label5.Location = new System.Drawing.Point(1010, 23);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(191, 20);
+            this.label5.Size = new System.Drawing.Size(136, 20);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Aktiv felhasznalok szama:";
+            this.label5.Text = "Aktiv felhasznalok";
             // 
-            // lbFelhasznalokSzama
+            // Felhasznalok
             // 
-            this.lbFelhasznalokSzama.AutoSize = true;
-            this.lbFelhasznalokSzama.Location = new System.Drawing.Point(409, 422);
-            this.lbFelhasznalokSzama.Name = "lbFelhasznalokSzama";
-            this.lbFelhasznalokSzama.Size = new System.Drawing.Size(18, 20);
-            this.lbFelhasznalokSzama.TabIndex = 13;
-            this.lbFelhasznalokSzama.Text = "0";
+            this.Felhasznalok.Enabled = false;
+            this.Felhasznalok.FormattingEnabled = true;
+            this.Felhasznalok.ItemHeight = 20;
+            this.Felhasznalok.Location = new System.Drawing.Point(1014, 53);
+            this.Felhasznalok.Name = "Felhasznalok";
+            this.Felhasznalok.Size = new System.Drawing.Size(316, 384);
+            this.Felhasznalok.Sorted = true;
+            this.Felhasznalok.TabIndex = 14;
+            this.Felhasznalok.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Felhasznalok_MouseDoubleClick);
+            this.Felhasznalok.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Felhasznalok_MouseDoubleClick);
             // 
             // frmUserAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1105, 513);
-            this.Controls.Add(this.lbFelhasznalokSzama);
+            this.ClientSize = new System.Drawing.Size(1446, 550);
+            this.ControlBox = false;
+            this.Controls.Add(this.Felhasznalok);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.gbAction);
             this.Controls.Add(this.btnClose);
@@ -241,6 +246,6 @@
         private System.Windows.Forms.TextBox tbPasswordAgain;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbFelhasznalokSzama;
+        private System.Windows.Forms.ListBox Felhasznalok;
     }
 }

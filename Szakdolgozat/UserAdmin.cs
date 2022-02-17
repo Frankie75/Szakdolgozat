@@ -40,6 +40,21 @@ namespace Szakdolgozat
         actions action;
 
 
+        public string EncryptDecrypt(string szPlainText, int szEncryptionKey)
+        {
+            StringBuilder szInputStringBuild = new StringBuilder(szPlainText);
+            StringBuilder szOutStringBuild = new StringBuilder(szPlainText.Length);
+            char Textch;
+            for (int iCount = 0; iCount < szPlainText.Length; iCount++)
+            {
+                Textch = szInputStringBuild[iCount];
+                Textch = (char)(Textch ^ szEncryptionKey);
+                szOutStringBuild.Append(Textch);
+            }
+            return szOutStringBuild.ToString();
+        }
+
+
         public frmUserAdmin(string c)
         {
             InitializeComponent();
@@ -54,10 +69,10 @@ namespace Szakdolgozat
                 {
 
                     Users.Add(new User(r[0].ToString(), r[1].ToString(), r[2].ToString()));
+                    Felhasznalok.Items.Add(r[1].ToString());
                 }
             }
 
-            lbFelhasznalokSzama.Text = Users.Count.ToString();
         
         
         }
@@ -73,6 +88,9 @@ namespace Szakdolgozat
         private void btnAddNewUser_Click(object sender, EventArgs e)
         {
             action=actions.newUser;
+            tbUserName.Text = "";
+            Felhasznalok.Enabled = false;
+      
             gbAction.Text = "Felhasznalo hozzaadasa";
             tbUserName.Enabled = true;
             tbPassword.Enabled = true;
@@ -85,8 +103,11 @@ namespace Szakdolgozat
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
             action = actions.deleteUser;
+            tbUserName.Text = Felhasznalok.Items[0].ToString();
+            
+            Felhasznalok.Enabled= true;
             gbAction.Text = "Felhasznalo torlese";
-            tbUserName.Enabled = true;
+            tbUserName.Enabled = false;
             tbPassword.Enabled = true;
             tbPasswordAgain.Enabled = false;
             tbPasswordNew.Enabled = false;
@@ -97,8 +118,11 @@ namespace Szakdolgozat
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             action = actions.changePassword;
+            tbUserName.Text = Felhasznalok.Items[0].ToString();
+
+            Felhasznalok.Enabled = true;
             gbAction.Text = "Jelszo modositasa";
-            tbUserName.Enabled = true;
+            tbUserName.Enabled = false;
             tbPassword.Enabled = true;
             tbPasswordAgain.Enabled = false;
             tbPasswordNew.Enabled = true;
@@ -108,12 +132,96 @@ namespace Szakdolgozat
 
         private void btnAction_Click(object sender, EventArgs e)
         {
+            bool vanilyenfelhasznalo = false;
             switch (action)
             {
                 case actions.newUser:
+                    foreach (var item in Users)
+                    {
+                        if (item.Name == tbUserName.Text)
+                        {
+                            MessageBox.Show("Van mar ilyen nevu felhasznalo!");
+                            vanilyenfelhasznalo = true;
+                            break;
+                        }
+
+                    }
+                    if (vanilyenfelhasznalo) break;
+
+                    if (tbUserName.Text.Length < 4 | tbUserName.Text.Length > 8)
+                    {
+                        MessageBox.Show("A megadott felhasznalonevnek 4-8 karakter husszunak kell lennie!");
+                        break;
+                    }
+
+                    if (tbPassword.Text != tbPasswordAgain.Text)
+                    {
+                        MessageBox.Show("A megadott jelszavak nem egyeznek meg!");
+                        break;
+                    }
+                    if (tbPassword.Text.Length < 4 | tbPassword.Text.Length > 8)
+                    {
+                        MessageBox.Show("A megadott jelszonak 4-8 karakter hosszunak kell lennie!");
+                        break;
+                    }
+
+                    using (var conn = new MySqlConnection(ConnectionString))
+                    {
+                        conn.Open();
+                        var command = new MySqlCommand("INSERT INTO " +
+                            "felhasznalok (fnev,jelszo) VALUES " +
+                            $"('{tbUserName.Text}', '{EncryptDecrypt(tbPassword.Text, 1)}');", conn);
+
+                        command.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Felhasznalo hozzaadva");
+                    this.Close();
                     break;
+
                 case actions.deleteUser:
+                    if (tbUserName.Text == "admin")
+                    {
+                        MessageBox.Show("Az 'admin' felhasznalo nem torolhato!");
+                        break;
+                    }
+
+
+
+
+
+                    foreach (var item in Users)
+                    {
+
+                        if (item.Name == tbUserName.Text)
+                        {
+                            if (EncryptDecrypt(item.Password, 1) == tbPassword.Text)
+                            {
+                                using (var conn = new MySqlConnection(ConnectionString))
+                                {
+                                    conn.Open();
+                                    var command = new MySqlCommand("DELETE FROM felhasznalok " +
+                                        $"WHERE fnev='{item.Name}'", conn);
+                                    command.ExecuteNonQuery();
+                                }
+                                MessageBox.Show("Felhasznalo Torolve");
+                                this.Close();
+
+                                break;
+
+                            }
+
+                            else
+                            {
+                                MessageBox.Show("Hibas jelszo!");
+                            }
+
+                        }
+
+                    }
+                   
                     break;
+
                 case actions.changePassword:
                     break;
                 default:
@@ -121,6 +229,13 @@ namespace Szakdolgozat
             }
         }
 
-  
+         
+
+            private void Felhasznalok_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            tbUserName.Text = Felhasznalok.Text;
+            tbPassword.Text = "";
+        }
+        
     }
 }

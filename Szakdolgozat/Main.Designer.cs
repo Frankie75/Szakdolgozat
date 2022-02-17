@@ -45,14 +45,20 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kilepesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.felhasznaloAdminisztracioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kilepesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ugyfeltorzsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eszkozokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ujSzerzodesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.beallitasokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvMain
             // 
+            this.dgvMain.AllowUserToAddRows = false;
+            this.dgvMain.AllowUserToDeleteRows = false;
             this.dgvMain.AllowUserToResizeColumns = false;
             this.dgvMain.AllowUserToResizeRows = false;
             this.dgvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -69,6 +75,7 @@
             this.dgvMain.Location = new System.Drawing.Point(56, 347);
             this.dgvMain.MultiSelect = false;
             this.dgvMain.Name = "dgvMain";
+            this.dgvMain.ReadOnly = true;
             this.dgvMain.RowHeadersVisible = false;
             this.dgvMain.RowHeadersWidth = 62;
             this.dgvMain.RowTemplate.Height = 28;
@@ -181,6 +188,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kilepesToolStripMenuItem,
             this.adminToolStripMenuItem,
+            this.beallitasokToolStripMenuItem,
             this.kilepesToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -190,24 +198,21 @@
             // 
             // kilepesToolStripMenuItem
             // 
+            this.kilepesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ujSzerzodesToolStripMenuItem});
             this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
-            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(125, 29);
+            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(125, 30);
             this.kilepesToolStripMenuItem.Text = "Szerzodesek";
             // 
             // adminToolStripMenuItem
             // 
             this.adminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ugyfeltorzsToolStripMenuItem,
+            this.eszkozokToolStripMenuItem,
             this.felhasznaloAdminisztracioToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(111, 29);
-            this.adminToolStripMenuItem.Text = "Beallitasok";
-            // 
-            // kilepesToolStripMenuItem1
-            // 
-            this.kilepesToolStripMenuItem1.Name = "kilepesToolStripMenuItem1";
-            this.kilepesToolStripMenuItem1.Size = new System.Drawing.Size(83, 29);
-            this.kilepesToolStripMenuItem1.Text = "Kilepes";
-            this.kilepesToolStripMenuItem1.Click += new System.EventHandler(this.kilepesToolStripMenuItem1_Click);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(145, 29);
+            this.adminToolStripMenuItem.Text = "Adminisztracio";
             // 
             // felhasznaloAdminisztracioToolStripMenuItem
             // 
@@ -215,6 +220,37 @@
             this.felhasznaloAdminisztracioToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
             this.felhasznaloAdminisztracioToolStripMenuItem.Text = "Felhasznalo adminisztracio";
             this.felhasznaloAdminisztracioToolStripMenuItem.Click += new System.EventHandler(this.felhasznaloAdminisztracioToolStripMenuItem_Click);
+            // 
+            // kilepesToolStripMenuItem1
+            // 
+            this.kilepesToolStripMenuItem1.Name = "kilepesToolStripMenuItem1";
+            this.kilepesToolStripMenuItem1.Size = new System.Drawing.Size(83, 30);
+            this.kilepesToolStripMenuItem1.Text = "Kilepes";
+            this.kilepesToolStripMenuItem1.Click += new System.EventHandler(this.kilepesToolStripMenuItem1_Click);
+            // 
+            // ugyfeltorzsToolStripMenuItem
+            // 
+            this.ugyfeltorzsToolStripMenuItem.Name = "ugyfeltorzsToolStripMenuItem";
+            this.ugyfeltorzsToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
+            this.ugyfeltorzsToolStripMenuItem.Text = "Ugyfeltorzs";
+            // 
+            // eszkozokToolStripMenuItem
+            // 
+            this.eszkozokToolStripMenuItem.Name = "eszkozokToolStripMenuItem";
+            this.eszkozokToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
+            this.eszkozokToolStripMenuItem.Text = "Eszkozok";
+            // 
+            // ujSzerzodesToolStripMenuItem
+            // 
+            this.ujSzerzodesToolStripMenuItem.Name = "ujSzerzodesToolStripMenuItem";
+            this.ujSzerzodesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.ujSzerzodesToolStripMenuItem.Text = "Uj szerzodes";
+            // 
+            // beallitasokToolStripMenuItem
+            // 
+            this.beallitasokToolStripMenuItem.Name = "beallitasokToolStripMenuItem";
+            this.beallitasokToolStripMenuItem.Size = new System.Drawing.Size(111, 30);
+            this.beallitasokToolStripMenuItem.Text = "Beallitasok";
             // 
             // formMain
             // 
@@ -263,6 +299,10 @@
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem felhasznaloAdminisztracioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kilepesToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ujSzerzodesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ugyfeltorzsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eszkozokToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem beallitasokToolStripMenuItem;
     }
 }
 
