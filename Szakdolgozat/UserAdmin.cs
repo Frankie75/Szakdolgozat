@@ -186,10 +186,6 @@ namespace Szakdolgozat
                         break;
                     }
 
-
-
-
-
                     foreach (var item in Users)
                     {
 
@@ -201,7 +197,7 @@ namespace Szakdolgozat
                                 {
                                     conn.Open();
                                     var command = new MySqlCommand("DELETE FROM felhasznalok " +
-                                        $"WHERE fnev='{item.Name}'", conn);
+                                        $"WHERE fnev='{item.Name}';", conn);
                                     command.ExecuteNonQuery();
                                 }
                                 MessageBox.Show("Felhasznalo Torolve");
@@ -223,6 +219,39 @@ namespace Szakdolgozat
                     break;
 
                 case actions.changePassword:
+
+                    if(tbPasswordNew.Text.Length <4 | tbPasswordNew.Text.Length > 8)
+                    {
+                        MessageBox.Show("Az uj jelszo hosszana 4-8 karakter!");
+                        break;
+                    }
+
+                    foreach (var item in Users)
+                    {
+                        if (item.Name == tbUserName.Text)
+                        {
+                            if (tbPassword.Text == EncryptDecrypt(item.Password, 1))
+                            {
+                                using (var conn = new MySqlConnection(ConnectionString))
+                                {
+                                    conn.Open();
+                                    var command = new MySqlCommand("UPDATE felhasznalok " +
+                                        $"SET jelszo='{EncryptDecrypt(tbPasswordNew.Text,1)}' " +
+                                        $"WHERE fnev = '{item.Name}';",conn);
+                                    command.ExecuteNonQuery();
+                                }
+                                MessageBox.Show("Jelszo modositva");
+                                this.Close();
+                                break;
+
+                            }
+                            else
+                            {
+                                MessageBox.Show("Hibas a jelszo!");
+                            }
+
+                        }
+                    }
                     break;
                 default:
                     break;
