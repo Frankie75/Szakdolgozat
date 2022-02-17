@@ -121,6 +121,13 @@ namespace Szakdolgozat
             frmUserAdmin frmUserAdmin = new frmUserAdmin(ConnectionString);
             frmUserAdmin.ShowDialog();
         }
+
+        private void ugyfeltorzsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmCustomerAdmin(ConnectionString);
+            f.Show();
+
+        }
     }
 }
 ;

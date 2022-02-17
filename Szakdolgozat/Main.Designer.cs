@@ -233,6 +233,7 @@
             this.ugyfeltorzsToolStripMenuItem.Name = "ugyfeltorzsToolStripMenuItem";
             this.ugyfeltorzsToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
             this.ugyfeltorzsToolStripMenuItem.Text = "Ugyfeltorzs";
+            this.ugyfeltorzsToolStripMenuItem.Click += new System.EventHandler(this.ugyfeltorzsToolStripMenuItem_Click);
             // 
             // eszkozokToolStripMenuItem
             // 

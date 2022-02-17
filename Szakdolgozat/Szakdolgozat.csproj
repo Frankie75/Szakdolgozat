@@ -101,6 +101,12 @@
     <Compile Include="Exit.Designer.cs">
       <DependentUpon>Exit.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomerAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerAdmin.Designer.cs">
+      <DependentUpon>CustomerAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </Compile>
     <EmbeddedResource Include="ConnectionPassword.resx">
       <DependentUpon>ConnectionPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerAdmin.resx">
+      <DependentUpon>CustomerAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>

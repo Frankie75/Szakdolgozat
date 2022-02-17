@@ -209,8 +209,10 @@
             // 
             // frmUserAdmin
             // 
+            this.AcceptButton = this.btnAddNewUser;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1446, 550);
             this.ControlBox = false;
             this.Controls.Add(this.Felhasznalok);
@@ -221,6 +223,7 @@
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnAddNewUser);
             this.Name = "frmUserAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Felhasznalo Adminisztracio";
             this.gbAction.ResumeLayout(false);
             this.gbAction.PerformLayout();

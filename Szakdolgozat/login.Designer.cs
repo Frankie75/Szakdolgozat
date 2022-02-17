@@ -84,6 +84,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Location = new System.Drawing.Point(209, 313);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(149, 58);
@@ -112,8 +113,10 @@
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(400, 514);
             this.ControlBox = false;
             this.Controls.Add(this.lblFelhasznalokSzama);

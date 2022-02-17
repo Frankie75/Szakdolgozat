@@ -136,6 +136,12 @@ namespace Szakdolgozat
             switch (action)
             {
                 case actions.newUser:
+
+                    if(Users.Count >= 10)
+                    {
+                        MessageBox.Show("A felhasznalok maximalis szama: 10 db.");
+                        break;
+                    }
                     foreach (var item in Users)
                     {
                         if (item.Name == tbUserName.Text)
