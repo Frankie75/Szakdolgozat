@@ -58,7 +58,7 @@ namespace Szakdolgozat
                         sor[4].ToString(), 
                         sor[5].ToString(),
                         sor[6].ToString()));
-                    dgvCustomerList.Rows.Add(sor[1], sor[3], sor[4], sor[5]);
+                    dgvCustomerList.Rows.Add(sor[0],sor[1], sor[3], sor[4], sor[5]);
                 }
             }
 
