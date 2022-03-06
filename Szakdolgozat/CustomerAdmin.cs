@@ -42,28 +42,39 @@ namespace Szakdolgozat
             ConnectionString = c;
             InitializeComponent();
 
+        }
 
+
+        public void refreshDGV(string Filter)
+        {
             using (var conn = new MySqlConnection(ConnectionString))
             {
                 conn.Open();
                 var command = new MySqlCommand("SELECT * from uf_torzs;", conn);
                 var sor = command.ExecuteReader();
+                Customers.Clear();
+                dgvCustomerList.Rows.Clear();
+
                 while (sor.Read())
                 {
                     Customers.Add(new Customer(
                         int.Parse(sor[0].ToString()),
-                        sor[1].ToString(), 
-                        sor[2].ToString(), 
-                        int.Parse(sor[3].ToString()), 
-                        sor[4].ToString(), 
+                        sor[1].ToString(),
+                        sor[2].ToString(),
+                        int.Parse(sor[3].ToString()),
+                        sor[4].ToString(),
                         sor[5].ToString(),
                         sor[6].ToString()));
-                    dgvCustomerList.Rows.Add(sor[0],sor[1], sor[3], sor[4], sor[5]);
+
+                    if (sor[1].ToString().Contains (Filter))
+                    {
+                        dgvCustomerList.Rows.Add(sor[1], sor[3], sor[4], sor[5], sor[0], sor[2], sor[6]);
+
+                    }
                 }
             }
 
         }
-
         private void kilepesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -71,6 +82,35 @@ namespace Szakdolgozat
 
         private void frmCustomerAdmin_Load(object sender, EventArgs e)
         {
+            refreshDGV("");
+
+        }
+
+        private void btnCustomerEditor_Click(object sender, EventArgs e)
+        {
+
+            int id = int.Parse(dgvCustomerList.SelectedRows[0].Cells[4].Value.ToString());
+            var f = new frmCutomerDataInputForm(ConnectionString,id);
+            f.ShowDialog();
+
+
+            
+
+        }
+
+
+
+        private void tbSearchName_KeyUp(object sender, KeyEventArgs e)
+        {
+            refreshDGV(tbSearchName.Text);
+        }
+
+        private void btnAddNewCustomer_Click(object sender, EventArgs e)
+        {
+            
+            var f = new frmCutomerDataInputForm(ConnectionString, -1);
+            f.ShowDialog();
+            refreshDGV("");
 
         }
     }

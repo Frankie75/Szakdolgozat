@@ -95,6 +95,12 @@
     <Compile Include="ConnectionPassword.Designer.cs">
       <DependentUpon>ConnectionPassword.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomersDataInputTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomersDataInputTable.Designer.cs">
+      <DependentUpon>CustomersDataInputTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <EmbeddedResource Include="CustomerAdmin.resx">
       <DependentUpon>CustomerAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomersDataInputTable.resx">
+      <DependentUpon>CustomersDataInputTable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +159,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="UserAdmin.resx">
       <DependentUpon>UserAdmin.cs</DependentUpon>
@@ -167,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2021-12-09.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
