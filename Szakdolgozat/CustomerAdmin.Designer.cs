@@ -36,12 +36,6 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.tbSearchName = new System.Windows.Forms.TextBox();
             this.dgvCustomerList = new System.Windows.Forms.DataGridView();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.ujUgyfelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ujUgyfelFelveteleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ugyfelTorleseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Nev = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ZipCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +43,12 @@
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.ujUgyfelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ujUgyfelFelveteleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ugyfelTorleseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomerList)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -82,6 +82,7 @@
             this.btnDeleteCustomer.TabIndex = 2;
             this.btnDeleteCustomer.Text = "Ugyfel torlese";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnClose
             // 
@@ -149,54 +150,6 @@
             this.dgvCustomerList.Size = new System.Drawing.Size(677, 373);
             this.dgvCustomerList.TabIndex = 0;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ujUgyfelToolStripMenuItem,
-            this.kilepesToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1477, 33);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // ujUgyfelToolStripMenuItem
-            // 
-            this.ujUgyfelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ujUgyfelFelveteleToolStripMenuItem,
-            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem,
-            this.ugyfelTorleseToolStripMenuItem});
-            this.ujUgyfelToolStripMenuItem.Name = "ujUgyfelToolStripMenuItem";
-            this.ujUgyfelToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
-            this.ujUgyfelToolStripMenuItem.Text = "Opciok";
-            // 
-            // ujUgyfelFelveteleToolStripMenuItem
-            // 
-            this.ujUgyfelFelveteleToolStripMenuItem.Name = "ujUgyfelFelveteleToolStripMenuItem";
-            this.ujUgyfelFelveteleToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
-            this.ujUgyfelFelveteleToolStripMenuItem.Text = "Uj Ugyfel felvetele";
-            // 
-            // meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem
-            // 
-            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Name = "meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem";
-            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
-            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Text = "Meglevo ugyfel adatainak szerkesztese";
-            // 
-            // ugyfelTorleseToolStripMenuItem
-            // 
-            this.ugyfelTorleseToolStripMenuItem.Name = "ugyfelTorleseToolStripMenuItem";
-            this.ugyfelTorleseToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
-            this.ugyfelTorleseToolStripMenuItem.Text = "Ugyfel torlese";
-            // 
-            // kilepesToolStripMenuItem
-            // 
-            this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
-            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
-            this.kilepesToolStripMenuItem.Text = "Bezar";
-            this.kilepesToolStripMenuItem.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
-            // 
             // Nev
             // 
             this.Nev.HeaderText = "Nev";
@@ -249,6 +202,54 @@
             this.Email.Name = "Email";
             this.Email.ReadOnly = true;
             this.Email.Visible = false;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ujUgyfelToolStripMenuItem,
+            this.kilepesToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1477, 33);
+            this.menuStrip1.TabIndex = 5;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // ujUgyfelToolStripMenuItem
+            // 
+            this.ujUgyfelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ujUgyfelFelveteleToolStripMenuItem,
+            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem,
+            this.ugyfelTorleseToolStripMenuItem});
+            this.ujUgyfelToolStripMenuItem.Name = "ujUgyfelToolStripMenuItem";
+            this.ujUgyfelToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
+            this.ujUgyfelToolStripMenuItem.Text = "Opciok";
+            // 
+            // ujUgyfelFelveteleToolStripMenuItem
+            // 
+            this.ujUgyfelFelveteleToolStripMenuItem.Name = "ujUgyfelFelveteleToolStripMenuItem";
+            this.ujUgyfelFelveteleToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
+            this.ujUgyfelFelveteleToolStripMenuItem.Text = "Uj Ugyfel felvetele";
+            // 
+            // meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem
+            // 
+            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Name = "meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem";
+            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
+            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Text = "Meglevo ugyfel adatainak szerkesztese";
+            // 
+            // ugyfelTorleseToolStripMenuItem
+            // 
+            this.ugyfelTorleseToolStripMenuItem.Name = "ugyfelTorleseToolStripMenuItem";
+            this.ugyfelTorleseToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
+            this.ugyfelTorleseToolStripMenuItem.Text = "Ugyfel torlese";
+            // 
+            // kilepesToolStripMenuItem
+            // 
+            this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
+            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(70, 29);
+            this.kilepesToolStripMenuItem.Text = "Bezar";
+            this.kilepesToolStripMenuItem.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
             // 
             // frmCustomerAdmin
             // 

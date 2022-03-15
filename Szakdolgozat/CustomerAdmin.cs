@@ -28,7 +28,7 @@ namespace Szakdolgozat
 
             public Customer(int id, string name, string phoneNumber, int postalCode, string city, string address, string email)
             {
-                CustomerId = id; 
+                CustomerId = id;
                 Name = name;
                 PhoneNumber = phoneNumber;
                 PostalCode = postalCode;
@@ -66,7 +66,7 @@ namespace Szakdolgozat
                         sor[5].ToString(),
                         sor[6].ToString()));
 
-                    if (sor[1].ToString().Contains (Filter))
+                    if (sor[1].ToString().Contains(Filter))
                     {
                         dgvCustomerList.Rows.Add(sor[1], sor[3], sor[4], sor[5], sor[0], sor[2], sor[6]);
 
@@ -90,11 +90,12 @@ namespace Szakdolgozat
         {
 
             int id = int.Parse(dgvCustomerList.SelectedRows[0].Cells[4].Value.ToString());
-            var f = new frmCutomerDataInputForm(ConnectionString,id);
+            var f = new frmCutomerDataInputForm(ConnectionString, id);
             f.ShowDialog();
+            refreshDGV("");
 
 
-            
+
 
         }
 
@@ -107,11 +108,39 @@ namespace Szakdolgozat
 
         private void btnAddNewCustomer_Click(object sender, EventArgs e)
         {
-            
+
             var f = new frmCutomerDataInputForm(ConnectionString, -1);
             f.ShowDialog();
             refreshDGV("");
 
+        }
+
+        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dgvCustomerList.SelectedRows[0].Cells[4].Value.ToString());
+
+            DialogResult dr = MessageBox.Show("Biztosan toroli az Ugyfelet az adatbazisbol?", "Nem", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                using (var conn = new MySqlConnection(ConnectionString))
+                {
+                    conn.Open();
+
+                    var command = new MySqlCommand(
+                        "DELETE FROM uf_torzs " +
+                        $"WHERE uf_id={id};", conn);
+                    command.ExecuteNonQuery();
+
+
+
+                }
+                MessageBox.Show("Ugyfel torolve!");
+                refreshDGV("");
+
+            }
+
+
+            
         }
     }
 }

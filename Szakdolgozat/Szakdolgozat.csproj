@@ -101,6 +101,12 @@
     <Compile Include="CustomersDataInputTable.Designer.cs">
       <DependentUpon>CustomersDataInputTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="DevicesAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DevicesAdmin.Designer.cs">
+      <DependentUpon>DevicesAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Exit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomersDataInputTable.resx">
       <DependentUpon>CustomersDataInputTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DevicesAdmin.resx">
+      <DependentUpon>DevicesAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>

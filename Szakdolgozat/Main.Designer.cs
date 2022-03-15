@@ -44,13 +44,13 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.kilepesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ujSzerzodesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.felhasznaloAdminisztracioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kilepesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ugyfeltorzsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eszkozokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ujSzerzodesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.felhasznaloAdminisztracioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beallitasokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kilepesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -117,24 +117,28 @@
             this.Column8.HeaderText = "Rendszam";
             this.Column8.MinimumWidth = 8;
             this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Kiadas datuma";
             this.Column5.MinimumWidth = 8;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Lejarat datuma";
             this.Column6.MinimumWidth = 8;
             this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Visszavet datuma";
             this.Column7.MinimumWidth = 8;
             this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
             // 
             // cbFilter
             // 
@@ -201,8 +205,14 @@
             this.kilepesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ujSzerzodesToolStripMenuItem});
             this.kilepesToolStripMenuItem.Name = "kilepesToolStripMenuItem";
-            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(125, 30);
+            this.kilepesToolStripMenuItem.Size = new System.Drawing.Size(125, 29);
             this.kilepesToolStripMenuItem.Text = "Szerzodesek";
+            // 
+            // ujSzerzodesToolStripMenuItem
+            // 
+            this.ujSzerzodesToolStripMenuItem.Name = "ujSzerzodesToolStripMenuItem";
+            this.ujSzerzodesToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
+            this.ujSzerzodesToolStripMenuItem.Text = "Uj szerzodes";
             // 
             // adminToolStripMenuItem
             // 
@@ -214,44 +224,39 @@
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(145, 29);
             this.adminToolStripMenuItem.Text = "Adminisztracio";
             // 
-            // felhasznaloAdminisztracioToolStripMenuItem
-            // 
-            this.felhasznaloAdminisztracioToolStripMenuItem.Name = "felhasznaloAdminisztracioToolStripMenuItem";
-            this.felhasznaloAdminisztracioToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
-            this.felhasznaloAdminisztracioToolStripMenuItem.Text = "Felhasznalo adminisztracio";
-            this.felhasznaloAdminisztracioToolStripMenuItem.Click += new System.EventHandler(this.felhasznaloAdminisztracioToolStripMenuItem_Click);
-            // 
-            // kilepesToolStripMenuItem1
-            // 
-            this.kilepesToolStripMenuItem1.Name = "kilepesToolStripMenuItem1";
-            this.kilepesToolStripMenuItem1.Size = new System.Drawing.Size(83, 30);
-            this.kilepesToolStripMenuItem1.Text = "Kilepes";
-            this.kilepesToolStripMenuItem1.Click += new System.EventHandler(this.kilepesToolStripMenuItem1_Click);
-            // 
             // ugyfeltorzsToolStripMenuItem
             // 
             this.ugyfeltorzsToolStripMenuItem.Name = "ugyfeltorzsToolStripMenuItem";
-            this.ugyfeltorzsToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
-            this.ugyfeltorzsToolStripMenuItem.Text = "Ugyfeltorzs";
+            this.ugyfeltorzsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.ugyfeltorzsToolStripMenuItem.Text = "Ugyfelek";
             this.ugyfeltorzsToolStripMenuItem.Click += new System.EventHandler(this.ugyfeltorzsToolStripMenuItem_Click);
             // 
             // eszkozokToolStripMenuItem
             // 
             this.eszkozokToolStripMenuItem.Name = "eszkozokToolStripMenuItem";
-            this.eszkozokToolStripMenuItem.Size = new System.Drawing.Size(324, 34);
-            this.eszkozokToolStripMenuItem.Text = "Eszkozok";
+            this.eszkozokToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.eszkozokToolStripMenuItem.Text = "Gepjarmuvek";
+            this.eszkozokToolStripMenuItem.Click += new System.EventHandler(this.eszkozokToolStripMenuItem_Click);
             // 
-            // ujSzerzodesToolStripMenuItem
+            // felhasznaloAdminisztracioToolStripMenuItem
             // 
-            this.ujSzerzodesToolStripMenuItem.Name = "ujSzerzodesToolStripMenuItem";
-            this.ujSzerzodesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.ujSzerzodesToolStripMenuItem.Text = "Uj szerzodes";
+            this.felhasznaloAdminisztracioToolStripMenuItem.Name = "felhasznaloAdminisztracioToolStripMenuItem";
+            this.felhasznaloAdminisztracioToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.felhasznaloAdminisztracioToolStripMenuItem.Text = "Felhasznalok";
+            this.felhasznaloAdminisztracioToolStripMenuItem.Click += new System.EventHandler(this.felhasznaloAdminisztracioToolStripMenuItem_Click);
             // 
             // beallitasokToolStripMenuItem
             // 
             this.beallitasokToolStripMenuItem.Name = "beallitasokToolStripMenuItem";
-            this.beallitasokToolStripMenuItem.Size = new System.Drawing.Size(111, 30);
+            this.beallitasokToolStripMenuItem.Size = new System.Drawing.Size(111, 29);
             this.beallitasokToolStripMenuItem.Text = "Beallitasok";
+            // 
+            // kilepesToolStripMenuItem1
+            // 
+            this.kilepesToolStripMenuItem1.Name = "kilepesToolStripMenuItem1";
+            this.kilepesToolStripMenuItem1.Size = new System.Drawing.Size(83, 29);
+            this.kilepesToolStripMenuItem1.Text = "Kilepes";
+            this.kilepesToolStripMenuItem1.Click += new System.EventHandler(this.kilepesToolStripMenuItem1_Click);
             // 
             // formMain
             // 

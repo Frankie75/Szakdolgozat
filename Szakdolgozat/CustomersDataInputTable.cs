@@ -14,11 +14,13 @@ namespace Szakdolgozat
     public partial class frmCutomerDataInputForm : Form
     {
         static string ConnectionString;
+        public int Id;
 
         public frmCutomerDataInputForm(string c, int id)
         {
             InitializeComponent();
             ConnectionString = c;
+            Id= id;
 
             if (id>0)
             {
@@ -65,7 +67,7 @@ namespace Szakdolgozat
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-
+            
         }
 
         private void btnOK_Click(object sender, EventArgs e)
@@ -73,18 +75,37 @@ namespace Szakdolgozat
             using(var conn = new MySqlConnection(ConnectionString))
             {
                 conn.Open();
-                var command = new MySqlCommand(
-                    "INSERT INTO uf_torzs " +
-                    "(unev, telefon, iranyitoszam, helyseg, cim, email) " +
-                    $"VALUES (" +
-                    $"'{tbName.Text}'," +
-                    $"'{tbPhoneNumber.Text}'," +
-                    $"{int.Parse(tbPostCode.Text)}," +
-                    $"'{tbCity.Text}'," +
-                    $"'{tbAddress.Text}'," +
-                    $"'{tbEmail.Text}');", conn);
+                if ( Id>0)
+                {
+                    var command = new MySqlCommand(
+                        "UPDATE  uf_torzs " +
+                        "SET " +
+                        $"unev='{tbName.Text}'," +
+                        $"telefon='{tbPhoneNumber.Text}'," +
+                        $"iranyitoszam={int.Parse(tbPostCode.Text)}," +
+                        $"helyseg='{tbCity.Text}'," +
+                        $"cim='{tbAddress.Text}'," +
+                        $"email='{tbEmail.Text}' " +
+                        $"WHERE uf_id={Id};", conn);
+                    command.ExecuteNonQuery();
 
-                command.ExecuteNonQuery();
+                }
+                else
+                {
+                    var command = new MySqlCommand(
+                        "INSERT INTO uf_torzs " +
+                        "(unev, telefon, iranyitoszam, helyseg, cim, email) " +
+                        $"VALUES (" +
+                        $"'{tbName.Text}'," +
+                        $"'{tbPhoneNumber.Text}'," +
+                        $"{int.Parse(tbPostCode.Text)}," +
+                        $"'{tbCity.Text}'," +
+                        $"'{tbAddress.Text}'," +
+                        $"'{tbEmail.Text}');", conn);
+                        command.ExecuteNonQuery();
+
+                }
+
 
             }
             MessageBox.Show("Uj ugyfel elmentve!");

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using Szakdolgozat;
 
 namespace Szakdolgozat
 {
@@ -127,6 +128,11 @@ namespace Szakdolgozat
             var f = new frmCustomerAdmin(ConnectionString);
             f.Show();
 
+        }
+
+        private void eszkozokToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
