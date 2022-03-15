@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
-using Szakdolgozat;
+
 
 namespace Szakdolgozat
 {
@@ -132,7 +132,8 @@ namespace Szakdolgozat
 
         private void eszkozokToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            var f = new frmDevicesAdmin(ConnectionString);
+            f.Show();
         }
     }
 }

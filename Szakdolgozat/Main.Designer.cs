@@ -272,7 +272,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "formMain";
-            this.Text = "Main";
+            this.Text = "Fomenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.formMain_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.formMain_MouseClick);
