@@ -126,14 +126,14 @@ namespace Szakdolgozat
         private void ugyfeltorzsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var f = new frmCustomerAdmin(ConnectionString);
-            f.Show();
+            f.ShowDialog();
 
         }
 
         private void eszkozokToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var f = new frmDevicesAdmin(ConnectionString);
-            f.Show();
+            f.ShowDialog();
         }
     }
 }

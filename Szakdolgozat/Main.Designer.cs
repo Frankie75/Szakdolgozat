@@ -177,6 +177,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnExit.Location = new System.Drawing.Point(1295, 57);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(168, 71);
@@ -227,21 +228,21 @@
             // ugyfeltorzsToolStripMenuItem
             // 
             this.ugyfeltorzsToolStripMenuItem.Name = "ugyfeltorzsToolStripMenuItem";
-            this.ugyfeltorzsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.ugyfeltorzsToolStripMenuItem.Size = new System.Drawing.Size(218, 34);
             this.ugyfeltorzsToolStripMenuItem.Text = "Ugyfelek";
             this.ugyfeltorzsToolStripMenuItem.Click += new System.EventHandler(this.ugyfeltorzsToolStripMenuItem_Click);
             // 
             // eszkozokToolStripMenuItem
             // 
             this.eszkozokToolStripMenuItem.Name = "eszkozokToolStripMenuItem";
-            this.eszkozokToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.eszkozokToolStripMenuItem.Size = new System.Drawing.Size(218, 34);
             this.eszkozokToolStripMenuItem.Text = "Gepjarmuvek";
             this.eszkozokToolStripMenuItem.Click += new System.EventHandler(this.eszkozokToolStripMenuItem_Click);
             // 
             // felhasznaloAdminisztracioToolStripMenuItem
             // 
             this.felhasznaloAdminisztracioToolStripMenuItem.Name = "felhasznaloAdminisztracioToolStripMenuItem";
-            this.felhasznaloAdminisztracioToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.felhasznaloAdminisztracioToolStripMenuItem.Size = new System.Drawing.Size(218, 34);
             this.felhasznaloAdminisztracioToolStripMenuItem.Text = "Felhasznalok";
             this.felhasznaloAdminisztracioToolStripMenuItem.Click += new System.EventHandler(this.felhasznaloAdminisztracioToolStripMenuItem_Click);
             // 
@@ -262,6 +263,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(1699, 832);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label2);

@@ -7,7 +7,7 @@ namespace Szakdolgozat
     public partial class frmDevicesAdmin : Form
     {
         static string ConnectionString;
-        static string[] kategoriak = new string[] {"szemelyauto", "teherauto", "motorkerekpar", "egyeb"};
+    
         public frmDevicesAdmin(string c)
         {
             InitializeComponent();
@@ -16,11 +16,11 @@ namespace Szakdolgozat
 
         private void DevicesAdmin_Load(object sender, EventArgs e)
         {
-            cbCategories.Items.Add("szemelyauto");
-            cbCategories.Items.Add("teherauto");
-            cbCategories.Items.Add("motorkerekpar");
-            cbCategories.Items.Add("egyeb");
-            cbCategories.Items.Add("mindegyik");
+            cbCategories.Items.Add("Szemelyauto");
+            cbCategories.Items.Add("Teherauto");
+            cbCategories.Items.Add("Motorkerekpar");
+            cbCategories.Items.Add("Egyeb");
+            cbCategories.Items.Add("Mindegyik");
             cbCategories.SelectedIndex = 4;
             refreshDgv("", cbCategories.SelectedIndex);
         }
@@ -43,11 +43,11 @@ namespace Szakdolgozat
                
                 while (sor.Read())
                 {
-                    if (kategoria==4)
-                        dgvDeviceList.Rows.Add(sor[0], sor[1], sor[2], sor[3], kategoriak[(int)sor[4]], sor[5]);
+                    if (cbCategories.Text=="Mindegyik")
+                        dgvDeviceList.Rows.Add(sor[0], sor[1], sor[2], sor[3], sor[4], sor[5]);
                     else
-                        if ((int)sor[4]==kategoria)
-                            dgvDeviceList.Rows.Add(sor[0], sor[1], sor[2], sor[3], kategoriak[(int)sor[4]], sor[5]);
+                        if (sor[4].ToString()==cbCategories.Text)
+                            dgvDeviceList.Rows.Add(sor[0], sor[1], sor[2], sor[3], sor[4], sor[5]);
 
                 }
 
@@ -67,10 +67,7 @@ namespace Szakdolgozat
             refreshDgv(tbSearchByType.Text, cbCategories.SelectedIndex);
         }
 
-        private void cbCategories_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            refreshDgv(tbSearchByType.Text, cbCategories.SelectedIndex);
-        }
+     
 
         private void btnDeleteDevice_Click(object sender, EventArgs e)
         {
@@ -105,8 +102,30 @@ namespace Szakdolgozat
             }
 
             
-            MessageBox.Show("Gepjarmu torolve!");
+           
             refreshDgv(tbSearchByType.Text, cbCategories.SelectedIndex);
+
+        }
+
+        private void btnNewDevice_Click(object sender, EventArgs e)
+        {
+            var f = new frmDevicesDataInputTable(-1,ConnectionString);
+            f.ShowDialog();
+            refreshDgv("", cbCategories.SelectedIndex);
+
+
+        }
+
+        private void btnEditDevice_Click(object sender, EventArgs e)
+        {
+            var f = new frmDevicesDataInputTable((int)dgvDeviceList.SelectedRows[0].Cells[5].Value, ConnectionString);
+            f.ShowDialog();
+            refreshDgv("", cbCategories.SelectedIndex);
+        }
+
+        private void cbCategories_DropDownClosed(object sender, EventArgs e)
+        {
+            refreshDgv("", cbCategories.SelectedIndex);
 
         }
     }

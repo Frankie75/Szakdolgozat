@@ -122,18 +122,32 @@ namespace Szakdolgozat
             DialogResult dr = MessageBox.Show("Biztosan toroli az Ugyfelet az adatbazisbol?", "Nem", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
-                using (var conn = new MySqlConnection(ConnectionString))
+                try
                 {
-                    conn.Open();
+                    using (var conn = new MySqlConnection(ConnectionString))
+                    {
+                        conn.Open();
 
-                    var command = new MySqlCommand(
-                        "DELETE FROM uf_torzs " +
-                        $"WHERE uf_id={id};", conn);
-                    command.ExecuteNonQuery();
-
-
+                        var command = new MySqlCommand(
+                            "DELETE FROM uf_torzs " +
+                            $"WHERE uf_id={id};", conn);
+                        command.ExecuteNonQuery();
+                    }
 
                 }
+
+                catch (MySqlException ex)
+                {
+                    if (ex.Number == 1451)
+                    {
+                        MessageBox.Show("Az Ugyfel hasznalatban van (nem torolheto!)");
+                        return;
+
+                    }
+
+                }
+
+
                 MessageBox.Show("Ugyfel torolve!");
                 refreshDGV("");
 

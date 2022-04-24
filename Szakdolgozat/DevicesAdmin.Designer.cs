@@ -33,19 +33,21 @@
             this.btnDeleteDevice = new System.Windows.Forms.Button();
             this.btnCloseWindow = new System.Windows.Forms.Button();
             this.dgvDeviceList = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbCategories = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbSearchByType = new System.Windows.Forms.TextBox();
             this.Rendszam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gyartmany = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Alvaszam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbSearchByType = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbCategories = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceList)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNewDevice
@@ -56,6 +58,7 @@
             this.btnNewDevice.TabIndex = 0;
             this.btnNewDevice.Text = "Uj gepjarmu";
             this.btnNewDevice.UseVisualStyleBackColor = true;
+            this.btnNewDevice.Click += new System.EventHandler(this.btnNewDevice_Click);
             // 
             // btnEditDevice
             // 
@@ -65,6 +68,7 @@
             this.btnEditDevice.TabIndex = 1;
             this.btnEditDevice.Text = "Gepjarmu adatainak szerkesztes";
             this.btnEditDevice.UseVisualStyleBackColor = true;
+            this.btnEditDevice.Click += new System.EventHandler(this.btnEditDevice_Click);
             // 
             // btnDeleteDevice
             // 
@@ -78,6 +82,7 @@
             // 
             // btnCloseWindow
             // 
+            this.btnCloseWindow.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCloseWindow.Location = new System.Drawing.Point(73, 385);
             this.btnCloseWindow.Name = "btnCloseWindow";
             this.btnCloseWindow.Size = new System.Drawing.Size(334, 81);
@@ -108,57 +113,8 @@
             this.dgvDeviceList.RowHeadersWidth = 62;
             this.dgvDeviceList.RowTemplate.Height = 28;
             this.dgvDeviceList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDeviceList.Size = new System.Drawing.Size(780, 305);
+            this.dgvDeviceList.Size = new System.Drawing.Size(780, 559);
             this.dgvDeviceList.TabIndex = 4;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.tbSearchByType);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.cbCategories);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dgvDeviceList);
-            this.groupBox1.Location = new System.Drawing.Point(637, 74);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(837, 471);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Gepjarmuvek listaja";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(364, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Kereses tipus szerint:";
-            // 
-            // cbCategories
-            // 
-            this.cbCategories.FormattingEnabled = true;
-            this.cbCategories.Location = new System.Drawing.Point(104, 30);
-            this.cbCategories.Name = "cbCategories";
-            this.cbCategories.Size = new System.Drawing.Size(160, 28);
-            this.cbCategories.TabIndex = 7;
-            this.cbCategories.SelectionChangeCommitted += new System.EventHandler(this.cbCategories_SelectionChangeCommitted);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Kategoria:";
-            // 
-            // tbSearchByType
-            // 
-            this.tbSearchByType.Location = new System.Drawing.Point(544, 30);
-            this.tbSearchByType.Name = "tbSearchByType";
-            this.tbSearchByType.Size = new System.Drawing.Size(257, 26);
-            this.tbSearchByType.TabIndex = 6;
-            this.tbSearchByType.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchByType_KeyUp);
             // 
             // Rendszam
             // 
@@ -203,11 +159,71 @@
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.tbSearchByType);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cbCategories);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.dgvDeviceList);
+            this.groupBox1.Location = new System.Drawing.Point(637, 74);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(837, 676);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Gepjarmuvek listaja";
+            // 
+            // tbSearchByType
+            // 
+            this.tbSearchByType.Location = new System.Drawing.Point(544, 30);
+            this.tbSearchByType.Name = "tbSearchByType";
+            this.tbSearchByType.Size = new System.Drawing.Size(257, 26);
+            this.tbSearchByType.TabIndex = 6;
+            this.tbSearchByType.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchByType_KeyUp);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Kategoria:";
+            // 
+            // cbCategories
+            // 
+            this.cbCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategories.FormattingEnabled = true;
+            this.cbCategories.Location = new System.Drawing.Point(104, 30);
+            this.cbCategories.Name = "cbCategories";
+            this.cbCategories.Size = new System.Drawing.Size(160, 28);
+            this.cbCategories.TabIndex = 7;
+            this.cbCategories.DropDownClosed += new System.EventHandler(this.cbCategories_DropDownClosed);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(364, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Kereses tipus szerint:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(73, 534);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(334, 216);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmDevicesAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1539, 576);
+            this.CancelButton = this.btnCloseWindow;
+            this.ClientSize = new System.Drawing.Size(1539, 805);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCloseWindow);
             this.Controls.Add(this.btnDeleteDevice);
@@ -220,6 +236,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,5 +259,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Alvaszam;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
