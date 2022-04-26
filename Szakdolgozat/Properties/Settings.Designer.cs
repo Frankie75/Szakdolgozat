@@ -70,5 +70,17 @@ namespace Szakdolgozat.Properties {
                 this["ConnectionName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int SelectedCustomerId {
+            get {
+                return ((int)(this["SelectedCustomerId"]));
+            }
+            set {
+                this["SelectedCustomerId"] = value;
+            }
+        }
     }
 }

@@ -51,6 +51,11 @@
             this.felhasznaloAdminisztracioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beallitasokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kilepesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -72,7 +77,7 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            this.dgvMain.Location = new System.Drawing.Point(56, 347);
+            this.dgvMain.Location = new System.Drawing.Point(47, 152);
             this.dgvMain.MultiSelect = false;
             this.dgvMain.Name = "dgvMain";
             this.dgvMain.ReadOnly = true;
@@ -80,7 +85,7 @@
             this.dgvMain.RowHeadersWidth = 62;
             this.dgvMain.RowTemplate.Height = 28;
             this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMain.Size = new System.Drawing.Size(1407, 429);
+            this.dgvMain.Size = new System.Drawing.Size(1389, 429);
             this.dgvMain.TabIndex = 0;
             // 
             // Column1
@@ -144,15 +149,16 @@
             // 
             this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(56, 221);
+            this.cbFilter.Location = new System.Drawing.Point(47, 103);
             this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(390, 28);
+            this.cbFilter.Size = new System.Drawing.Size(552, 28);
             this.cbFilter.TabIndex = 3;
+            this.cbFilter.DropDownClosed += new System.EventHandler(this.cbFilter_DropDownClosed);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 188);
+            this.label1.Location = new System.Drawing.Point(43, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 20);
             this.label1.TabIndex = 4;
@@ -160,16 +166,16 @@
             // 
             // tbSearchName
             // 
-            this.tbSearchName.Location = new System.Drawing.Point(1028, 223);
+            this.tbSearchName.Location = new System.Drawing.Point(1063, 103);
             this.tbSearchName.Name = "tbSearchName";
-            this.tbSearchName.Size = new System.Drawing.Size(391, 26);
+            this.tbSearchName.Size = new System.Drawing.Size(373, 26);
             this.tbSearchName.TabIndex = 5;
             this.tbSearchName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchName_KeyUp);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1024, 188);
+            this.label2.Location = new System.Drawing.Point(1059, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 20);
             this.label2.TabIndex = 6;
@@ -178,9 +184,9 @@
             // btnExit
             // 
             this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnExit.Location = new System.Drawing.Point(1295, 57);
+            this.btnExit.Location = new System.Drawing.Point(1251, 637);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(168, 71);
+            this.btnExit.Size = new System.Drawing.Size(185, 132);
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Kilepes";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -214,6 +220,7 @@
             this.ujSzerzodesToolStripMenuItem.Name = "ujSzerzodesToolStripMenuItem";
             this.ujSzerzodesToolStripMenuItem.Size = new System.Drawing.Size(213, 34);
             this.ujSzerzodesToolStripMenuItem.Text = "Uj szerzodes";
+            this.ujSzerzodesToolStripMenuItem.Click += new System.EventHandler(this.ujSzerzodesToolStripMenuItem_Click);
             // 
             // adminToolStripMenuItem
             // 
@@ -259,12 +266,67 @@
             this.kilepesToolStripMenuItem1.Text = "Kilepes";
             this.kilepesToolStripMenuItem1.Click += new System.EventHandler(this.kilepesToolStripMenuItem1_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(47, 637);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(351, 136);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "Uj szerzodes";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.ujSzerzodesToolStripMenuItem_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(427, 637);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(337, 62);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Ugyfeltorzs";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.ugyfeltorzsToolStripMenuItem_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(427, 711);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(337, 62);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "Gepjarmuvek listaja";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.eszkozokToolStripMenuItem_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(895, 637);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(337, 62);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "Felhsznalok";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.felhasznaloAdminisztracioToolStripMenuItem_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(895, 707);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(337, 62);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "Beallitasok";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(1699, 832);
+            this.ControlBox = false;
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbSearchName);
@@ -272,10 +334,11 @@
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.dgvMain);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "formMain";
-            this.Text = "Fomenu";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CarRent-All Ugyviteli rendszer";
             this.Load += new System.EventHandler(this.formMain_Load);
             this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.formMain_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
@@ -311,6 +374,11 @@
         private System.Windows.Forms.ToolStripMenuItem ugyfeltorzsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eszkozokToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beallitasokToolStripMenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 

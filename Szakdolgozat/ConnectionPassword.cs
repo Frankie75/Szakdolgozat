@@ -19,7 +19,11 @@ namespace Szakdolgozat
 
         private void ConnectionPassword_Load(object sender, EventArgs e)
         {
+
+            // delete these lines!!!!
+
             tbUserName.Text = "frankieh_frankie";
+            tbPassword.Text = "ml1510domain";
         }
 
      

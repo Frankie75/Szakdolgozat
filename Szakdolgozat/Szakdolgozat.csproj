@@ -125,6 +125,12 @@
     <Compile Include="CustomerAdmin.Designer.cs">
       <DependentUpon>CustomerAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewContracts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewContracts.Designer.cs">
+      <DependentUpon>NewContracts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewContracts.resx">
+      <DependentUpon>NewContracts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

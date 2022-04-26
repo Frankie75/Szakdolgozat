@@ -32,7 +32,7 @@ namespace Szakdolgozat
             }
             return szOutStringBuild.ToString();
         }
-
+        public string isActive = "";
         public formMain()
         {
             InitializeComponent();
@@ -67,7 +67,7 @@ namespace Szakdolgozat
         {
 
             dgvMain.Rows.Clear();
-            string isActive = "not";
+        
             var conn = new MySqlConnection(ConnectionString);
             conn.Open();
             var command = new MySqlCommand(
@@ -134,6 +134,18 @@ namespace Szakdolgozat
         {
             var f = new frmDevicesAdmin(ConnectionString);
             f.ShowDialog();
+        }
+
+        private void ujSzerzodesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmNewContract(ConnectionString);
+            f.ShowDialog();
+
+        }
+
+        private void cbFilter_DropDownClosed(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -223,12 +223,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCloseWindow;
             this.ClientSize = new System.Drawing.Size(1539, 805);
+            this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCloseWindow);
             this.Controls.Add(this.btnDeleteDevice);
             this.Controls.Add(this.btnEditDevice);
             this.Controls.Add(this.btnNewDevice);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmDevicesAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gepjarmuvek listaja";
