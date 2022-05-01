@@ -42,19 +42,15 @@
             this.tbRentalFee = new System.Windows.Forms.TextBox();
             this.rtbNotesOut = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.rtbNotesIn = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cbFuelLevelOut = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cbFuelLevelIn = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.tbEndOfPeriod = new System.Windows.Forms.TextBox();
             this.tbCustomerAddress = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.tbCustomerName = new System.Windows.Forms.TextBox();
+            this.tbOdometerStart = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnSelectCustomer
@@ -95,10 +91,15 @@
             // 
             // dtpStart
             // 
+            this.dtpStart.CustomFormat = "yyyy-MM-dd hh:mm";
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStart.Location = new System.Drawing.Point(26, 194);
+            this.dtpStart.MinDate = new System.DateTime(2022, 4, 29, 0, 0, 0, 0);
             this.dtpStart.Name = "dtpStart";
+            this.dtpStart.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dtpStart.Size = new System.Drawing.Size(221, 26);
             this.dtpStart.TabIndex = 5;
+            this.dtpStart.Value = new System.DateTime(2022, 5, 1, 13, 2, 25, 0);
             // 
             // label3
             // 
@@ -114,22 +115,26 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(319, 158);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(150, 20);
+            this.label4.Size = new System.Drawing.Size(215, 20);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Berleti idoszak vege";
+            this.label4.Text = "Kilometerora allasa kiadaskor";
             // 
             // dtpStop
             // 
+            this.dtpStop.CustomFormat = "yyyy-MM-dd hh:mm";
+            this.dtpStop.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStop.Location = new System.Drawing.Point(26, 283);
+            this.dtpStop.MinDate = new System.DateTime(2022, 4, 29, 0, 0, 0, 0);
             this.dtpStop.Name = "dtpStop";
             this.dtpStop.Size = new System.Drawing.Size(221, 26);
             this.dtpStop.TabIndex = 8;
+            this.dtpStop.Value = new System.DateTime(2022, 4, 29, 0, 0, 0, 0);
             // 
             // tbDeposit
             // 
             this.tbDeposit.Location = new System.Drawing.Point(26, 348);
             this.tbDeposit.Name = "tbDeposit";
-            this.tbDeposit.Size = new System.Drawing.Size(184, 26);
+            this.tbDeposit.Size = new System.Drawing.Size(221, 26);
             this.tbDeposit.TabIndex = 9;
             // 
             // label5
@@ -144,7 +149,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 379);
+            this.label6.Location = new System.Drawing.Point(319, 325);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 20);
             this.label6.TabIndex = 11;
@@ -152,9 +157,9 @@
             // 
             // tbRentalFee
             // 
-            this.tbRentalFee.Location = new System.Drawing.Point(26, 413);
+            this.tbRentalFee.Location = new System.Drawing.Point(323, 348);
             this.tbRentalFee.Name = "tbRentalFee";
-            this.tbRentalFee.Size = new System.Drawing.Size(177, 26);
+            this.tbRentalFee.Size = new System.Drawing.Size(251, 26);
             this.tbRentalFee.TabIndex = 12;
             // 
             // rtbNotesOut
@@ -173,23 +178,6 @@
             this.label7.Size = new System.Drawing.Size(202, 20);
             this.label7.TabIndex = 14;
             this.label7.Text = "Serulesek leirasa kiadaskor";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(742, 413);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(232, 20);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Serulesek leirasa visszavetelkor";
-            // 
-            // rtbNotesIn
-            // 
-            this.rtbNotesIn.Location = new System.Drawing.Point(746, 447);
-            this.rtbNotesIn.Name = "rtbNotesIn";
-            this.rtbNotesIn.Size = new System.Drawing.Size(440, 214);
-            this.rtbNotesIn.TabIndex = 16;
-            this.rtbNotesIn.Text = "";
             // 
             // label9
             // 
@@ -210,29 +198,10 @@
             "25% - 50%",
             "50% - 75%",
             "75% - 100%"});
-            this.cbFuelLevelOut.Location = new System.Drawing.Point(323, 263);
+            this.cbFuelLevelOut.Location = new System.Drawing.Point(323, 281);
             this.cbFuelLevelOut.Name = "cbFuelLevelOut";
             this.cbFuelLevelOut.Size = new System.Drawing.Size(251, 28);
             this.cbFuelLevelOut.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(319, 308);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(256, 20);
-            this.label10.TabIndex = 19;
-            this.label10.Text = "Uzemanyag mennyisege atvetelkor";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // cbFuelLevelIn
-            // 
-            this.cbFuelLevelIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFuelLevelIn.FormattingEnabled = true;
-            this.cbFuelLevelIn.Location = new System.Drawing.Point(323, 346);
-            this.cbFuelLevelIn.Name = "cbFuelLevelIn";
-            this.cbFuelLevelIn.Size = new System.Drawing.Size(251, 28);
-            this.cbFuelLevelIn.TabIndex = 20;
             // 
             // label11
             // 
@@ -242,14 +211,6 @@
             this.label11.Size = new System.Drawing.Size(225, 20);
             this.label11.TabIndex = 21;
             this.label11.Text = "Berleti idoszak varhato lejarata";
-            // 
-            // tbEndOfPeriod
-            // 
-            this.tbEndOfPeriod.Enabled = false;
-            this.tbEndOfPeriod.Location = new System.Drawing.Point(323, 196);
-            this.tbEndOfPeriod.Name = "tbEndOfPeriod";
-            this.tbEndOfPeriod.Size = new System.Drawing.Size(251, 26);
-            this.tbEndOfPeriod.TabIndex = 22;
             // 
             // tbCustomerAddress
             // 
@@ -270,18 +231,19 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(38, 705);
+            this.btnSave.Location = new System.Drawing.Point(26, 451);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(566, 121);
+            this.btnSave.Size = new System.Drawing.Size(548, 121);
             this.btnSave.TabIndex = 25;
             this.btnSave.Text = "Rogzites";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(620, 705);
+            this.btnCancel.Location = new System.Drawing.Point(638, 451);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(566, 121);
+            this.btnCancel.Size = new System.Drawing.Size(548, 121);
             this.btnCancel.TabIndex = 26;
             this.btnCancel.Text = "Megsem";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -295,25 +257,28 @@
             this.tbCustomerName.Size = new System.Drawing.Size(325, 26);
             this.tbCustomerName.TabIndex = 27;
             // 
+            // tbOdometerStart
+            // 
+            this.tbOdometerStart.Location = new System.Drawing.Point(323, 194);
+            this.tbOdometerStart.Name = "tbOdometerStart";
+            this.tbOdometerStart.Size = new System.Drawing.Size(251, 26);
+            this.tbOdometerStart.TabIndex = 28;
+            // 
             // frmNewContract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 877);
+            this.ClientSize = new System.Drawing.Size(1246, 638);
             this.ControlBox = false;
+            this.Controls.Add(this.tbOdometerStart);
             this.Controls.Add(this.tbCustomerName);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.tbCustomerAddress);
-            this.Controls.Add(this.tbEndOfPeriod);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.cbFuelLevelIn);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.cbFuelLevelOut);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.rtbNotesIn);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.rtbNotesOut);
             this.Controls.Add(this.tbRentalFee);
@@ -353,18 +318,14 @@
         private System.Windows.Forms.TextBox tbRentalFee;
         private System.Windows.Forms.RichTextBox rtbNotesOut;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RichTextBox rtbNotesIn;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbFuelLevelOut;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox cbFuelLevelIn;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox tbEndOfPeriod;
         private System.Windows.Forms.TextBox tbCustomerAddress;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox tbCustomerName;
+        private System.Windows.Forms.TextBox tbOdometerStart;
     }
 }

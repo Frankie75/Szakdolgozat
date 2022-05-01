@@ -21,6 +21,10 @@ namespace Szakdolgozat
         {
             InitializeComponent();
             ConnectionString = c;
+
+            //delete
+            tbUsername.Text = "admin";
+            tbPassword.Text = "admin";
         }
 
         public class user
@@ -63,7 +67,7 @@ namespace Szakdolgozat
             r.Close();
             conn.Close();
 
-            lblFelhasznalokSzama.Text=(Users.Count().ToString());
+            lblFelhasznalokSzama.Text = (Users.Count().ToString());
 
 
         }

@@ -56,6 +56,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.btnCloseContract = new System.Windows.Forms.Button();
+            this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +69,7 @@
             this.dgvMain.AllowUserToResizeColumns = false;
             this.dgvMain.AllowUserToResizeRows = false;
             this.dgvMain.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMain.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMain.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -83,6 +86,7 @@
             this.dgvMain.ReadOnly = true;
             this.dgvMain.RowHeadersVisible = false;
             this.dgvMain.RowHeadersWidth = 62;
+            this.dgvMain.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMain.RowTemplate.Height = 28;
             this.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMain.Size = new System.Drawing.Size(1389, 429);
@@ -149,6 +153,11 @@
             // 
             this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Items.AddRange(new object[] {
+            "Minden szerzodes",
+            "Aktiv (folyamatban levo)",
+            "Lezart",
+            "Archivalt"});
             this.cbFilter.Location = new System.Drawing.Point(47, 103);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(552, 28);
@@ -270,7 +279,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(47, 637);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(351, 136);
+            this.button1.Size = new System.Drawing.Size(191, 136);
             this.button1.TabIndex = 9;
             this.button1.Text = "Uj szerzodes";
             this.button1.UseVisualStyleBackColor = true;
@@ -278,9 +287,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(427, 637);
+            this.button2.Location = new System.Drawing.Point(651, 637);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(337, 62);
+            this.button2.Size = new System.Drawing.Size(196, 62);
             this.button2.TabIndex = 10;
             this.button2.Text = "Ugyfeltorzs";
             this.button2.UseVisualStyleBackColor = true;
@@ -288,9 +297,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(427, 711);
+            this.button3.Location = new System.Drawing.Point(651, 711);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(337, 62);
+            this.button3.Size = new System.Drawing.Size(196, 62);
             this.button3.TabIndex = 11;
             this.button3.Text = "Gepjarmuvek listaja";
             this.button3.UseVisualStyleBackColor = true;
@@ -315,6 +324,25 @@
             this.button5.Text = "Beallitasok";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // btnCloseContract
+            // 
+            this.btnCloseContract.Location = new System.Drawing.Point(283, 637);
+            this.btnCloseContract.Name = "btnCloseContract";
+            this.btnCloseContract.Size = new System.Drawing.Size(193, 62);
+            this.btnCloseContract.TabIndex = 14;
+            this.btnCloseContract.Text = "Szerzodes lezarasa";
+            this.btnCloseContract.UseVisualStyleBackColor = true;
+            this.btnCloseContract.Click += new System.EventHandler(this.btnCloseContract_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(283, 711);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(193, 62);
+            this.btnPrint.TabIndex = 15;
+            this.btnPrint.Text = "Nyomtatas";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            // 
             // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -322,6 +350,8 @@
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(1699, 832);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.btnCloseContract);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -379,6 +409,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnCloseContract;
+        private System.Windows.Forms.Button btnPrint;
     }
 }
 

@@ -32,7 +32,6 @@ namespace Szakdolgozat
             }
             return szOutStringBuild.ToString();
         }
-        public string isActive = "";
         public formMain()
         {
             InitializeComponent();
@@ -40,12 +39,9 @@ namespace Szakdolgozat
             frmConnectionPw cpw = new frmConnectionPw();
             cpw.ShowDialog();
 
-            ConnectionString = $"Server = frankie75.hu; Database = frankieh_autokolcsonzo; Uid = {Properties.Settings.Default.ConnectionName}; Pwd = {Properties.Settings.Default.ConnectionPassword}";
+            ConnectionString = $"Server = frankie75.hu; Database = frankieh_autokolcsonzo; Uid = {Properties.Settings.Default.ConnectionName}; Pwd = {Properties.Settings.Default.ConnectionPassword}; convert zero datetime=True";
 
 
-            cbFilter.Items.Add("Minden szerzodes");
-            cbFilter.Items.Add("Aktiv, folyamatban levo");
-            cbFilter.Items.Add("Lezart, visszavett");
             cbFilter.SelectedIndex = 0;
 
             frmLogin f = new frmLogin(ConnectionString);
@@ -59,15 +55,20 @@ namespace Szakdolgozat
             
             if (!Properties.Settings.Default.PasswordValid) Application.Exit();
           
-            refresDGV("");
+            refreshDGV("");
             
         }
 
-        public void refresDGV(string name_filter)
+        public void refreshDGV(string name_filter)
         {
 
             dgvMain.Rows.Clear();
-        
+            string InsertedString="";
+            if (cbFilter.SelectedIndex == 0) InsertedString = "";
+            else if (cbFilter.SelectedIndex == 1) InsertedString = "szerzodesek.visszavet_datum is NULL and ";
+            else if (cbFilter.SelectedIndex == 2) InsertedString = "szerzodesek.visszavet_datum is not NULL and ";
+
+
             var conn = new MySqlConnection(ConnectionString);
             conn.Open();
             var command = new MySqlCommand(
@@ -77,7 +78,8 @@ namespace Szakdolgozat
                 "where " +
                 "szerzodesek.uf_id = uf_torzs.uf_id and " +
                 "szerzodesek.gk_id = gk_torzs.gk_id and " +
-                $"szerzodesek.visszavet_datum is {isActive} null and " +
+                $"{InsertedString} "+
+     //         $"szerzodesek.visszavet_datum is {isActive} null and " +
                 $"unev like '{name_filter + '%'}';",conn);
             var rows = command.ExecuteReader();
             while (rows.Read())
@@ -101,7 +103,7 @@ namespace Szakdolgozat
 
         private void tbSearchName_KeyUp(object sender, KeyEventArgs e)
         {
-            refresDGV(tbSearchName.Text);
+            refreshDGV(tbSearchName.Text);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -140,11 +142,28 @@ namespace Szakdolgozat
         {
             var f = new frmNewContract(ConnectionString);
             f.ShowDialog();
+            refreshDGV("");
+           
 
         }
 
         private void cbFilter_DropDownClosed(object sender, EventArgs e)
         {
+            refreshDGV("");
+        }
+
+        private void btnCloseContract_Click(object sender, EventArgs e)
+        {
+            if(dgvMain.SelectedRows[0].Cells[7].Value.ToString() != "")
+            {
+                MessageBox.Show("A szerzodes mar le van zarva!");
+                return;
+            }
+            int ContractId = (int)dgvMain.SelectedRows[0].Cells[0].Value;
+            var f= new frmContractCloser(ConnectionString, ContractId);
+            f.ShowDialog();
+            refreshDGV("");
+
 
         }
     }

@@ -16,18 +16,9 @@ namespace Szakdolgozat
 
         static string ConnectionString;
 
-        //public class Customers
-        //{
-        //    public int Id { get; set; }
-        //    public string Name { get; set; }
-        //    public string Address { get; set; }
+   
 
-        //}
-
-        public class Contracts
-        {
-
-        }
+     
         public class Vehicle
         {
             public int Id { get; set; }
@@ -42,19 +33,22 @@ namespace Szakdolgozat
 
         public List<Vehicle> Vehicles=new List<Vehicle>();
         public List<int> Busy = new List<int>();
+        public List<int> BusyIndex = new List<int>();
 
 
         public frmNewContract(string cs)
         {
             InitializeComponent();
             ConnectionString = cs;
+         
         }
 
         private void frmNewContract_Load(object sender, EventArgs e)
         {
+            cbFuelLevelOut.Text = cbFuelLevelOut.Items[0].ToString();
             ActualiseFormData();
 
-          
+
         }
 
         private void ActualiseFormData()
@@ -62,6 +56,7 @@ namespace Szakdolgozat
             Vehicles.Clear();
             Busy.Clear();
             cbSelectVehicles.Items.Clear();
+            BusyIndex.Clear();
 
             using (var conn = new MySqlConnection(ConnectionString))
             {
@@ -119,7 +114,7 @@ namespace Szakdolgozat
                 if (!Busy.Contains(item.Id))
                 {
                     cbSelectVehicles.Items.Add(item.Brand + " " + item.Type + " (" + item.IdentityPlate + ")");
-
+                    BusyIndex.Add(item.Id);
                 }
 
             }     
@@ -138,6 +133,68 @@ namespace Szakdolgozat
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string ErrorString = "";
+            if (tbDeposit.Text.Length == 0 || !Int32.TryParse(tbDeposit.Text,out _ )) ErrorString += "Hibas a 'Deposit' mezo kitoltese\n";
+            if (tbRentalFee.Text.Length == 0 || !Int32.TryParse(tbRentalFee.Text, out _)) ErrorString += "Hibas a 'Berleti dij' mezo kitoltese\n";
+            if (cbSelectVehicles.Text.Length == 0) ErrorString += "Nincs kivalasztott gepjarmu\n";
+            if (tbOdometerStart.Text.Length == 0 || !Int32.TryParse(tbOdometerStart.Text, out _)) ErrorString += "Hibas a 'Kilometer allasa' mezo kitoltese\n";
+
+            if (ErrorString != "")
+            {
+                MessageBox.Show(ErrorString);
+                return;
+            }
+
+            //MessageBox.Show(
+            //       $"INSERT INTO szerzodesek (uf_id, gk_id, kiadas_datum, kaucio, " +
+            //       $"berleti_dij, kiadas_serules, kiadas_uzemanyag, kiadas_km, " +
+            //       $"lejarat_datum, visszavet_datum) " +
+            //       $"VALUES (" +
+            //       $"{Properties.Settings.Default.SelectedCustomerId}, " +
+            //       $"{BusyIndex[cbSelectVehicles.SelectedIndex]}, " +
+            //       $"'{dtpStart.Text}', " +
+            //       $"{Int32.Parse(tbDeposit.Text)}, " +
+            //       $"{Int32.Parse(tbRentalFee.Text)}, " +
+            //       $"'{rtbNotesOut.Text}', " +
+            //       $"'{cbFuelLevelOut.Text}', " +
+            //       $"{Int32.Parse(tbOdometerStart.Text)}, " +
+            //       $"'{dtpStop.Text}', " +
+            //       $"NULL ");
+
+
+            using (var conn = new MySqlConnection(ConnectionString))
+            {
+                conn.Open();
+                var command = new MySqlCommand(
+                   $"INSERT INTO szerzodesek (uf_id, gk_id, kiadas_datum, kaucio, " +
+                   $"berleti_dij, kiadas_serules, kiadas_uzemanyag, kiadas_km, " +
+                   $"lejarat_datum, visszavet_datum) " +
+                   $"VALUES (" +
+                   $"{Properties.Settings.Default.SelectedCustomerId}, " +
+                   $"{BusyIndex[cbSelectVehicles.SelectedIndex]}, " +
+                   $"'{dtpStart.Text}', " +
+                   $"{Int32.Parse(tbDeposit.Text)}, " +
+                   $"{Int32.Parse(tbRentalFee.Text)}, " +
+                   $"'{rtbNotesOut.Text}', " +
+                   $"'{cbFuelLevelOut.Text}', " +
+                   $"{Int32.Parse(tbOdometerStart.Text)}, " +
+                   $"'{dtpStop.Text}', " +
+                   $"NULL " +
+                   $");", conn);
+
+
+
+                command.ExecuteNonQuery();
+                MessageBox.Show("Uj szerzodes elmentve");
+
+            }
+            this.Close();
+
+
         }
     }
 }

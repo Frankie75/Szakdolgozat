@@ -78,7 +78,6 @@ namespace Szakdolgozat
         private void kilepesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int id = int.Parse(dgvCustomerList.SelectedRows[0].Cells[4].Value.ToString());
-            MessageBox.Show(id.ToString());
             Properties.Settings.Default.SelectedCustomerId = id;
             this.Close();
            

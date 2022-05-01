@@ -90,7 +90,7 @@
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(442, 89);
             this.btnClose.TabIndex = 3;
-            this.btnClose.Text = "Bezar";
+            this.btnClose.Text = "Bezar / Kivalaszt";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.kilepesToolStripMenuItem_Click);
             // 
