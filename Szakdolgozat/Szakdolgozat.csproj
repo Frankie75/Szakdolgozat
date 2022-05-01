@@ -244,5 +244,12 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ford_fiesta.png" />
+    <Content Include="Resources\No_Photography.png" />
+    <Content Include="Resources\opel_astra.png" />
+    <Content Include="Resources\renault_captur.png" />
+    <Content Include="Resources\renault_clio.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -139,6 +139,8 @@ namespace Szakdolgozat
                         cbDoorsNumber.Text = sor[23].ToString();
 
                         rtbNote.Text = sor[16].ToString();
+                        pbCarPhoto.ImageLocation= sor[24].ToString();
+                        lblFileName.Text = sor[24].ToString();
 
          
                         if (int.Parse(sor[6].ToString()) == 1) chkbDocuments.Checked = true;
@@ -155,6 +157,11 @@ namespace Szakdolgozat
                     }
                 }
 
+            }
+            else
+            {
+                pbCarPhoto.ImageLocation = @"C:\Users\Frankie\source\repos\Szakdolgozat\Szakdolgozat\Resources\No_Photography.png";
+                lblFileName.Text = @"C:\Users\Frankie\source\repos\Szakdolgozat\Szakdolgozat\Resources\No_Photography.png";
             }
 
         }
@@ -178,7 +185,7 @@ namespace Szakdolgozat
                     command.ExecuteNonQuery();
                 }
             }
-            InitiateForm(Id);
+            //InitiateForm(Id);
         }
 
         private void btnNewType_Click(object sender, EventArgs e)
@@ -195,7 +202,7 @@ namespace Szakdolgozat
                     command.ExecuteNonQuery();
                 }
             }
-            InitiateForm(Id);
+            //InitiateForm(Id);
 
         }
 
@@ -213,7 +220,7 @@ namespace Szakdolgozat
                     command.ExecuteNonQuery();
                 }
             }
-            InitiateForm(Id);
+            //InitiateForm(Id);
 
         }
 
@@ -232,7 +239,7 @@ namespace Szakdolgozat
                     }
                 }
             cbBrand.Text = "";
-            InitiateForm(Id);
+            //InitiateForm(Id);
         }
 
         private void btnRemoveType_Click(object sender, EventArgs e)
@@ -250,7 +257,7 @@ namespace Szakdolgozat
                 }
             }
             cbType.Text = "";
-            InitiateForm(Id);
+            //InitiateForm(Id);
 
         }
 
@@ -269,7 +276,7 @@ namespace Szakdolgozat
                 }
             }
             cbColour.Text = "";
-            InitiateForm(Id);
+            //InitiateForm(Id);
 
         }
 
@@ -314,6 +321,9 @@ namespace Szakdolgozat
 
             if (Id > 0)
             {
+                string path = lblFileName.Text;
+                path=path.Replace(@"\","/");
+
                 using (var conn = new MySqlConnection(ConnectionString))
                 {
                     conn.Open();
@@ -342,7 +352,8 @@ namespace Szakdolgozat
                         $"uzemanyag='{cbFuelType.Text}', " +
                         $"szemelyek_szama={int.Parse(cbPessengerNumber.Text)}, " +
                         $"gyartasi_ev={int.Parse(cbManufacturingDate.Text)}, " +
-                        $"ajtok_szama={int.Parse(cbDoorsNumber.Text)} " +
+                        $"ajtok_szama={int.Parse(cbDoorsNumber.Text)}, " +
+                        $"picture='{path}' " +
                         $"WHERE gk_id={Id};", conn);
                     command.ExecuteNonQuery();
                     MessageBox.Show("Adatok frissitve!");
@@ -352,6 +363,9 @@ namespace Szakdolgozat
             }
             else
             {
+                string path = lblFileName.Text;
+                path = path.Replace(@"\", "/");
+
                 using (var conn = new MySqlConnection(ConnectionString))
                 {
                     conn.Open();
@@ -359,7 +373,7 @@ namespace Szakdolgozat
                         $"INSERT INTO gk_torzs (gyarto, tipus, szin, alvazszam, rendszam, " +
                         $"dokumentum_b, elsosegely_b, potkerek_b, elakadasj_b, antenna_b, radio_b, izzokeszlet_b, " +
                         $"emelo_b, navigacio_b, melleny_b, megjegyzes, muszaki_ervenyes, kategoria, valto_tipus, " +
-                        $"uzemanyag, szemelyek_szama, gyartasi_ev, ajtok_szama) " +
+                        $"uzemanyag, szemelyek_szama, gyartasi_ev, ajtok_szama, picture) " +
                         $"VALUES (" +
                         $"'{cbBrand.Text}', " +
                         $"'{cbType.Text}', " +
@@ -383,7 +397,8 @@ namespace Szakdolgozat
                         $"'{cbFuelType.Text}', " +
                         $"{int.Parse(cbPessengerNumber.Text)}, " +
                         $"{int.Parse(cbManufacturingDate.Text)}, " +
-                        $"{int.Parse(cbDoorsNumber.Text)} " +
+                        $"{int.Parse(cbDoorsNumber.Text)}, " +
+                        $"'{path}' " +
                         $");", conn);
                     command.ExecuteNonQuery();
                     MessageBox.Show("Uj gepjarmu elmentve");
@@ -392,6 +407,23 @@ namespace Szakdolgozat
 
             }
 
+
+        }
+
+        private void btnPictureSelect_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Title = "Valaszd ki a kepet";
+            fileDialog.Filter = "Minden file (*.*)|*.*|PNG (*.png)|*.png";
+            fileDialog.FilterIndex = 1;
+            fileDialog.InitialDirectory = @"C:\Users\Frankie\source\repos\Szakdolgozat\Szakdolgozat\Resources\";
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                lblFileName.Text = fileDialog.FileName;
+                pbCarPhoto.ImageLocation = fileDialog.FileName;
+
+                
+            }
 
         }
     }

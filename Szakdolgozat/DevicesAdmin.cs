@@ -7,6 +7,7 @@ namespace Szakdolgozat
     public partial class frmDevicesAdmin : Form
     {
         static string ConnectionString;
+        static bool DgvReady=false;
     
         public frmDevicesAdmin(string c)
         {
@@ -27,6 +28,7 @@ namespace Szakdolgozat
         
         private void refreshDgv(string tipus, int kategoria)
         {
+            DgvReady = false;
             dgvDeviceList.Rows.Clear();
             using (var conn = new MySqlConnection(ConnectionString))
             {
@@ -34,7 +36,7 @@ namespace Szakdolgozat
                
                 conn.Open();
                 var command = new MySqlCommand(
-                    "SELECT rendszam, gyarto, tipus, alvazszam, kategoria, gk_id " +
+                    "SELECT rendszam, gyarto, tipus, alvazszam, kategoria, gk_id, picture " +
                     "FROM gk_torzs " +
                     $"WHERE tipus LIKE '{tipus + '%'}';",conn);
                     
@@ -44,17 +46,17 @@ namespace Szakdolgozat
                 while (sor.Read())
                 {
                     if (cbCategories.Text=="Mindegyik")
-                        dgvDeviceList.Rows.Add(sor[0], sor[1], sor[2], sor[3], sor[4], sor[5]);
+                        dgvDeviceList.Rows.Add(sor[0], sor[1], sor[2], sor[3], sor[4], sor[5], sor[6]);
                     else
                         if (sor[4].ToString()==cbCategories.Text)
-                            dgvDeviceList.Rows.Add(sor[0], sor[1], sor[2], sor[3], sor[4], sor[5]);
+                            dgvDeviceList.Rows.Add(sor[0], sor[1], sor[2], sor[3], sor[4], sor[5], sor[6]);
 
                 }
 
-
             }
 
-
+            pbCarPicture.ImageLocation = dgvDeviceList.SelectedRows[0].Cells[6].Value.ToString();
+            DgvReady = true;
         }
 
         private void btnCloseWindow_Click(object sender, EventArgs e)
@@ -126,6 +128,13 @@ namespace Szakdolgozat
         private void cbCategories_DropDownClosed(object sender, EventArgs e)
         {
             refreshDgv("", cbCategories.SelectedIndex);
+
+        }
+
+        private void dgvDeviceList_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if(DgvReady)
+            pbCarPicture.ImageLocation = dgvDeviceList.SelectedRows[0].Cells[6].Value.ToString();
 
         }
     }

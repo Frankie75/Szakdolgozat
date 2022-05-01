@@ -39,15 +39,16 @@
             this.Alvaszam = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Picture = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tbSearchByType = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbCategories = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbCarPicture = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceList)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarPicture)).BeginInit();
             this.SuspendLayout();
             // 
             // btnNewDevice
@@ -98,6 +99,7 @@
             this.dgvDeviceList.AllowUserToResizeColumns = false;
             this.dgvDeviceList.AllowUserToResizeRows = false;
             this.dgvDeviceList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDeviceList.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvDeviceList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDeviceList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Rendszam,
@@ -105,7 +107,8 @@
             this.Tipus,
             this.Alvaszam,
             this.Kategoria,
-            this.Id});
+            this.Id,
+            this.Picture});
             this.dgvDeviceList.Location = new System.Drawing.Point(21, 87);
             this.dgvDeviceList.Name = "dgvDeviceList";
             this.dgvDeviceList.ReadOnly = true;
@@ -115,6 +118,7 @@
             this.dgvDeviceList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDeviceList.Size = new System.Drawing.Size(780, 559);
             this.dgvDeviceList.TabIndex = 4;
+            this.dgvDeviceList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeviceList_RowEnter);
             // 
             // Rendszam
             // 
@@ -158,6 +162,14 @@
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
+            // 
+            // Picture
+            // 
+            this.Picture.HeaderText = "Column1";
+            this.Picture.MinimumWidth = 8;
+            this.Picture.Name = "Picture";
+            this.Picture.ReadOnly = true;
+            this.Picture.Visible = false;
             // 
             // groupBox1
             // 
@@ -209,13 +221,15 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Kereses tipus szerint:";
             // 
-            // pictureBox1
+            // pbCarPicture
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(73, 534);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(334, 216);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.pbCarPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pbCarPicture.Location = new System.Drawing.Point(73, 534);
+            this.pbCarPicture.Name = "pbCarPicture";
+            this.pbCarPicture.Size = new System.Drawing.Size(334, 216);
+            this.pbCarPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCarPicture.TabIndex = 6;
+            this.pbCarPicture.TabStop = false;
             // 
             // frmDevicesAdmin
             // 
@@ -224,7 +238,7 @@
             this.CancelButton = this.btnCloseWindow;
             this.ClientSize = new System.Drawing.Size(1539, 805);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbCarPicture);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCloseWindow);
             this.Controls.Add(this.btnDeleteDevice);
@@ -238,7 +252,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceList)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarPicture)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -255,12 +269,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbCategories;
         private System.Windows.Forms.TextBox tbSearchByType;
+        private System.Windows.Forms.PictureBox pbCarPicture;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rendszam;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gyartmany;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipus;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alvaszam;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Picture;
     }
 }

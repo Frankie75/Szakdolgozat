@@ -44,7 +44,7 @@
             this.btnNewType = new System.Windows.Forms.Button();
             this.btnNewColour = new System.Windows.Forms.Button();
             this.rtbNote = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbCarPhoto = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -75,7 +75,10 @@
             this.cbDoorsNumber = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnPictureSelect = new System.Windows.Forms.Button();
+            this.lblFileName = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarPhoto)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,7 +164,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 255);
+            this.label5.Location = new System.Drawing.Point(58, 260);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(134, 20);
             this.label5.TabIndex = 10;
@@ -188,7 +191,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(771, 302);
+            this.label7.Location = new System.Drawing.Point(771, 356);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 20);
             this.label7.TabIndex = 14;
@@ -216,23 +219,25 @@
             // 
             // rtbNote
             // 
-            this.rtbNote.Location = new System.Drawing.Point(775, 334);
+            this.rtbNote.Location = new System.Drawing.Point(775, 379);
             this.rtbNote.Name = "rtbNote";
-            this.rtbNote.Size = new System.Drawing.Size(463, 176);
+            this.rtbNote.Size = new System.Drawing.Size(463, 125);
             this.rtbNote.TabIndex = 17;
             this.rtbNote.Text = "";
             // 
-            // pictureBox1
+            // pbCarPhoto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(775, 538);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(463, 216);
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
+            this.pbCarPhoto.InitialImage = null;
+            this.pbCarPhoto.Location = new System.Drawing.Point(775, 521);
+            this.pbCarPhoto.Name = "pbCarPhoto";
+            this.pbCarPhoto.Size = new System.Drawing.Size(463, 359);
+            this.pbCarPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCarPhoto.TabIndex = 18;
+            this.pbCarPhoto.TabStop = false;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(84, 662);
+            this.btnSave.Location = new System.Drawing.Point(121, 733);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(210, 92);
             this.btnSave.TabIndex = 19;
@@ -243,7 +248,7 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(337, 662);
+            this.btnClose.Location = new System.Drawing.Point(356, 733);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(210, 92);
             this.btnClose.TabIndex = 20;
@@ -263,7 +268,7 @@
             this.groupBox1.Controls.Add(this.chkbSpareTyre);
             this.groupBox1.Controls.Add(this.chkbEmergencyBox);
             this.groupBox1.Controls.Add(this.chkbDocuments);
-            this.groupBox1.Location = new System.Drawing.Point(62, 371);
+            this.groupBox1.Location = new System.Drawing.Point(62, 460);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(608, 234);
             this.groupBox1.TabIndex = 22;
@@ -420,8 +425,9 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-mm-dd";
-            this.dateTimePicker1.Location = new System.Drawing.Point(280, 249);
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(280, 255);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(198, 26);
             this.dateTimePicker1.TabIndex = 28;
@@ -521,14 +527,46 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(58, 320);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(38, 20);
+            this.label14.TabIndex = 39;
+            this.label14.Text = "File:";
+            // 
+            // btnPictureSelect
+            // 
+            this.btnPictureSelect.Location = new System.Drawing.Point(62, 356);
+            this.btnPictureSelect.Name = "btnPictureSelect";
+            this.btnPictureSelect.Size = new System.Drawing.Size(416, 55);
+            this.btnPictureSelect.TabIndex = 40;
+            this.btnPictureSelect.Text = "Kep kivalsztasa";
+            this.btnPictureSelect.UseVisualStyleBackColor = true;
+            this.btnPictureSelect.Click += new System.EventHandler(this.btnPictureSelect_Click);
+            // 
+            // lblFileName
+            // 
+            this.lblFileName.AutoSize = true;
+            this.lblFileName.Location = new System.Drawing.Point(117, 320);
+            this.lblFileName.Name = "lblFileName";
+            this.lblFileName.Size = new System.Drawing.Size(660, 20);
+            this.lblFileName.TabIndex = 41;
+            this.lblFileName.Text = "C:\\Users\\Frankie\\source\\repos\\Szakdolgozat\\Szakdolgozat\\Resources\\No_Photography." +
+    "png";
+            // 
             // frmDevicesDataInputTable
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1372, 805);
+            this.ClientSize = new System.Drawing.Size(1372, 942);
             this.ControlBox = false;
+            this.Controls.Add(this.lblFileName);
+            this.Controls.Add(this.btnPictureSelect);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.cbDoorsNumber);
             this.Controls.Add(this.label12);
@@ -548,7 +586,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbCarPhoto);
             this.Controls.Add(this.rtbNote);
             this.Controls.Add(this.btnNewColour);
             this.Controls.Add(this.btnNewType);
@@ -570,7 +608,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DevicesDataInputTable";
             this.Load += new System.EventHandler(this.frmDevicesDataInputTable_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCarPhoto)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -596,7 +634,7 @@
         private System.Windows.Forms.Button btnNewType;
         private System.Windows.Forms.Button btnNewColour;
         private System.Windows.Forms.RichTextBox rtbNote;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbCarPhoto;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -627,5 +665,8 @@
         private System.Windows.Forms.ComboBox cbDoorsNumber;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnPictureSelect;
+        private System.Windows.Forms.Label lblFileName;
     }
 }
