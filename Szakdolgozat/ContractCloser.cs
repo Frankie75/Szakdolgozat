@@ -62,6 +62,8 @@ namespace Szakdolgozat
             }
 
             MessageBox.Show("Szerzodes lezarva!");
+            this.Close();
+
 
             
         }

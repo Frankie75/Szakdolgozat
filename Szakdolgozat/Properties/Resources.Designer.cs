@@ -59,15 +59,5 @@ namespace Szakdolgozat.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _2021_12_09 {
-            get {
-                object obj = ResourceManager.GetObject("2021-12-09", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

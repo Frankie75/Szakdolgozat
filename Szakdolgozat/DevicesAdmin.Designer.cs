@@ -46,9 +46,16 @@
             this.cbCategories = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pbCarPicture = new System.Windows.Forms.PictureBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.opciokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bezarasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ujGepjarmuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.szerkesztesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kivalastottTorleseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceList)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarPicture)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNewDevice
@@ -231,6 +238,57 @@
             this.pbCarPicture.TabIndex = 6;
             this.pbCarPicture.TabStop = false;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.opciokToolStripMenuItem,
+            this.bezarasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1539, 33);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // opciokToolStripMenuItem
+            // 
+            this.opciokToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ujGepjarmuToolStripMenuItem,
+            this.szerkesztesToolStripMenuItem,
+            this.kivalastottTorleseToolStripMenuItem});
+            this.opciokToolStripMenuItem.Name = "opciokToolStripMenuItem";
+            this.opciokToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
+            this.opciokToolStripMenuItem.Text = "Opciok";
+            // 
+            // bezarasToolStripMenuItem
+            // 
+            this.bezarasToolStripMenuItem.Name = "bezarasToolStripMenuItem";
+            this.bezarasToolStripMenuItem.Size = new System.Drawing.Size(87, 29);
+            this.bezarasToolStripMenuItem.Text = "Bezaras";
+            this.bezarasToolStripMenuItem.Click += new System.EventHandler(this.btnCloseWindow_Click);
+            // 
+            // ujGepjarmuToolStripMenuItem
+            // 
+            this.ujGepjarmuToolStripMenuItem.Name = "ujGepjarmuToolStripMenuItem";
+            this.ujGepjarmuToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.ujGepjarmuToolStripMenuItem.Text = "Uj gepjarmu";
+            this.ujGepjarmuToolStripMenuItem.Click += new System.EventHandler(this.btnNewDevice_Click);
+            // 
+            // szerkesztesToolStripMenuItem
+            // 
+            this.szerkesztesToolStripMenuItem.Name = "szerkesztesToolStripMenuItem";
+            this.szerkesztesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.szerkesztesToolStripMenuItem.Text = "Szerkesztes";
+            this.szerkesztesToolStripMenuItem.Click += new System.EventHandler(this.btnEditDevice_Click);
+            // 
+            // kivalastottTorleseToolStripMenuItem
+            // 
+            this.kivalastottTorleseToolStripMenuItem.Name = "kivalastottTorleseToolStripMenuItem";
+            this.kivalastottTorleseToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.kivalastottTorleseToolStripMenuItem.Text = "Kivalastott torlese";
+            this.kivalastottTorleseToolStripMenuItem.Click += new System.EventHandler(this.btnDeleteDevice_Click);
+            // 
             // frmDevicesAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -244,7 +302,9 @@
             this.Controls.Add(this.btnDeleteDevice);
             this.Controls.Add(this.btnEditDevice);
             this.Controls.Add(this.btnNewDevice);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmDevicesAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gepjarmuvek listaja";
@@ -253,7 +313,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarPicture)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -277,5 +340,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Kategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Picture;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem opciokToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ujGepjarmuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem szerkesztesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kivalastottTorleseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bezarasToolStripMenuItem;
     }
 }

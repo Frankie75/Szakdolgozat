@@ -231,18 +231,21 @@
             this.ujUgyfelFelveteleToolStripMenuItem.Name = "ujUgyfelFelveteleToolStripMenuItem";
             this.ujUgyfelFelveteleToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
             this.ujUgyfelFelveteleToolStripMenuItem.Text = "Uj Ugyfel felvetele";
+            this.ujUgyfelFelveteleToolStripMenuItem.Click += new System.EventHandler(this.btnAddNewCustomer_Click);
             // 
             // meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem
             // 
             this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Name = "meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem";
             this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
             this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Text = "Meglevo ugyfel adatainak szerkesztese";
+            this.meglevoUgyfelAdatainakSzerkeszteseToolStripMenuItem.Click += new System.EventHandler(this.btnCustomerEditor_Click);
             // 
             // ugyfelTorleseToolStripMenuItem
             // 
             this.ugyfelTorleseToolStripMenuItem.Name = "ugyfelTorleseToolStripMenuItem";
             this.ugyfelTorleseToolStripMenuItem.Size = new System.Drawing.Size(420, 34);
             this.ugyfelTorleseToolStripMenuItem.Text = "Ugyfel torlese";
+            this.ugyfelTorleseToolStripMenuItem.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // kilepesToolStripMenuItem
             // 

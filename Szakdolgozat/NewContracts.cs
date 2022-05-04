@@ -15,6 +15,7 @@ namespace Szakdolgozat
     {
 
         static string ConnectionString;
+        static int SelectedCar = 0;
 
    
 
@@ -46,6 +47,10 @@ namespace Szakdolgozat
         private void frmNewContract_Load(object sender, EventArgs e)
         {
             cbFuelLevelOut.Text = cbFuelLevelOut.Items[0].ToString();
+            dtpStart.Value= DateTime.Now;
+            dtpStart.MinDate = DateTime.Now;
+            dtpStop.Value= DateTime.Now;
+            dtpStop.MinDate = DateTime.Now;
             ActualiseFormData();
 
 
@@ -149,22 +154,7 @@ namespace Szakdolgozat
                 return;
             }
 
-            //MessageBox.Show(
-            //       $"INSERT INTO szerzodesek (uf_id, gk_id, kiadas_datum, kaucio, " +
-            //       $"berleti_dij, kiadas_serules, kiadas_uzemanyag, kiadas_km, " +
-            //       $"lejarat_datum, visszavet_datum) " +
-            //       $"VALUES (" +
-            //       $"{Properties.Settings.Default.SelectedCustomerId}, " +
-            //       $"{BusyIndex[cbSelectVehicles.SelectedIndex]}, " +
-            //       $"'{dtpStart.Text}', " +
-            //       $"{Int32.Parse(tbDeposit.Text)}, " +
-            //       $"{Int32.Parse(tbRentalFee.Text)}, " +
-            //       $"'{rtbNotesOut.Text}', " +
-            //       $"'{cbFuelLevelOut.Text}', " +
-            //       $"{Int32.Parse(tbOdometerStart.Text)}, " +
-            //       $"'{dtpStop.Text}', " +
-            //       $"NULL ");
-
+   
 
             using (var conn = new MySqlConnection(ConnectionString))
             {
@@ -175,7 +165,7 @@ namespace Szakdolgozat
                    $"lejarat_datum, visszavet_datum) " +
                    $"VALUES (" +
                    $"{Properties.Settings.Default.SelectedCustomerId}, " +
-                   $"{BusyIndex[cbSelectVehicles.SelectedIndex]}, " +
+                   $"{BusyIndex[SelectedCar]}, " +
                    $"'{dtpStart.Text}', " +
                    $"{Int32.Parse(tbDeposit.Text)}, " +
                    $"{Int32.Parse(tbRentalFee.Text)}, " +
@@ -195,6 +185,11 @@ namespace Szakdolgozat
             this.Close();
 
 
+        }
+
+        private void cbSelectVehicles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SelectedCar = cbSelectVehicles.SelectedIndex;
         }
     }
 }

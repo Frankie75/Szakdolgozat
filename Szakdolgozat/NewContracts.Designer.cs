@@ -79,6 +79,7 @@
             this.cbSelectVehicles.Name = "cbSelectVehicles";
             this.cbSelectVehicles.Size = new System.Drawing.Size(440, 28);
             this.cbSelectVehicles.TabIndex = 3;
+            this.cbSelectVehicles.SelectedIndexChanged += new System.EventHandler(this.cbSelectVehicles_SelectedIndexChanged);
             // 
             // label2
             // 

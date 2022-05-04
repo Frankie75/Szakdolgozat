@@ -34,8 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblFelhasznalokSzama = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbUsername
@@ -93,24 +91,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(159, 407);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Felhasznalok szama:";
-            // 
-            // lblFelhasznalokSzama
-            // 
-            this.lblFelhasznalokSzama.AutoSize = true;
-            this.lblFelhasznalokSzama.Location = new System.Drawing.Point(323, 407);
-            this.lblFelhasznalokSzama.Name = "lblFelhasznalokSzama";
-            this.lblFelhasznalokSzama.Size = new System.Drawing.Size(18, 20);
-            this.lblFelhasznalokSzama.TabIndex = 7;
-            this.lblFelhasznalokSzama.Text = "0";
-            // 
             // frmLogin
             // 
             this.AcceptButton = this.btnLogin;
@@ -119,8 +99,6 @@
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(400, 514);
             this.ControlBox = false;
-            this.Controls.Add(this.lblFelhasznalokSzama);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
@@ -145,7 +123,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblFelhasznalokSzama;
     }
 }

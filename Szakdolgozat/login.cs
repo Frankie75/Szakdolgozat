@@ -33,6 +33,8 @@ namespace Szakdolgozat
             public string username { get; set; }
             public string password { get; set; }
 
+
+
         }
 
         private List<user> Users = new List<user>();
@@ -52,30 +54,40 @@ namespace Szakdolgozat
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            var conn = new MySqlConnection(ConnectionString);
-            conn.Open();
-            var command = new MySqlCommand("select * from felhasznalok;", conn);
-            var r = command.ExecuteReader();
-            while (r.Read())
+            try
             {
-                var u = new user();
-                u.user_id = r[0].ToString();
-                u.username = r[1].ToString();
-                u.password = r[2].ToString();
-                Users.Add(u);
+                var conn = new MySqlConnection(ConnectionString);
+                conn.Open();
+                var command = new MySqlCommand("select * from felhasznalok;", conn);
+                var r = command.ExecuteReader();
+                while (r.Read())
+                {
+
+                    var u = new user();
+                    u.user_id = r[0].ToString();
+                    u.username = r[1].ToString();
+                    u.password = r[2].ToString();
+                    Users.Add(u);
+                }
+                r.Close();
+                conn.Close();
+
+
             }
-            r.Close();
-            conn.Close();
-
-            lblFelhasznalokSzama.Text = (Users.Count().ToString());
-
-
+            catch 
+            {
+                MessageBox.Show("Azonositasi-eleresi hiba, a program kilep!","Hibauzenet");
+                Application.Exit();            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-      
-          foreach(user u in Users)
+
+     
+
+
+
+            foreach (user u in Users)
             {
                 if(u.username == tbUsername.Text)
                 {
