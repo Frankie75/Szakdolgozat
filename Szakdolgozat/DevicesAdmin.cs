@@ -54,7 +54,9 @@ namespace Szakdolgozat
                 }
 
             }
-
+            if(dgvDeviceList.SelectedRows.Count ==0)
+                pbCarPicture.ImageLocation = @"C:\Users\Frankie\source\repos\Szakdolgozat\Szakdolgozat\Resources\No_Photography.png";
+            else
             pbCarPicture.ImageLocation = dgvDeviceList.SelectedRows[0].Cells[6].Value.ToString();
             DgvReady = true;
         }
