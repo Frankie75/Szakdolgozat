@@ -101,6 +101,7 @@
             this.dtpStart.Size = new System.Drawing.Size(221, 26);
             this.dtpStart.TabIndex = 5;
             this.dtpStart.Value = new System.DateTime(2022, 5, 1, 13, 2, 25, 0);
+            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpStart_ValueChanged);
             // 
             // label3
             // 

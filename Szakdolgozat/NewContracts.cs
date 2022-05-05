@@ -191,5 +191,16 @@ namespace Szakdolgozat
         {
             SelectedCar = cbSelectVehicles.SelectedIndex;
         }
+
+        private void dtpStart_ValueChanged(object sender, EventArgs e)
+        {
+            if(dtpStop.Value < dtpStart.Value)
+            {
+                dtpStop.Value = dtpStart.Value;
+                dtpStop.MinDate = dtpStart.Value;
+            }
+            else
+                dtpStop.MinDate=dtpStart.Value;
+        }
     }
 }

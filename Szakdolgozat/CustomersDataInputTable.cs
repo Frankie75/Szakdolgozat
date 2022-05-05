@@ -72,6 +72,12 @@ namespace Szakdolgozat
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if(!Int32.TryParse(tbPostCode.Text, out _))
+            {
+                MessageBox.Show("Hibas 'Iranyitoszam' mezo kitoltes", "Hiba");
+                return;
+            }
+
             using(var conn = new MySqlConnection(ConnectionString))
             {
                 conn.Open();

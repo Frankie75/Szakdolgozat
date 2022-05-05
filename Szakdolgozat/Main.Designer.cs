@@ -212,7 +212,7 @@
             this.kilepesToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1730, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(1575, 33);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -349,7 +349,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.CancelButton = this.btnExit;
-            this.ClientSize = new System.Drawing.Size(1730, 864);
+            this.ClientSize = new System.Drawing.Size(1575, 864);
             this.ControlBox = false;
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCloseContract);
