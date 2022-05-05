@@ -36,11 +36,9 @@ namespace Szakdolgozat
         {
             InitializeComponent();
 
-            frmConnectionPw cpw = new frmConnectionPw();
-            cpw.ShowDialog();
-
+            Properties.Settings.Default.ConnectionName = "frankieh_frankie";
+            Properties.Settings.Default.ConnectionPassword = "ml1510domain";
             ConnectionString = $"Server = frankie75.hu; Database = frankieh_autokolcsonzo; Uid = {Properties.Settings.Default.ConnectionName}; Pwd = {Properties.Settings.Default.ConnectionPassword}; convert zero datetime=True";
-
 
             cbFilter.SelectedIndex = 0;
 
@@ -53,9 +51,9 @@ namespace Szakdolgozat
         private void formMain_Load(object sender, EventArgs e)
         {
             
-            if (!Properties.Settings.Default.PasswordValid) Application.Exit();
+            if (Properties.Settings.Default.PasswordValid==false) Application.Exit();
           
-            refreshDGV("");
+            else refreshDGV("");
             
         }
 

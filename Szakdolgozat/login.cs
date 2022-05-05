@@ -54,6 +54,12 @@ namespace Szakdolgozat
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+      
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+
             try
             {
                 var conn = new MySqlConnection(ConnectionString);
@@ -72,18 +78,14 @@ namespace Szakdolgozat
                 r.Close();
                 conn.Close();
 
-
             }
-            catch 
+            catch
             {
-                MessageBox.Show("Azonositasi-eleresi hiba, a program kilep!","Hibauzenet");
-                Application.Exit();            }
-        }
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-
-     
+                MessageBox.Show("Adatbazis elerese sikertelen, a program kilep!", "Hibauzenet");
+                Properties.Settings.Default.PasswordValid = false;
+                Application.Exit();
+                
+            }
 
 
 

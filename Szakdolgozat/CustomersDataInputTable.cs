@@ -42,8 +42,6 @@ namespace Szakdolgozat
                         tbCity.Text = sor[4].ToString();
                         tbAddress.Text = sor[5].ToString();
                         tbEmail.Text = sor[6].ToString();
-                        
-
                     }
 
 

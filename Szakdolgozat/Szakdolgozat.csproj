@@ -104,12 +104,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConnectionPassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConnectionPassword.Designer.cs">
-      <DependentUpon>ConnectionPassword.cs</DependentUpon>
-    </Compile>
     <Compile Include="ContractCloser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,9 +166,6 @@
     <Compile Include="UserAdmin.Designer.cs">
       <DependentUpon>UserAdmin.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ConnectionPassword.resx">
-      <DependentUpon>ConnectionPassword.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ContractCloser.resx">
       <DependentUpon>ContractCloser.cs</DependentUpon>
     </EmbeddedResource>
