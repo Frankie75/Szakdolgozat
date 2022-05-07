@@ -271,6 +271,22 @@ namespace Szakdolgozat
             tbUserName.Text = Felhasznalok.Text;
             tbPassword.Text = "";
         }
-        
+
+        private void SetColor()
+        {
+            this.BackColor = Properties.Settings.Default.ColorBack;
+            this.ForeColor = Properties.Settings.Default.ColorFore;
+            this.btnAction.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnAddNewUser.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnChangePassword.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnClose.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnDeleteUser.BackColor = Properties.Settings.Default.ColorButton;
+            
+        }
+
+        private void frmUserAdmin_Load(object sender, EventArgs e)
+        {
+            SetColor();
+        }
     }
 }

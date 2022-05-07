@@ -46,6 +46,8 @@ namespace Szakdolgozat
 
         private void frmNewContract_Load(object sender, EventArgs e)
         {
+            SetColor();
+
             cbFuelLevelOut.Text = cbFuelLevelOut.Items[0].ToString();
             dtpStart.Value= DateTime.Now;
             dtpStart.MinDate = DateTime.Now;
@@ -201,6 +203,17 @@ namespace Szakdolgozat
             }
             else
                 dtpStop.MinDate=dtpStart.Value;
+        }
+
+        private void SetColor()
+        {
+            this.BackColor = Properties.Settings.Default.ColorBack;
+            this.ForeColor = Properties.Settings.Default.ColorFore;
+            this.btnCancel.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnSave.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnSelectCustomer.BackColor = Properties.Settings.Default.ColorButton;
+
+            
         }
     }
 }

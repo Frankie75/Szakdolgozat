@@ -26,6 +26,7 @@ namespace Szakdolgozat
 
         private void ContractCloser_Load(object sender, EventArgs e)
         {
+            SetColor();
 
         }
 
@@ -66,6 +67,14 @@ namespace Szakdolgozat
 
 
             
+        }
+        private void SetColor()
+        {
+            this.BackColor = Properties.Settings.Default.ColorBack;
+            this.ForeColor = Properties.Settings.Default.ColorFore;
+            this.btnCancel.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnCloseContract.BackColor = Properties.Settings.Default.ColorButton;
+       
         }
     }
 }

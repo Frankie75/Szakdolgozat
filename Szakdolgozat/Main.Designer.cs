@@ -51,11 +51,11 @@
             this.felhasznaloAdminisztracioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beallitasokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kilepesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnNewContract = new System.Windows.Forms.Button();
+            this.btnCustomers = new System.Windows.Forms.Button();
+            this.btnVehicles = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.btnCloseContract = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
@@ -267,6 +267,7 @@
             this.beallitasokToolStripMenuItem.Name = "beallitasokToolStripMenuItem";
             this.beallitasokToolStripMenuItem.Size = new System.Drawing.Size(111, 29);
             this.beallitasokToolStripMenuItem.Text = "Beallitasok";
+            this.beallitasokToolStripMenuItem.Click += new System.EventHandler(this.btsSettings_Click);
             // 
             // kilepesToolStripMenuItem1
             // 
@@ -275,54 +276,55 @@
             this.kilepesToolStripMenuItem1.Text = "Kilepes";
             this.kilepesToolStripMenuItem1.Click += new System.EventHandler(this.kilepesToolStripMenuItem1_Click);
             // 
-            // button1
+            // btnNewContract
             // 
-            this.button1.Location = new System.Drawing.Point(47, 637);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 136);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Uj szerzodes";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.ujSzerzodesToolStripMenuItem_Click);
+            this.btnNewContract.Location = new System.Drawing.Point(47, 637);
+            this.btnNewContract.Name = "btnNewContract";
+            this.btnNewContract.Size = new System.Drawing.Size(191, 136);
+            this.btnNewContract.TabIndex = 9;
+            this.btnNewContract.Text = "Uj szerzodes";
+            this.btnNewContract.UseVisualStyleBackColor = true;
+            this.btnNewContract.Click += new System.EventHandler(this.ujSzerzodesToolStripMenuItem_Click);
             // 
-            // button2
+            // btnCustomers
             // 
-            this.button2.Location = new System.Drawing.Point(651, 637);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(196, 62);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Ugyfeltorzs";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.ugyfeltorzsToolStripMenuItem_Click);
+            this.btnCustomers.Location = new System.Drawing.Point(651, 637);
+            this.btnCustomers.Name = "btnCustomers";
+            this.btnCustomers.Size = new System.Drawing.Size(196, 62);
+            this.btnCustomers.TabIndex = 10;
+            this.btnCustomers.Text = "Ugyfeltorzs";
+            this.btnCustomers.UseVisualStyleBackColor = true;
+            this.btnCustomers.Click += new System.EventHandler(this.ugyfeltorzsToolStripMenuItem_Click);
             // 
-            // button3
+            // btnVehicles
             // 
-            this.button3.Location = new System.Drawing.Point(651, 711);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(196, 62);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Gepjarmuvek listaja";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.eszkozokToolStripMenuItem_Click);
+            this.btnVehicles.Location = new System.Drawing.Point(651, 711);
+            this.btnVehicles.Name = "btnVehicles";
+            this.btnVehicles.Size = new System.Drawing.Size(196, 62);
+            this.btnVehicles.TabIndex = 11;
+            this.btnVehicles.Text = "Gepjarmuvek listaja";
+            this.btnVehicles.UseVisualStyleBackColor = true;
+            this.btnVehicles.Click += new System.EventHandler(this.eszkozokToolStripMenuItem_Click);
             // 
-            // button4
+            // btnUsers
             // 
-            this.button4.Location = new System.Drawing.Point(895, 637);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(337, 62);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Felhsznalok";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.felhasznaloAdminisztracioToolStripMenuItem_Click);
+            this.btnUsers.Location = new System.Drawing.Point(895, 637);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(337, 62);
+            this.btnUsers.TabIndex = 12;
+            this.btnUsers.Text = "Felhsznalok";
+            this.btnUsers.UseVisualStyleBackColor = true;
+            this.btnUsers.Click += new System.EventHandler(this.felhasznaloAdminisztracioToolStripMenuItem_Click);
             // 
-            // button5
+            // btnSettings
             // 
-            this.button5.Location = new System.Drawing.Point(895, 707);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(337, 62);
-            this.button5.TabIndex = 13;
-            this.button5.Text = "Beallitasok";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnSettings.Location = new System.Drawing.Point(895, 707);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(337, 62);
+            this.btnSettings.TabIndex = 13;
+            this.btnSettings.Text = "Beallitasok";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btsSettings_Click);
             // 
             // btnCloseContract
             // 
@@ -345,6 +347,7 @@
             // 
             // formMain
             // 
+            this.AcceptButton = this.btnNewContract;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -353,11 +356,11 @@
             this.ControlBox = false;
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCloseContract);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSettings);
+            this.Controls.Add(this.btnUsers);
+            this.Controls.Add(this.btnVehicles);
+            this.Controls.Add(this.btnCustomers);
+            this.Controls.Add(this.btnNewContract);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbSearchName);
@@ -397,11 +400,11 @@
         private System.Windows.Forms.ToolStripMenuItem ugyfeltorzsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eszkozokToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem beallitasokToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnNewContract;
+        private System.Windows.Forms.Button btnCustomers;
+        private System.Windows.Forms.Button btnVehicles;
+        private System.Windows.Forms.Button btnUsers;
+        private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnCloseContract;
         private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

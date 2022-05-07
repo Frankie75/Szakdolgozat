@@ -12,7 +12,7 @@ namespace Szakdolgozat.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.0.3.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -80,6 +80,42 @@ namespace Szakdolgozat.Properties {
             }
             set {
                 this["SelectedCustomerId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ControlLight")]
+        public global::System.Drawing.Color ColorBack {
+            get {
+                return ((global::System.Drawing.Color)(this["ColorBack"]));
+            }
+            set {
+                this["ColorBack"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ControlText")]
+        public global::System.Drawing.Color ColorFore {
+            get {
+                return ((global::System.Drawing.Color)(this["ColorFore"]));
+            }
+            set {
+                this["ColorFore"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ButtonFace")]
+        public global::System.Drawing.Color ColorButton {
+            get {
+                return ((global::System.Drawing.Color)(this["ColorButton"]));
+            }
+            set {
+                this["ColorButton"] = value;
             }
         }
     }

@@ -86,6 +86,7 @@ namespace Szakdolgozat
 
         private void frmCustomerAdmin_Load(object sender, EventArgs e)
         {
+            SetColor();
             refreshDGV("");
 
         }
@@ -161,6 +162,17 @@ namespace Szakdolgozat
             
         }
 
-    
+        private void SetColor()
+        {
+            this.BackColor = Properties.Settings.Default.ColorBack;
+            this.ForeColor = Properties.Settings.Default.ColorFore;
+            this.btnAddNewCustomer.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnClose.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnCustomerEditor.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnDeleteCustomer.BackColor = Properties.Settings.Default.ColorButton;
+
+        }
+
+
     }
 }

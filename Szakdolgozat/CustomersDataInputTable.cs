@@ -59,6 +59,7 @@ namespace Szakdolgozat
         }
         private void frmCutomerDataInputForm_Load(object sender, EventArgs e)
         {
+            SetColor();
 
         }
 
@@ -114,6 +115,15 @@ namespace Szakdolgozat
             }
             MessageBox.Show("Uj ugyfel elmentve!");
             this.Close();
+        }
+
+        private void SetColor()
+        {
+            this.BackColor = Properties.Settings.Default.ColorBack;
+            this.ForeColor = Properties.Settings.Default.ColorFore;
+            this.btnCancel.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnOK.BackColor = Properties.Settings.Default.ColorButton;
+
         }
     }
 }

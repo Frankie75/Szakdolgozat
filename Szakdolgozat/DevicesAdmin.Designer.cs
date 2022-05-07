@@ -48,10 +48,10 @@
             this.pbCarPicture = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opciokToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bezarasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ujGepjarmuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.szerkesztesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kivalastottTorleseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bezarasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDeviceList)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCarPicture)).BeginInit();
@@ -230,7 +230,6 @@
             // 
             // pbCarPicture
             // 
-            this.pbCarPicture.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pbCarPicture.Location = new System.Drawing.Point(73, 534);
             this.pbCarPicture.Name = "pbCarPicture";
             this.pbCarPicture.Size = new System.Drawing.Size(334, 216);
@@ -261,33 +260,33 @@
             this.opciokToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
             this.opciokToolStripMenuItem.Text = "Opciok";
             // 
-            // bezarasToolStripMenuItem
-            // 
-            this.bezarasToolStripMenuItem.Name = "bezarasToolStripMenuItem";
-            this.bezarasToolStripMenuItem.Size = new System.Drawing.Size(87, 29);
-            this.bezarasToolStripMenuItem.Text = "Bezaras";
-            this.bezarasToolStripMenuItem.Click += new System.EventHandler(this.btnCloseWindow_Click);
-            // 
             // ujGepjarmuToolStripMenuItem
             // 
             this.ujGepjarmuToolStripMenuItem.Name = "ujGepjarmuToolStripMenuItem";
-            this.ujGepjarmuToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.ujGepjarmuToolStripMenuItem.Size = new System.Drawing.Size(254, 34);
             this.ujGepjarmuToolStripMenuItem.Text = "Uj gepjarmu";
             this.ujGepjarmuToolStripMenuItem.Click += new System.EventHandler(this.btnNewDevice_Click);
             // 
             // szerkesztesToolStripMenuItem
             // 
             this.szerkesztesToolStripMenuItem.Name = "szerkesztesToolStripMenuItem";
-            this.szerkesztesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.szerkesztesToolStripMenuItem.Size = new System.Drawing.Size(254, 34);
             this.szerkesztesToolStripMenuItem.Text = "Szerkesztes";
             this.szerkesztesToolStripMenuItem.Click += new System.EventHandler(this.btnEditDevice_Click);
             // 
             // kivalastottTorleseToolStripMenuItem
             // 
             this.kivalastottTorleseToolStripMenuItem.Name = "kivalastottTorleseToolStripMenuItem";
-            this.kivalastottTorleseToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.kivalastottTorleseToolStripMenuItem.Size = new System.Drawing.Size(254, 34);
             this.kivalastottTorleseToolStripMenuItem.Text = "Kivalastott torlese";
             this.kivalastottTorleseToolStripMenuItem.Click += new System.EventHandler(this.btnDeleteDevice_Click);
+            // 
+            // bezarasToolStripMenuItem
+            // 
+            this.bezarasToolStripMenuItem.Name = "bezarasToolStripMenuItem";
+            this.bezarasToolStripMenuItem.Size = new System.Drawing.Size(87, 29);
+            this.bezarasToolStripMenuItem.Text = "Bezaras";
+            this.bezarasToolStripMenuItem.Click += new System.EventHandler(this.btnCloseWindow_Click);
             // 
             // frmDevicesAdmin
             // 

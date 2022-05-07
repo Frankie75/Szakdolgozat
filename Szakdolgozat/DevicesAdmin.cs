@@ -17,6 +17,8 @@ namespace Szakdolgozat
 
         private void DevicesAdmin_Load(object sender, EventArgs e)
         {
+            SetColor();
+
             cbCategories.Items.Add("Szemelyauto");
             cbCategories.Items.Add("Teherauto");
             cbCategories.Items.Add("Motorkerekpar");
@@ -137,6 +139,17 @@ namespace Szakdolgozat
         {
             if(DgvReady)
             pbCarPicture.ImageLocation = dgvDeviceList.SelectedRows[0].Cells[6].Value.ToString();
+
+        }
+
+        private void SetColor()
+        {
+            this.BackColor = Properties.Settings.Default.ColorBack;
+            this.ForeColor = Properties.Settings.Default.ColorFore;
+            this.btnCloseWindow.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnDeleteDevice.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnEditDevice.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnNewDevice.BackColor = Properties.Settings.Default.ColorButton;
 
         }
     }

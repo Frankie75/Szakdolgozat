@@ -51,7 +51,8 @@ namespace Szakdolgozat
 
         private void frmDevicesDataInputTable_Load(object sender, EventArgs e)
         {
-           
+            SetColor();
+
 
         }
 
@@ -425,6 +426,23 @@ namespace Szakdolgozat
                 
             }
 
+        }
+
+        private void SetColor()
+        {
+            this.BackColor = Properties.Settings.Default.ColorBack;
+            this.ForeColor = Properties.Settings.Default.ColorFore;
+            this.btnClose.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnNewBrand.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnNewColour.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnNewType.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnPictureSelect.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnRemoveBrand.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnRemoveColour.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnRemoveType.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnSave.BackColor = Properties.Settings.Default.ColorButton;
+
+   
         }
     }
 }

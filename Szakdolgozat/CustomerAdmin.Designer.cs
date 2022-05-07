@@ -256,8 +256,10 @@
             // 
             // frmCustomerAdmin
             // 
+            this.AcceptButton = this.btnAddNewCustomer;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1477, 679);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
@@ -266,6 +268,7 @@
             this.Controls.Add(this.btnCustomerEditor);
             this.Controls.Add(this.btnAddNewCustomer);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmCustomerAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

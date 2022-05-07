@@ -19,7 +19,7 @@ namespace Szakdolgozat
 
         private void frmExit_Load(object sender, EventArgs e)
         {
-
+            SetColor();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -30,6 +30,15 @@ namespace Szakdolgozat
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void SetColor()
+        {
+            this.BackColor = Properties.Settings.Default.ColorBack;
+            this.ForeColor = Properties.Settings.Default.ColorFore;
+            this.btnCancel.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnExit.BackColor = Properties.Settings.Default.ColorButton;
+
         }
     }
 }

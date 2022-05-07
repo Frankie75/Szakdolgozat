@@ -39,7 +39,11 @@ namespace Szakdolgozat
             Properties.Settings.Default.ConnectionName = "frankieh_frankie";
             Properties.Settings.Default.ConnectionPassword = "ml1510domain";
             ConnectionString = $"Server = frankie75.hu; Database = frankieh_autokolcsonzo; Uid = {Properties.Settings.Default.ConnectionName}; Pwd = {Properties.Settings.Default.ConnectionPassword}; convert zero datetime=True";
+            
+          
+            SetColor();
 
+           
             cbFilter.SelectedIndex = 0;
 
             frmLogin f = new frmLogin(ConnectionString);
@@ -163,6 +167,29 @@ namespace Szakdolgozat
             refreshDGV("");
 
 
+        }
+        private void SetColor()
+        {
+            this.BackColor = Properties.Settings.Default.ColorBack;
+            this.ForeColor = Properties.Settings.Default.ColorFore;
+            
+            this.btnCloseContract.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnCustomers.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnExit.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnNewContract.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnPrint.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnUsers.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnVehicles.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnCloseContract.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnSettings.BackColor = Properties.Settings.Default.ColorButton;
+
+        }
+
+        private void btsSettings_Click(object sender, EventArgs e)
+        {
+            frmSettings f = new frmSettings();
+            f.ShowDialog();
+            SetColor();
         }
     }
 }

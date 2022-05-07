@@ -606,7 +606,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmDevicesDataInputTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DevicesDataInputTable";
+            this.Text = "Gepjarmu adatai";
             this.Load += new System.EventHandler(this.frmDevicesDataInputTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCarPhoto)).EndInit();
             this.groupBox1.ResumeLayout(false);

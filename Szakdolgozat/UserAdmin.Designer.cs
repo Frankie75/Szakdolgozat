@@ -79,6 +79,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Location = new System.Drawing.Point(183, 312);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(292, 65);
@@ -222,9 +223,11 @@
             this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.btnDeleteUser);
             this.Controls.Add(this.btnAddNewUser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmUserAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Felhasznalo Adminisztracio";
+            this.Load += new System.EventHandler(this.frmUserAdmin_Load);
             this.gbAction.ResumeLayout(false);
             this.gbAction.PerformLayout();
             this.ResumeLayout(false);
