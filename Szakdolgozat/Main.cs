@@ -16,8 +16,9 @@ namespace Szakdolgozat
     public partial class formMain : Form
     {
         static public string ConnectionString;
-//      static public string ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=autokolcsonzo";
+        //      static public string ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=autokolcsonzo";
 
+        private Form activeForm = null;
 
         public string EncryptDecrypt(string szPlainText, int szEncryptionKey)
         {
@@ -40,129 +41,55 @@ namespace Szakdolgozat
             Properties.Settings.Default.ConnectionPassword = "ml1510domain";
             ConnectionString = $"Server = frankie75.hu; Database = frankieh_autokolcsonzo; Uid = {Properties.Settings.Default.ConnectionName}; Pwd = {Properties.Settings.Default.ConnectionPassword}; convert zero datetime=True";
 
-            cbFilter.SelectedIndex = 0;
-
             frmLogin f = new frmLogin(ConnectionString);
             f.ShowDialog();
-
-
         }
 
-        private void formMain_Load(object sender, EventArgs e)
+    private void openChildForm(Form childForm)
         {
-            
-            if (Properties.Settings.Default.PasswordValid==false) Application.Exit();
-          
-            else refreshDGV("");
-            
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnlForm.Controls.Add(childForm);
+            pnlForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
-
-        public void refreshDGV(string name_filter)
+        private void btnSetting_Click(object sender, EventArgs e)
         {
-
-            dgvMain.Rows.Clear();
-            string InsertedString="";
-            if (cbFilter.SelectedIndex == 0) InsertedString = "";
-            else if (cbFilter.SelectedIndex == 1) InsertedString = "szerzodesek.visszavet_datum is NULL and ";
-            else if (cbFilter.SelectedIndex == 2) InsertedString = "szerzodesek.visszavet_datum is not NULL and ";
-
-
-            var conn = new MySqlConnection(ConnectionString);
-            conn.Open();
-            var command = new MySqlCommand(
-                "select szerzodes_id, unev, iranyitoszam, helyseg, cim, gyarto, tipus, " +
-                "rendszam, kiadas_datum, lejarat_datum, visszavet_datum " +
-                "from gk_torzs, uf_torzs, szerzodesek " +
-                "where " +
-                "szerzodesek.uf_id = uf_torzs.uf_id and " +
-                "szerzodesek.gk_id = gk_torzs.gk_id and " +
-                $"{InsertedString} "+
-     //         $"szerzodesek.visszavet_datum is {isActive} null and " +
-                $"unev like '{name_filter + '%'}';",conn);
-            var rows = command.ExecuteReader();
-            while (rows.Read())
-            {
-                string address= rows[2] + " "+ rows[3] +  " " + rows[4];
-                string car = rows[5] + " " + rows[6];
-
-                dgvMain.Rows.Add(
-                    rows[0], rows[1], address, car,
-                    rows[7], rows[8], rows[9], rows[10]);
-            }
-
-            conn.Close();
-
+            openChildForm(new Setting());
         }
-
-        private void formMain_MouseClick(object sender, MouseEventArgs e)
-        {
-      
-        }
-
-        private void tbSearchName_KeyUp(object sender, KeyEventArgs e)
-        {
-            refreshDGV(tbSearchName.Text);
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
-           frmExit frmExit = new frmExit();
-           frmExit.ShowDialog();
-
+            openChildForm(new frmExit());
         }
 
-        private void kilepesToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void btnCarList_Click(object sender, EventArgs e)
         {
-            frmExit frmExit = new frmExit();
-            frmExit.ShowDialog();
+            openChildForm(new frmDevicesAdmin(ConnectionString));
         }
 
-        private void felhasznaloAdminisztracioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnClientList_Click(object sender, EventArgs e)
         {
-            frmUserAdmin frmUserAdmin = new frmUserAdmin(ConnectionString);
-            frmUserAdmin.ShowDialog();
+            openChildForm(new frmCustomerAdmin(ConnectionString));
         }
 
-        private void ugyfeltorzsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnUser_Click(object sender, EventArgs e)
         {
-            var f = new frmCustomerAdmin(ConnectionString);
-            f.ShowDialog();
-
+            openChildForm(new frmUserAdmin(ConnectionString));
         }
 
-        private void eszkozokToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnContract_Click(object sender, EventArgs e)
         {
-            var f = new frmDevicesAdmin(ConnectionString);
-            f.ShowDialog();
+           openChildForm(new Contract(ConnectionString));
         }
 
-        private void ujSzerzodesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            var f = new frmNewContract(ConnectionString);
-            f.ShowDialog();
-            refreshDGV("");
-           
-
-        }
-
-        private void cbFilter_DropDownClosed(object sender, EventArgs e)
-        {
-            refreshDGV("");
-        }
-
-        private void btnCloseContract_Click(object sender, EventArgs e)
-        {
-            if(dgvMain.SelectedRows[0].Cells[7].Value.ToString() != "")
-            {
-                MessageBox.Show("A szerzodes mar le van zarva!");
-                return;
-            }
-            int ContractId = (int)dgvMain.SelectedRows[0].Cells[0].Value;
-            var f= new frmContractCloser(ConnectionString, ContractId);
-            f.ShowDialog();
-            refreshDGV("");
-
-
+            System.Diagnostics.Process.Start("https://youtube.com/");
         }
     }
 }

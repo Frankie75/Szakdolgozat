@@ -37,7 +37,7 @@ namespace Szakdolgozat
         private void btnCloseContract_Click(object sender, EventArgs e)
         {
             string ErrorMessage = "";
-            if (tbOdometer.Text.Length == 0 || !Int32.TryParse(tbOdometer.Text, out _)) ErrorMessage += "Hibas a 'Kilometer' mezo kitoltese\n";
+            if (tbOdometer.Text.Length == 0 || !Int32.TryParse(tbOdometer.Text, out _)) ErrorMessage += "Hibás a 'Kilométer' mező kitöltése\n";
           
             if(ErrorMessage != "")
             {
@@ -61,11 +61,13 @@ namespace Szakdolgozat
                 command.ExecuteNonQuery();
             }
 
-            MessageBox.Show("Szerzodes lezarva!");
-            this.Close();
+            MessageBox.Show("Szerződés lezárva!");
+            this.Close();           
+        }
 
+        private void dtpDateOfTheEnd_ValueChanged(object sender, EventArgs e)
+        {
 
-            
         }
     }
 }

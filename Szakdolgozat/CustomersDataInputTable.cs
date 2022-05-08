@@ -24,7 +24,7 @@ namespace Szakdolgozat
 
             if (id>0)
             {
-                btnOK.Text = "Mentes";
+                btnOK.Text = "Mentés";
                 using (var conn = new MySqlConnection(ConnectionString))
                 {
                     conn.Open();
@@ -51,7 +51,7 @@ namespace Szakdolgozat
 
             else
             {
-                btnOK.Text = "Uj letrehozasa";
+                btnOK.Text = "Új létrehozása";
             }
 
 
@@ -72,7 +72,7 @@ namespace Szakdolgozat
         {
             if(!Int32.TryParse(tbPostCode.Text, out _))
             {
-                MessageBox.Show("Hibas 'Iranyitoszam' mezo kitoltes", "Hiba");
+                MessageBox.Show("Hibás 'Irányítószám' mező kitöltés", "Hiba");
                 return;
             }
 
@@ -112,7 +112,7 @@ namespace Szakdolgozat
 
 
             }
-            MessageBox.Show("Uj ugyfel elmentve!");
+            MessageBox.Show("Új ügyfél elmentve!");
             this.Close();
         }
     }

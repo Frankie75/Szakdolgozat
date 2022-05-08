@@ -123,7 +123,7 @@ namespace Szakdolgozat
         {
             int id = int.Parse(dgvCustomerList.SelectedRows[0].Cells[4].Value.ToString());
 
-            DialogResult dr = MessageBox.Show("Biztosan toroli az Ugyfelet az adatbazisbol?", "Nem", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Biztosan törölni szeretné az ügyfelet az adatbazisból?", "Nem", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
                 try
@@ -144,7 +144,7 @@ namespace Szakdolgozat
                 {
                     if (ex.Number == 1451)
                     {
-                        MessageBox.Show("Az Ugyfel hasznalatban van (nem torolheto!)");
+                        MessageBox.Show("Az ügyfél használatban van, nem törölhető!");
                         return;
 
                     }
@@ -152,7 +152,7 @@ namespace Szakdolgozat
                 }
 
 
-                MessageBox.Show("Ugyfel torolve!");
+                MessageBox.Show("Ügyfél törölve!");
                 refreshDGV("");
 
             }

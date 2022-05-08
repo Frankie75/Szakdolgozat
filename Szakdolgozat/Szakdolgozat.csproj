@@ -63,6 +63,9 @@
     <Reference Include="K4os.Hash.xxHash, Version=1.0.7.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.7\lib\net46\K4os.Hash.xxHash.dll</HintPath>
     </Reference>
+    <Reference Include="MaterialSkin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.2.2.3.1\lib\net461\MaterialSkin.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.29.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.0.29\lib\net452\MySql.Data.dll</HintPath>
     </Reference>
@@ -75,6 +78,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
@@ -140,6 +144,12 @@
     <Compile Include="CustomerAdmin.Designer.cs">
       <DependentUpon>CustomerAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contract.Designer.cs">
+      <DependentUpon>Contract.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewContracts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +170,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Setting.Designer.cs">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +200,9 @@
     <EmbeddedResource Include="Exit.resx">
       <DependentUpon>Exit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Contract.resx">
+      <DependentUpon>Contract.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewContracts.resx">
       <DependentUpon>NewContracts.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +222,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Setting.resx">
+      <DependentUpon>Setting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserAdmin.resx">
       <DependentUpon>UserAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -233,11 +255,21 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\beallit.png" />
+    <Content Include="Resources\felhasz.png" />
     <Content Include="Resources\ford_fiesta.png" />
+    <Content Include="Resources\gepjarmu.png" />
+    <Content Include="Resources\kilep.png" />
+    <Content Include="Resources\lezar.png" />
+    <Content Include="Resources\Logo_kicsi.png" />
+    <Content Include="Resources\logo_kis.png" />
     <Content Include="Resources\No_Photography.png" />
     <Content Include="Resources\opel_astra.png" />
     <Content Include="Resources\renault_captur.png" />
     <Content Include="Resources\renault_clio.png" />
+    <Content Include="Resources\szerzod.png" />
+    <Content Include="Resources\szerzodes.png" />
+    <Content Include="Resources\ugyfel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

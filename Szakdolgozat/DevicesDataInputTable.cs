@@ -124,7 +124,6 @@ namespace Szakdolgozat
 
                     while (sor.Read())
                     {
-                        
                         cbBrand.Text =sor[1].ToString();
                         cbType.Text = sor[2].ToString();
                         cbColour.Text = sor[3].ToString();
@@ -153,10 +152,8 @@ namespace Szakdolgozat
                         if (int.Parse(sor[13].ToString()) == 1) chkbJack.Checked = true;
                         if (int.Parse(sor[14].ToString()) == 1) chkbNavigation.Checked = true;
                         if (int.Parse(sor[15].ToString()) == 1) chkbWarningSuit.Checked = true;
-
                     }
                 }
-
             }
             else
             {
@@ -282,9 +279,6 @@ namespace Szakdolgozat
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-         
-
             string ErrorMessage = "";
             if (cbBrand.Text == "") ErrorMessage += "A 'Gyarto' mezo ures\n";
             if (cbType.Text == "") ErrorMessage += "A 'Tipus' mezo ures\n";
@@ -294,7 +288,6 @@ namespace Szakdolgozat
             if (cbPessengerNumber.Text == "" || int.TryParse(cbPessengerNumber.Text,out _) ==false) ErrorMessage += "A 'Szemelyek szama' mezo hibas\n";
             if (cbManufacturingDate.Text == "" || int.TryParse(cbManufacturingDate.Text, out _) == false) ErrorMessage += "A 'Gyartasi ev' mezo hibas\n";
             if (cbDoorsNumber.Text == "" || int.TryParse(cbDoorsNumber.Text, out _) == false) ErrorMessage += "Az 'Ajtok Szama' mezo hibas\n";
-            
 
             if(ErrorMessage != "")
             {
@@ -356,7 +349,7 @@ namespace Szakdolgozat
                         $"picture='{path}' " +
                         $"WHERE gk_id={Id};", conn);
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Adatok frissitve!");
+                    MessageBox.Show("Adatok frissítve!");
                     this.Close();
                 }
 
@@ -401,7 +394,7 @@ namespace Szakdolgozat
                         $"'{path}' " +
                         $");", conn);
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Uj gepjarmu elmentve");
+                    MessageBox.Show("Új gépjármű elmentve");
                     this.Close();
                 }
 
@@ -413,7 +406,7 @@ namespace Szakdolgozat
         private void btnPictureSelect_Click(object sender, EventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Title = "Valaszd ki a kepet";
+            fileDialog.Title = "Válaszd ki a képet";
             fileDialog.Filter = "Minden file (*.*)|*.*|PNG (*.png)|*.png";
             fileDialog.FilterIndex = 1;
             fileDialog.InitialDirectory = @"C:\Users\Frankie\source\repos\Szakdolgozat\Szakdolgozat\Resources\";
@@ -421,8 +414,6 @@ namespace Szakdolgozat
             {
                 lblFileName.Text = fileDialog.FileName;
                 pbCarPhoto.ImageLocation = fileDialog.FileName;
-
-                
             }
 
         }
