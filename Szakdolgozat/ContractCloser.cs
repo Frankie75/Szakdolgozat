@@ -38,7 +38,7 @@ namespace Szakdolgozat
         private void btnCloseContract_Click(object sender, EventArgs e)
         {
             string ErrorMessage = "";
-            if (tbOdometer.Text.Length == 0 || !Int32.TryParse(tbOdometer.Text, out _)) ErrorMessage += "Hibas a 'Kilometer' mezo kitoltese\n";
+            if (tbOdometer.Text.Length == 0 || !Int32.TryParse(tbOdometer.Text, out _)) ErrorMessage += "Hibás a 'Kilometer' mező kitöltése\n";
           
             if(ErrorMessage != "")
             {

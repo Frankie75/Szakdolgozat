@@ -104,6 +104,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contract.Designer.cs">
+      <DependentUpon>Contract.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContractCloser.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +178,9 @@
     <Compile Include="UserAdmin.Designer.cs">
       <DependentUpon>UserAdmin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Contract.resx">
+      <DependentUpon>Contract.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContractCloser.resx">
       <DependentUpon>ContractCloser.cs</DependentUpon>
     </EmbeddedResource>
@@ -242,11 +251,21 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\beallit.png" />
+    <Content Include="Resources\felhasz.png" />
     <Content Include="Resources\ford_fiesta.png" />
+    <Content Include="Resources\gepjarmu.png" />
+    <Content Include="Resources\kilep.png" />
+    <Content Include="Resources\lezar.png" />
+    <Content Include="Resources\Logo_kicsi.png" />
+    <Content Include="Resources\logo_kis.png" />
     <Content Include="Resources\No_Photography.png" />
+    <Content Include="Resources\nymomtat.png" />
     <Content Include="Resources\opel_astra.png" />
     <Content Include="Resources\renault_captur.png" />
     <Content Include="Resources\renault_clio.png" />
+    <Content Include="Resources\szerzodes.png" />
+    <Content Include="Resources\ugyfel.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

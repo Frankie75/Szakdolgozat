@@ -26,7 +26,6 @@ namespace Szakdolgozat
                 Id = id;
                 Name = name;
                 Password = password;
-
             }
 
         }
@@ -67,7 +66,6 @@ namespace Szakdolgozat
                 var r = command.ExecuteReader();    
                 while (r.Read())
                 {
-
                     Users.Add(new User(r[0].ToString(), r[1].ToString(), r[2].ToString()));
                     Felhasznalok.Items.Add(r[1].ToString());
                 }
@@ -88,12 +86,12 @@ namespace Szakdolgozat
             tbUserName.Text = "";
             Felhasznalok.Enabled = false;
       
-            gbAction.Text = "Felhasznalo hozzaadasa";
+            gbAction.Text = "Felhasználó hozzáadása";
             tbUserName.Enabled = true;
             tbPassword.Enabled = true;
             tbPasswordAgain.Enabled = true;
             tbPasswordNew.Enabled = false;
-            btnAction.Text = "Felhasznalo Hozzaadasa";
+            btnAction.Text = "Felhasználó hozzáadása";
             btnAction.Enabled = true;
         }
 
@@ -103,12 +101,12 @@ namespace Szakdolgozat
             tbUserName.Text = Felhasznalok.Items[0].ToString();
             
             Felhasznalok.Enabled= true;
-            gbAction.Text = "Felhasznalo torlese";
+            gbAction.Text = "Felhasználó törlése";
             tbUserName.Enabled = false;
             tbPassword.Enabled = true;
             tbPasswordAgain.Enabled = false;
             tbPasswordNew.Enabled = false;
-            btnAction.Text = "Felhasznalo Torlese";
+            btnAction.Text = "Felhasználó törlése";
             btnAction.Enabled = true;
         }
 
@@ -118,12 +116,12 @@ namespace Szakdolgozat
             tbUserName.Text = Felhasznalok.Items[0].ToString();
 
             Felhasznalok.Enabled = true;
-            gbAction.Text = "Jelszo modositasa";
+            gbAction.Text = "Jelszó módosítása";
             tbUserName.Enabled = false;
             tbPassword.Enabled = true;
             tbPasswordAgain.Enabled = false;
             tbPasswordNew.Enabled = true;
-            btnAction.Text = "Jelszo modositasa";
+            btnAction.Text = "Jelszó módosítása";
             btnAction.Enabled = true;
         }
 
@@ -136,14 +134,14 @@ namespace Szakdolgozat
 
                     if(Users.Count >= 10)
                     {
-                        MessageBox.Show("A felhasznalok maximalis szama: 10 db.");
+                        MessageBox.Show("A felhasználók maximális száma: 10 db.");
                         break;
                     }
                     foreach (var item in Users)
                     {
                         if (item.Name == tbUserName.Text)
                         {
-                            MessageBox.Show("Van mar ilyen nevu felhasznalo!");
+                            MessageBox.Show("Van már ilyen nevű felhasználó!");
                             vanilyenfelhasznalo = true;
                             break;
                         }
@@ -153,18 +151,18 @@ namespace Szakdolgozat
 
                     if (tbUserName.Text.Length < 4 | tbUserName.Text.Length > 8)
                     {
-                        MessageBox.Show("A megadott felhasznalonevnek 4-8 karakter husszunak kell lennie!");
+                        MessageBox.Show("A megadott felhasználónévnek 4-8 karakter hosszúnak kell lennie!");
                         break;
                     }
 
                     if (tbPassword.Text != tbPasswordAgain.Text)
                     {
-                        MessageBox.Show("A megadott jelszavak nem egyeznek meg!");
+                        MessageBox.Show("A megadott jelszavak nem egyeznek!");
                         break;
                     }
                     if (tbPassword.Text.Length < 4 | tbPassword.Text.Length > 8)
                     {
-                        MessageBox.Show("A megadott jelszonak 4-8 karakter hosszunak kell lennie!");
+                        MessageBox.Show("A megadott jelszónak 4-8 karakter hosszúnak kell lennie!");
                         break;
                     }
 
@@ -178,14 +176,14 @@ namespace Szakdolgozat
                         command.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("Felhasznalo hozzaadva");
+                    MessageBox.Show("Felhasználó hozzáadva");
                     this.Close();
                     break;
 
                 case actions.deleteUser:
                     if (tbUserName.Text == "admin")
                     {
-                        MessageBox.Show("Az 'admin' felhasznalo nem torolhato!");
+                        MessageBox.Show("Az 'admin' felhasznaáló nem törölhető!");
                         break;
                     }
 
@@ -203,18 +201,16 @@ namespace Szakdolgozat
                                         $"WHERE fnev='{item.Name}';", conn);
                                     command.ExecuteNonQuery();
                                 }
-                                MessageBox.Show("Felhasznalo Torolve");
+                                MessageBox.Show("Felhasználó törölve");
                                 this.Close();
 
                                 break;
-
                             }
 
                             else
                             {
-                                MessageBox.Show("Hibas jelszo!");
+                                MessageBox.Show("Hibás jelszó!");
                             }
-
                         }
 
                     }
@@ -225,7 +221,7 @@ namespace Szakdolgozat
 
                     if(tbPasswordNew.Text.Length <4 | tbPasswordNew.Text.Length > 8)
                     {
-                        MessageBox.Show("Az uj jelszo hosszana 4-8 karakter!");
+                        MessageBox.Show("Az új jelszó hosszának 4-8 karakter kell lennie!");
                         break;
                     }
 
@@ -243,16 +239,14 @@ namespace Szakdolgozat
                                         $"WHERE fnev = '{item.Name}';",conn);
                                     command.ExecuteNonQuery();
                                 }
-                                MessageBox.Show("Jelszo modositva");
+                                MessageBox.Show("Jelszó módosítva");
                                 this.Close();
                                 break;
-
                             }
                             else
                             {
-                                MessageBox.Show("Hibas a jelszo!");
+                                MessageBox.Show("Hibás a jelszó!");
                             }
-
                         }
                     }
                     break;
@@ -276,7 +270,6 @@ namespace Szakdolgozat
             this.btnChangePassword.BackColor = Properties.Settings.Default.ColorButton;
             this.btnClose.BackColor = Properties.Settings.Default.ColorButton;
             this.btnDeleteUser.BackColor = Properties.Settings.Default.ColorButton;
-            
         }
 
         private void frmUserAdmin_Load(object sender, EventArgs e)

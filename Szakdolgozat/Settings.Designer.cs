@@ -36,9 +36,11 @@
             // 
             // btnRed
             // 
-            this.btnRed.Location = new System.Drawing.Point(226, 28);
+            this.btnRed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnRed.Location = new System.Drawing.Point(267, 250);
+            this.btnRed.Margin = new System.Windows.Forms.Padding(2);
             this.btnRed.Name = "btnRed";
-            this.btnRed.Size = new System.Drawing.Size(138, 63);
+            this.btnRed.Size = new System.Drawing.Size(92, 41);
             this.btnRed.TabIndex = 0;
             this.btnRed.Text = "Piros";
             this.btnRed.UseVisualStyleBackColor = true;
@@ -47,45 +49,53 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 49);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(189, 207);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 20);
+            this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Szin tema kivalasztasa";
+            this.label1.Text = "Téma kiválasztása";
             // 
             // btnGreen
             // 
-            this.btnGreen.Location = new System.Drawing.Point(370, 28);
+            this.btnGreen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnGreen.Location = new System.Drawing.Point(383, 250);
+            this.btnGreen.Margin = new System.Windows.Forms.Padding(2);
             this.btnGreen.Name = "btnGreen";
-            this.btnGreen.Size = new System.Drawing.Size(138, 63);
+            this.btnGreen.Size = new System.Drawing.Size(92, 41);
             this.btnGreen.TabIndex = 2;
-            this.btnGreen.Text = "Zold";
+            this.btnGreen.Text = "Zöld ";
             this.btnGreen.UseVisualStyleBackColor = true;
             this.btnGreen.Click += new System.EventHandler(this.btnGreen_Click);
             // 
             // btnDefault
             // 
-            this.btnDefault.Location = new System.Drawing.Point(514, 28);
+            this.btnDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDefault.Location = new System.Drawing.Point(496, 250);
+            this.btnDefault.Margin = new System.Windows.Forms.Padding(2);
             this.btnDefault.Name = "btnDefault";
-            this.btnDefault.Size = new System.Drawing.Size(138, 63);
+            this.btnDefault.Size = new System.Drawing.Size(167, 41);
             this.btnDefault.TabIndex = 3;
-            this.btnDefault.Text = "Alapertelmezett";
+            this.btnDefault.Text = "Alapértelmezett";
             this.btnDefault.UseVisualStyleBackColor = true;
             this.btnDefault.Click += new System.EventHandler(this.btnDefault_Click);
             // 
             // frmSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 147);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(852, 580);
             this.ControlBox = false;
             this.Controls.Add(this.btnDefault);
             this.Controls.Add(this.btnGreen);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRed);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSettings";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Beallitasok";
             this.Load += new System.EventHandler(this.frmSettings_Load);
             this.ResumeLayout(false);

@@ -85,25 +85,28 @@
             // cbBrand
             // 
             this.cbBrand.FormattingEnabled = true;
-            this.cbBrand.Location = new System.Drawing.Point(213, 53);
+            this.cbBrand.Location = new System.Drawing.Point(132, 34);
+            this.cbBrand.Margin = new System.Windows.Forms.Padding(2);
             this.cbBrand.Name = "cbBrand";
-            this.cbBrand.Size = new System.Drawing.Size(265, 28);
+            this.cbBrand.Size = new System.Drawing.Size(178, 21);
             this.cbBrand.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 63);
+            this.label1.Location = new System.Drawing.Point(29, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 20);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Gyarto";
+            this.label1.Text = "Gyártó";
             // 
             // btnNewBrand
             // 
-            this.btnNewBrand.Location = new System.Drawing.Point(553, 57);
+            this.btnNewBrand.Location = new System.Drawing.Point(369, 37);
+            this.btnNewBrand.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewBrand.Name = "btnNewBrand";
-            this.btnNewBrand.Size = new System.Drawing.Size(79, 33);
+            this.btnNewBrand.Size = new System.Drawing.Size(53, 21);
             this.btnNewBrand.TabIndex = 2;
             this.btnNewBrand.Text = "+";
             this.btnNewBrand.UseVisualStyleBackColor = true;
@@ -112,96 +115,107 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(58, 104);
+            this.label2.Location = new System.Drawing.Point(29, 68);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 20);
+            this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Tipus";
+            this.label2.Text = "T.pus";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 220);
+            this.label3.Location = new System.Drawing.Point(29, 143);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 20);
+            this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Szin";
+            this.label3.Text = "Szín";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 140);
+            this.label4.Location = new System.Drawing.Point(29, 91);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 20);
+            this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Rendszam";
+            this.label4.Text = "Rendszám";
             // 
             // cbType
             // 
             this.cbType.FormattingEnabled = true;
-            this.cbType.Location = new System.Drawing.Point(213, 93);
+            this.cbType.Location = new System.Drawing.Point(132, 60);
+            this.cbType.Margin = new System.Windows.Forms.Padding(2);
             this.cbType.Name = "cbType";
-            this.cbType.Size = new System.Drawing.Size(265, 28);
+            this.cbType.Size = new System.Drawing.Size(178, 21);
             this.cbType.TabIndex = 6;
             // 
             // cbNumberPlate
             // 
             this.cbNumberPlate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbNumberPlate.FormattingEnabled = true;
-            this.cbNumberPlate.Location = new System.Drawing.Point(213, 132);
+            this.cbNumberPlate.Location = new System.Drawing.Point(132, 86);
+            this.cbNumberPlate.Margin = new System.Windows.Forms.Padding(2);
             this.cbNumberPlate.Name = "cbNumberPlate";
-            this.cbNumberPlate.Size = new System.Drawing.Size(265, 28);
+            this.cbNumberPlate.Size = new System.Drawing.Size(178, 20);
             this.cbNumberPlate.TabIndex = 7;
             // 
             // cbColour
             // 
             this.cbColour.FormattingEnabled = true;
-            this.cbColour.Location = new System.Drawing.Point(213, 212);
+            this.cbColour.Location = new System.Drawing.Point(132, 138);
+            this.cbColour.Margin = new System.Windows.Forms.Padding(2);
             this.cbColour.Name = "cbColour";
-            this.cbColour.Size = new System.Drawing.Size(265, 28);
+            this.cbColour.Size = new System.Drawing.Size(178, 21);
             this.cbColour.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 260);
+            this.label5.Location = new System.Drawing.Point(29, 169);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(134, 20);
+            this.label5.Size = new System.Drawing.Size(109, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Muszaki ervenyes";
+            this.label5.Text = "Műszaki érvényesség";
             // 
             // cbCategory
             // 
             this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(973, 55);
+            this.cbCategory.Location = new System.Drawing.Point(678, 39);
+            this.cbCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(265, 28);
+            this.cbCategory.Size = new System.Drawing.Size(178, 21);
             this.cbCategory.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(818, 53);
+            this.label6.Location = new System.Drawing.Point(574, 37);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(77, 20);
+            this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Kategoria";
+            this.label6.Text = "Kategória";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(771, 356);
+            this.label7.Location = new System.Drawing.Point(545, 231);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 20);
+            this.label7.Size = new System.Drawing.Size(66, 13);
             this.label7.TabIndex = 14;
-            this.label7.Text = "Megjegyzes:";
+            this.label7.Text = "Megjegyzés:";
             // 
             // btnNewType
             // 
-            this.btnNewType.Location = new System.Drawing.Point(553, 96);
+            this.btnNewType.Location = new System.Drawing.Point(369, 62);
+            this.btnNewType.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewType.Name = "btnNewType";
-            this.btnNewType.Size = new System.Drawing.Size(79, 35);
+            this.btnNewType.Size = new System.Drawing.Size(53, 23);
             this.btnNewType.TabIndex = 15;
             this.btnNewType.Text = "+";
             this.btnNewType.UseVisualStyleBackColor = true;
@@ -209,9 +223,10 @@
             // 
             // btnNewColour
             // 
-            this.btnNewColour.Location = new System.Drawing.Point(553, 208);
+            this.btnNewColour.Location = new System.Drawing.Point(369, 135);
+            this.btnNewColour.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewColour.Name = "btnNewColour";
-            this.btnNewColour.Size = new System.Drawing.Size(79, 32);
+            this.btnNewColour.Size = new System.Drawing.Size(53, 21);
             this.btnNewColour.TabIndex = 16;
             this.btnNewColour.Text = "+";
             this.btnNewColour.UseVisualStyleBackColor = true;
@@ -219,40 +234,44 @@
             // 
             // rtbNote
             // 
-            this.rtbNote.Location = new System.Drawing.Point(775, 379);
+            this.rtbNote.Location = new System.Drawing.Point(548, 246);
+            this.rtbNote.Margin = new System.Windows.Forms.Padding(2);
             this.rtbNote.Name = "rtbNote";
-            this.rtbNote.Size = new System.Drawing.Size(463, 125);
+            this.rtbNote.Size = new System.Drawing.Size(310, 83);
             this.rtbNote.TabIndex = 17;
             this.rtbNote.Text = "";
             // 
             // pbCarPhoto
             // 
             this.pbCarPhoto.InitialImage = null;
-            this.pbCarPhoto.Location = new System.Drawing.Point(775, 521);
+            this.pbCarPhoto.Location = new System.Drawing.Point(548, 339);
+            this.pbCarPhoto.Margin = new System.Windows.Forms.Padding(2);
             this.pbCarPhoto.Name = "pbCarPhoto";
-            this.pbCarPhoto.Size = new System.Drawing.Size(463, 359);
+            this.pbCarPhoto.Size = new System.Drawing.Size(309, 233);
             this.pbCarPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCarPhoto.TabIndex = 18;
             this.pbCarPhoto.TabStop = false;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(121, 733);
+            this.btnSave.Location = new System.Drawing.Point(39, 516);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(210, 92);
+            this.btnSave.Size = new System.Drawing.Size(140, 60);
             this.btnSave.TabIndex = 19;
-            this.btnSave.Text = "Mentes";
+            this.btnSave.Text = "Mentés";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(356, 733);
+            this.btnClose.Location = new System.Drawing.Point(237, 516);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(210, 92);
+            this.btnClose.Size = new System.Drawing.Size(140, 60);
             this.btnClose.TabIndex = 20;
-            this.btnClose.Text = "Bezar";
+            this.btnClose.Text = "Bezár";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
@@ -268,69 +287,77 @@
             this.groupBox1.Controls.Add(this.chkbSpareTyre);
             this.groupBox1.Controls.Add(this.chkbEmergencyBox);
             this.groupBox1.Controls.Add(this.chkbDocuments);
-            this.groupBox1.Location = new System.Drawing.Point(62, 460);
+            this.groupBox1.Location = new System.Drawing.Point(32, 339);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(608, 234);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(345, 152);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Felszereltseg:";
+            this.groupBox1.Text = "Felszereltség";
             // 
             // chkbWarningSuit
             // 
             this.chkbWarningSuit.AutoSize = true;
-            this.chkbWarningSuit.Location = new System.Drawing.Point(233, 173);
+            this.chkbWarningSuit.Location = new System.Drawing.Point(190, 112);
+            this.chkbWarningSuit.Margin = new System.Windows.Forms.Padding(2);
             this.chkbWarningSuit.Name = "chkbWarningSuit";
-            this.chkbWarningSuit.Size = new System.Drawing.Size(176, 24);
+            this.chkbWarningSuit.Size = new System.Drawing.Size(119, 17);
             this.chkbWarningSuit.TabIndex = 9;
-            this.chkbWarningSuit.Text = "Lathatosagi melleny";
+            this.chkbWarningSuit.Text = "Láthatósági mellény";
             this.chkbWarningSuit.UseVisualStyleBackColor = true;
             // 
             // chkbNavigation
             // 
             this.chkbNavigation.AutoSize = true;
-            this.chkbNavigation.Location = new System.Drawing.Point(233, 139);
+            this.chkbNavigation.Location = new System.Drawing.Point(190, 90);
+            this.chkbNavigation.Margin = new System.Windows.Forms.Padding(2);
             this.chkbNavigation.Name = "chkbNavigation";
-            this.chkbNavigation.Size = new System.Drawing.Size(103, 24);
+            this.chkbNavigation.Size = new System.Drawing.Size(74, 17);
             this.chkbNavigation.TabIndex = 8;
-            this.chkbNavigation.Text = "Navigacio";
+            this.chkbNavigation.Text = "Navigáció";
             this.chkbNavigation.UseVisualStyleBackColor = true;
             // 
             // chkbJack
             // 
             this.chkbJack.AutoSize = true;
-            this.chkbJack.Location = new System.Drawing.Point(233, 104);
+            this.chkbJack.Location = new System.Drawing.Point(190, 68);
+            this.chkbJack.Margin = new System.Windows.Forms.Padding(2);
             this.chkbJack.Name = "chkbJack";
-            this.chkbJack.Size = new System.Drawing.Size(80, 24);
+            this.chkbJack.Size = new System.Drawing.Size(55, 17);
             this.chkbJack.TabIndex = 7;
-            this.chkbJack.Text = "Emelo";
+            this.chkbJack.Text = "Emelő";
             this.chkbJack.UseVisualStyleBackColor = true;
             // 
             // chkbSpareLightBulb
             // 
             this.chkbSpareLightBulb.AutoSize = true;
-            this.chkbSpareLightBulb.Location = new System.Drawing.Point(233, 71);
+            this.chkbSpareLightBulb.Location = new System.Drawing.Point(190, 46);
+            this.chkbSpareLightBulb.Margin = new System.Windows.Forms.Padding(2);
             this.chkbSpareLightBulb.Name = "chkbSpareLightBulb";
-            this.chkbSpareLightBulb.Size = new System.Drawing.Size(115, 24);
+            this.chkbSpareLightBulb.Size = new System.Drawing.Size(78, 17);
             this.chkbSpareLightBulb.TabIndex = 6;
-            this.chkbSpareLightBulb.Text = "Izzokeszlet";
+            this.chkbSpareLightBulb.Text = "Izzókészlet";
             this.chkbSpareLightBulb.UseVisualStyleBackColor = true;
             // 
             // chkbRadio
             // 
             this.chkbRadio.AutoSize = true;
-            this.chkbRadio.Location = new System.Drawing.Point(233, 40);
+            this.chkbRadio.Location = new System.Drawing.Point(190, 26);
+            this.chkbRadio.Margin = new System.Windows.Forms.Padding(2);
             this.chkbRadio.Name = "chkbRadio";
-            this.chkbRadio.Size = new System.Drawing.Size(77, 24);
+            this.chkbRadio.Size = new System.Drawing.Size(54, 17);
             this.chkbRadio.TabIndex = 5;
-            this.chkbRadio.Text = "Radio";
+            this.chkbRadio.Text = "Radió";
             this.chkbRadio.UseVisualStyleBackColor = true;
             // 
             // chkbAntenna
             // 
             this.chkbAntenna.AutoSize = true;
-            this.chkbAntenna.Location = new System.Drawing.Point(6, 173);
+            this.chkbAntenna.Location = new System.Drawing.Point(39, 112);
+            this.chkbAntenna.Margin = new System.Windows.Forms.Padding(2);
             this.chkbAntenna.Name = "chkbAntenna";
-            this.chkbAntenna.Size = new System.Drawing.Size(96, 24);
+            this.chkbAntenna.Size = new System.Drawing.Size(66, 17);
             this.chkbAntenna.TabIndex = 4;
             this.chkbAntenna.Text = "Antenna";
             this.chkbAntenna.UseVisualStyleBackColor = true;
@@ -338,48 +365,53 @@
             // chkbTriangle
             // 
             this.chkbTriangle.AutoSize = true;
-            this.chkbTriangle.Location = new System.Drawing.Point(6, 139);
+            this.chkbTriangle.Location = new System.Drawing.Point(39, 90);
+            this.chkbTriangle.Margin = new System.Windows.Forms.Padding(2);
             this.chkbTriangle.Name = "chkbTriangle";
-            this.chkbTriangle.Size = new System.Drawing.Size(133, 24);
+            this.chkbTriangle.Size = new System.Drawing.Size(91, 17);
             this.chkbTriangle.TabIndex = 3;
-            this.chkbTriangle.Text = "Elakadasjelzo";
+            this.chkbTriangle.Text = "Elakadásjelző";
             this.chkbTriangle.UseVisualStyleBackColor = true;
             // 
             // chkbSpareTyre
             // 
             this.chkbSpareTyre.AutoSize = true;
-            this.chkbSpareTyre.Location = new System.Drawing.Point(6, 104);
+            this.chkbSpareTyre.Location = new System.Drawing.Point(39, 68);
+            this.chkbSpareTyre.Margin = new System.Windows.Forms.Padding(2);
             this.chkbSpareTyre.Name = "chkbSpareTyre";
-            this.chkbSpareTyre.Size = new System.Drawing.Size(98, 24);
+            this.chkbSpareTyre.Size = new System.Drawing.Size(69, 17);
             this.chkbSpareTyre.TabIndex = 2;
-            this.chkbSpareTyre.Text = "Potkerek";
+            this.chkbSpareTyre.Text = "Pótkerék";
             this.chkbSpareTyre.UseVisualStyleBackColor = true;
             // 
             // chkbEmergencyBox
             // 
             this.chkbEmergencyBox.AutoSize = true;
-            this.chkbEmergencyBox.Location = new System.Drawing.Point(6, 71);
+            this.chkbEmergencyBox.Location = new System.Drawing.Point(39, 46);
+            this.chkbEmergencyBox.Margin = new System.Windows.Forms.Padding(2);
             this.chkbEmergencyBox.Name = "chkbEmergencyBox";
-            this.chkbEmergencyBox.Size = new System.Drawing.Size(159, 24);
+            this.chkbEmergencyBox.Size = new System.Drawing.Size(108, 17);
             this.chkbEmergencyBox.TabIndex = 1;
-            this.chkbEmergencyBox.Text = "Elsosegely doboz";
+            this.chkbEmergencyBox.Text = "Elsősegély doboz";
             this.chkbEmergencyBox.UseVisualStyleBackColor = true;
             // 
             // chkbDocuments
             // 
             this.chkbDocuments.AutoSize = true;
-            this.chkbDocuments.Location = new System.Drawing.Point(6, 40);
+            this.chkbDocuments.Location = new System.Drawing.Point(39, 26);
+            this.chkbDocuments.Margin = new System.Windows.Forms.Padding(2);
             this.chkbDocuments.Name = "chkbDocuments";
-            this.chkbDocuments.Size = new System.Drawing.Size(148, 24);
+            this.chkbDocuments.Size = new System.Drawing.Size(101, 17);
             this.chkbDocuments.TabIndex = 0;
             this.chkbDocuments.Text = "Dokumentumok";
             this.chkbDocuments.UseVisualStyleBackColor = true;
             // 
             // btnRemoveBrand
             // 
-            this.btnRemoveBrand.Location = new System.Drawing.Point(638, 57);
+            this.btnRemoveBrand.Location = new System.Drawing.Point(425, 37);
+            this.btnRemoveBrand.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveBrand.Name = "btnRemoveBrand";
-            this.btnRemoveBrand.Size = new System.Drawing.Size(79, 33);
+            this.btnRemoveBrand.Size = new System.Drawing.Size(53, 21);
             this.btnRemoveBrand.TabIndex = 23;
             this.btnRemoveBrand.Text = "-";
             this.btnRemoveBrand.UseVisualStyleBackColor = true;
@@ -387,9 +419,10 @@
             // 
             // btnRemoveType
             // 
-            this.btnRemoveType.Location = new System.Drawing.Point(638, 98);
+            this.btnRemoveType.Location = new System.Drawing.Point(425, 64);
+            this.btnRemoveType.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveType.Name = "btnRemoveType";
-            this.btnRemoveType.Size = new System.Drawing.Size(79, 33);
+            this.btnRemoveType.Size = new System.Drawing.Size(53, 21);
             this.btnRemoveType.TabIndex = 24;
             this.btnRemoveType.Text = "-";
             this.btnRemoveType.UseVisualStyleBackColor = true;
@@ -397,9 +430,10 @@
             // 
             // btnRemoveColour
             // 
-            this.btnRemoveColour.Location = new System.Drawing.Point(638, 209);
+            this.btnRemoveColour.Location = new System.Drawing.Point(425, 136);
+            this.btnRemoveColour.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveColour.Name = "btnRemoveColour";
-            this.btnRemoveColour.Size = new System.Drawing.Size(79, 33);
+            this.btnRemoveColour.Size = new System.Drawing.Size(53, 21);
             this.btnRemoveColour.TabIndex = 25;
             this.btnRemoveColour.Text = "-";
             this.btnRemoveColour.UseVisualStyleBackColor = true;
@@ -408,28 +442,31 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(58, 179);
+            this.label8.Location = new System.Drawing.Point(29, 116);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 20);
+            this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 26;
-            this.label8.Text = "Alvazszam";
+            this.label8.Text = "Alvázszám";
             // 
             // cbVinNumber
             // 
             this.cbVinNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbVinNumber.FormattingEnabled = true;
-            this.cbVinNumber.Location = new System.Drawing.Point(213, 171);
+            this.cbVinNumber.Location = new System.Drawing.Point(132, 111);
+            this.cbVinNumber.Margin = new System.Windows.Forms.Padding(2);
             this.cbVinNumber.Name = "cbVinNumber";
-            this.cbVinNumber.Size = new System.Drawing.Size(265, 28);
+            this.cbVinNumber.Size = new System.Drawing.Size(178, 20);
             this.cbVinNumber.TabIndex = 27;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(280, 255);
+            this.dateTimePicker1.Location = new System.Drawing.Point(177, 166);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(198, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(133, 20);
             this.dateTimePicker1.TabIndex = 28;
             this.dateTimePicker1.Value = new System.DateTime(2022, 4, 9, 0, 0, 0, 0);
             // 
@@ -437,91 +474,101 @@
             // 
             this.cbGearchangeType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGearchangeType.FormattingEnabled = true;
-            this.cbGearchangeType.Location = new System.Drawing.Point(973, 96);
+            this.cbGearchangeType.Location = new System.Drawing.Point(678, 65);
+            this.cbGearchangeType.Margin = new System.Windows.Forms.Padding(2);
             this.cbGearchangeType.Name = "cbGearchangeType";
-            this.cbGearchangeType.Size = new System.Drawing.Size(265, 28);
+            this.cbGearchangeType.Size = new System.Drawing.Size(178, 21);
             this.cbGearchangeType.TabIndex = 29;
             // 
             // cbFuelType
             // 
             this.cbFuelType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbFuelType.FormattingEnabled = true;
-            this.cbFuelType.Location = new System.Drawing.Point(973, 137);
+            this.cbFuelType.Location = new System.Drawing.Point(678, 92);
+            this.cbFuelType.Margin = new System.Windows.Forms.Padding(2);
             this.cbFuelType.Name = "cbFuelType";
-            this.cbFuelType.Size = new System.Drawing.Size(265, 28);
+            this.cbFuelType.Size = new System.Drawing.Size(178, 21);
             this.cbFuelType.TabIndex = 30;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(818, 94);
+            this.label9.Location = new System.Drawing.Point(574, 64);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 20);
+            this.label9.Size = new System.Drawing.Size(31, 13);
             this.label9.TabIndex = 31;
-            this.label9.Text = "Valto";
+            this.label9.Text = "Váltó";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(818, 134);
+            this.label10.Location = new System.Drawing.Point(574, 90);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 20);
+            this.label10.Size = new System.Drawing.Size(63, 13);
             this.label10.TabIndex = 32;
-            this.label10.Text = "Uzemanyag";
+            this.label10.Text = "Üzemanyag";
             // 
             // cbPessengerNumber
             // 
             this.cbPessengerNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbPessengerNumber.FormattingEnabled = true;
-            this.cbPessengerNumber.Location = new System.Drawing.Point(973, 176);
+            this.cbPessengerNumber.Location = new System.Drawing.Point(678, 117);
+            this.cbPessengerNumber.Margin = new System.Windows.Forms.Padding(2);
             this.cbPessengerNumber.Name = "cbPessengerNumber";
-            this.cbPessengerNumber.Size = new System.Drawing.Size(265, 28);
+            this.cbPessengerNumber.Size = new System.Drawing.Size(178, 20);
             this.cbPessengerNumber.TabIndex = 33;
             // 
             // cbManufacturingDate
             // 
             this.cbManufacturingDate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbManufacturingDate.FormattingEnabled = true;
-            this.cbManufacturingDate.Location = new System.Drawing.Point(973, 212);
+            this.cbManufacturingDate.Location = new System.Drawing.Point(678, 141);
+            this.cbManufacturingDate.Margin = new System.Windows.Forms.Padding(2);
             this.cbManufacturingDate.Name = "cbManufacturingDate";
-            this.cbManufacturingDate.Size = new System.Drawing.Size(265, 28);
+            this.cbManufacturingDate.Size = new System.Drawing.Size(178, 20);
             this.cbManufacturingDate.TabIndex = 34;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(818, 184);
+            this.label11.Location = new System.Drawing.Point(574, 123);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(137, 20);
+            this.label11.Size = new System.Drawing.Size(91, 13);
             this.label11.TabIndex = 35;
-            this.label11.Text = "Szemelyek szama";
+            this.label11.Text = "Szeméylek száma";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(818, 228);
+            this.label12.Location = new System.Drawing.Point(574, 151);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(88, 20);
+            this.label12.Size = new System.Drawing.Size(60, 13);
             this.label12.TabIndex = 36;
-            this.label12.Text = "Gyartasi ev";
+            this.label12.Text = "Gyártási év";
             // 
             // cbDoorsNumber
             // 
             this.cbDoorsNumber.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.cbDoorsNumber.FormattingEnabled = true;
-            this.cbDoorsNumber.Location = new System.Drawing.Point(973, 252);
+            this.cbDoorsNumber.Location = new System.Drawing.Point(678, 167);
+            this.cbDoorsNumber.Margin = new System.Windows.Forms.Padding(2);
             this.cbDoorsNumber.Name = "cbDoorsNumber";
-            this.cbDoorsNumber.Size = new System.Drawing.Size(265, 28);
+            this.cbDoorsNumber.Size = new System.Drawing.Size(178, 20);
             this.cbDoorsNumber.TabIndex = 37;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(818, 260);
+            this.label13.Location = new System.Drawing.Point(574, 172);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(96, 20);
+            this.label13.Size = new System.Drawing.Size(64, 13);
             this.label13.TabIndex = 38;
-            this.label13.Text = "Ajtok szama";
+            this.label13.Text = "Ajtók száma";
             // 
             // openFileDialog1
             // 
@@ -530,28 +577,31 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(58, 320);
+            this.label14.Location = new System.Drawing.Point(29, 246);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(38, 20);
+            this.label14.Size = new System.Drawing.Size(26, 13);
             this.label14.TabIndex = 39;
             this.label14.Text = "File:";
             // 
             // btnPictureSelect
             // 
-            this.btnPictureSelect.Location = new System.Drawing.Point(62, 356);
+            this.btnPictureSelect.Location = new System.Drawing.Point(31, 269);
+            this.btnPictureSelect.Margin = new System.Windows.Forms.Padding(2);
             this.btnPictureSelect.Name = "btnPictureSelect";
-            this.btnPictureSelect.Size = new System.Drawing.Size(416, 55);
+            this.btnPictureSelect.Size = new System.Drawing.Size(277, 36);
             this.btnPictureSelect.TabIndex = 40;
-            this.btnPictureSelect.Text = "Kep kivalsztasa";
+            this.btnPictureSelect.Text = "Kép kiválasztása";
             this.btnPictureSelect.UseVisualStyleBackColor = true;
             this.btnPictureSelect.Click += new System.EventHandler(this.btnPictureSelect_Click);
             // 
             // lblFileName
             // 
             this.lblFileName.AutoSize = true;
-            this.lblFileName.Location = new System.Drawing.Point(117, 320);
+            this.lblFileName.Location = new System.Drawing.Point(68, 246);
+            this.lblFileName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(660, 20);
+            this.lblFileName.Size = new System.Drawing.Size(457, 13);
             this.lblFileName.TabIndex = 41;
             this.lblFileName.Text = "C:\\Users\\Frankie\\source\\repos\\Szakdolgozat\\Szakdolgozat\\Resources\\No_Photography." +
     "png";
@@ -559,10 +609,10 @@
             // frmDevicesDataInputTable
             // 
             this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1372, 942);
+            this.ClientSize = new System.Drawing.Size(915, 612);
             this.ControlBox = false;
             this.Controls.Add(this.lblFileName);
             this.Controls.Add(this.btnPictureSelect);
@@ -603,10 +653,11 @@
             this.Controls.Add(this.btnNewBrand);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbBrand);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDevicesDataInputTable";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gepjarmu adatai";
+            this.Text = "Gépjármű adatai";
             this.Load += new System.EventHandler(this.frmDevicesDataInputTable_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbCarPhoto)).EndInit();
             this.groupBox1.ResumeLayout(false);

@@ -75,7 +75,7 @@ namespace Szakdolgozat
         {
             if (dgvDeviceList.Rows.Count < 1) return;
 
-            DialogResult dr = MessageBox.Show("Biztos torolni akarod?", "Megerosites", MessageBoxButtons.OKCancel);
+            DialogResult dr = MessageBox.Show("Biztos törlni akarod?", "Megerősítés", MessageBoxButtons.OKCancel);
             if(dr == DialogResult.Cancel)
                 return;
             try
@@ -88,25 +88,18 @@ namespace Szakdolgozat
                         $"WHERE gk_id = {dgvDeviceList.SelectedRows[0].Cells[5].Value};", conn);
 
                     command.ExecuteNonQuery();
-
                 }
-
             }
 
             catch (MySqlException ex )
             {
                 if ( ex.Number == 1451)
                 {
-                    MessageBox.Show("A gepjarmu hasznalatban van (nem torolheto!)");
+                    MessageBox.Show("A gépjármű használatban van, nem törölhető! ");
                     return;
-
                 }
             }
-
-            
-           
             refreshDgv(tbSearchByType.Text, cbCategories.SelectedIndex);
-
         }
 
         private void btnNewDevice_Click(object sender, EventArgs e)
@@ -114,7 +107,6 @@ namespace Szakdolgozat
             var f = new frmDevicesDataInputTable(-1,ConnectionString);
             f.ShowDialog();
             refreshDgv("", cbCategories.SelectedIndex);
-
         }
 
         private void btnEditDevice_Click(object sender, EventArgs e)
@@ -128,14 +120,12 @@ namespace Szakdolgozat
         private void cbCategories_DropDownClosed(object sender, EventArgs e)
         {
             refreshDgv("", cbCategories.SelectedIndex);
-
         }
 
         private void dgvDeviceList_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
             if(DgvReady)
             pbCarPicture.ImageLocation = dgvDeviceList.SelectedRows[0].Cells[6].Value.ToString();
-
         }
 
         private void SetColor()
@@ -146,7 +136,6 @@ namespace Szakdolgozat
             this.btnDeleteDevice.BackColor = Properties.Settings.Default.ColorButton;
             this.btnEditDevice.BackColor = Properties.Settings.Default.ColorButton;
             this.btnNewDevice.BackColor = Properties.Settings.Default.ColorButton;
-
         }
     }
 }
