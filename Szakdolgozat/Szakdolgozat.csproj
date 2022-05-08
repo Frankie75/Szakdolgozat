@@ -225,6 +225,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\Dokumentacio.pdf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
