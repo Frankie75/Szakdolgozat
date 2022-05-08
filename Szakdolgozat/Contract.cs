@@ -15,9 +15,11 @@ namespace Szakdolgozat
     public partial class Contract : Form
     {
         static public string ConnectionString;
-        public Contract()
+        public Contract(string c)
         {
             InitializeComponent();
+            ConnectionString = c;
+            refreshDGV("");
         }
         public void refreshDGV(string name_filter)
         {

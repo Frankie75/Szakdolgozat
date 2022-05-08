@@ -27,7 +27,6 @@ namespace Szakdolgozat
         private void ContractCloser_Load(object sender, EventArgs e)
         {
             SetColor();
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -62,11 +61,8 @@ namespace Szakdolgozat
                 command.ExecuteNonQuery();
             }
 
-            MessageBox.Show("Szerzodes lezarva!");
+            MessageBox.Show("Szerződés lezárva!");
             this.Close();
-
-
-            
         }
         private void SetColor()
         {

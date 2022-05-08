@@ -187,7 +187,7 @@ namespace Szakdolgozat
 
         private void btnCont_Click(object sender, EventArgs e)
         {
-            openChildForm(new Contract());
+            openChildForm(new Contract(ConnectionString));
         }
     }
 }

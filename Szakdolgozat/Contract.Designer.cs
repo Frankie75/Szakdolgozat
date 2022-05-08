@@ -49,13 +49,14 @@ namespace Szakdolgozat
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.pnlForm = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPrint
             // 
             this.btnPrint.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnPrint.Location = new System.Drawing.Point(212, 93);
+            this.btnPrint.Location = new System.Drawing.Point(212, 81);
             this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(169, 49);
@@ -67,7 +68,7 @@ namespace Szakdolgozat
             // btnCloseContract
             // 
             this.btnCloseContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCloseContract.Location = new System.Drawing.Point(212, 157);
+            this.btnCloseContract.Location = new System.Drawing.Point(212, 145);
             this.btnCloseContract.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseContract.Name = "btnCloseContract";
             this.btnCloseContract.Size = new System.Drawing.Size(169, 49);
@@ -79,7 +80,7 @@ namespace Szakdolgozat
             // btnNewContract
             // 
             this.btnNewContract.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnNewContract.Location = new System.Drawing.Point(30, 93);
+            this.btnNewContract.Location = new System.Drawing.Point(30, 81);
             this.btnNewContract.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewContract.Name = "btnNewContract";
             this.btnNewContract.Size = new System.Drawing.Size(149, 113);
@@ -92,7 +93,7 @@ namespace Szakdolgozat
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(588, 93);
+            this.label2.Location = new System.Drawing.Point(588, 78);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 17);
@@ -102,7 +103,7 @@ namespace Szakdolgozat
             // tbSearchName
             // 
             this.tbSearchName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbSearchName.Location = new System.Drawing.Point(591, 119);
+            this.tbSearchName.Location = new System.Drawing.Point(591, 104);
             this.tbSearchName.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearchName.Name = "tbSearchName";
             this.tbSearchName.Size = new System.Drawing.Size(365, 23);
@@ -113,7 +114,7 @@ namespace Szakdolgozat
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(585, 163);
+            this.label1.Location = new System.Drawing.Point(585, 148);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(182, 17);
@@ -130,7 +131,7 @@ namespace Szakdolgozat
             "Aktiv (folyamatban levo)",
             "Lezart",
             "Archivalt"});
-            this.cbFilter.Location = new System.Drawing.Point(587, 185);
+            this.cbFilter.Location = new System.Drawing.Point(587, 170);
             this.cbFilter.Margin = new System.Windows.Forms.Padding(2);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(369, 24);
@@ -239,6 +240,15 @@ namespace Szakdolgozat
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // pnlForm
+            // 
+            this.pnlForm.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pnlForm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlForm.Location = new System.Drawing.Point(0, 0);
+            this.pnlForm.Name = "pnlForm";
+            this.pnlForm.Size = new System.Drawing.Size(981, 580);
+            this.pnlForm.TabIndex = 30;
+            // 
             // Contract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,6 +262,7 @@ namespace Szakdolgozat
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbFilter);
             this.Controls.Add(this.dgvMain);
+            this.Controls.Add(this.pnlForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Contract";
             this.Text = "Contract";
@@ -282,5 +293,6 @@ namespace Szakdolgozat
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.Panel pnlForm;
     }
 }
