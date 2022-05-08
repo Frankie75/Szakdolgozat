@@ -23,18 +23,18 @@ namespace Szakdolgozat
 
         private void ThemeColors()
         {
-            this.BackColor = Properties.Settings.Default.ColorBack;
-            this.ForeColor = Properties.Settings.Default.ColorFore;
+            //this.BackColor = Properties.Settings.Default.ColorBack;
+            //this.ForeColor = Properties.Settings.Default.ColorFore;
 
-            this.btnCloseContract.BackColor = Properties.Settings.Default.ColorButton;
-            this.btnCustomers.BackColor = Properties.Settings.Default.ColorButton;
-            this.btnExit.BackColor = Properties.Settings.Default.ColorButton;
-            this.btnNewContract.BackColor = Properties.Settings.Default.ColorButton;
-            this.btnPrint.BackColor = Properties.Settings.Default.ColorButton;
-            this.btnUsers.BackColor = Properties.Settings.Default.ColorButton;
-            this.btnVehicles.BackColor = Properties.Settings.Default.ColorButton;
-            this.btnCloseContract.BackColor = Properties.Settings.Default.ColorButton;
-            this.btnSettings.BackColor = Properties.Settings.Default.ColorButton;
+            //this.btnCloseContract.BackColor = Properties.Settings.Default.ColorButton;
+            //this.btnCustomers.BackColor = Properties.Settings.Default.ColorButton;
+            //this.btnExit.BackColor = Properties.Settings.Default.ColorButton;
+            //this.btnNewContract.BackColor = Properties.Settings.Default.ColorButton;
+            //this.btnPrint.BackColor = Properties.Settings.Default.ColorButton;
+            //this.btnUsers.BackColor = Properties.Settings.Default.ColorButton;
+            //this.btnVehicles.BackColor = Properties.Settings.Default.ColorButton;
+            //this.btnCloseContract.BackColor = Properties.Settings.Default.ColorButton;
+            //this.btnSettings.BackColor = Properties.Settings.Default.ColorButton;
         }
 
         private void rdLight_CheckedChanged(object sender, EventArgs e)
