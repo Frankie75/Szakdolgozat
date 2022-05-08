@@ -37,7 +37,7 @@
             // btnRed
             // 
             this.btnRed.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnRed.Location = new System.Drawing.Point(267, 250);
+            this.btnRed.Location = new System.Drawing.Point(258, 250);
             this.btnRed.Margin = new System.Windows.Forms.Padding(2);
             this.btnRed.Name = "btnRed";
             this.btnRed.Size = new System.Drawing.Size(92, 41);
@@ -72,7 +72,7 @@
             // btnDefault
             // 
             this.btnDefault.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnDefault.Location = new System.Drawing.Point(496, 250);
+            this.btnDefault.Location = new System.Drawing.Point(504, 250);
             this.btnDefault.Margin = new System.Windows.Forms.Padding(2);
             this.btnDefault.Name = "btnDefault";
             this.btnDefault.Size = new System.Drawing.Size(167, 41);
