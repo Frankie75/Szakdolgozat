@@ -60,42 +60,46 @@
             // 
             // btnNewDevice
             // 
-            this.btnNewDevice.Location = new System.Drawing.Point(73, 74);
+            this.btnNewDevice.Location = new System.Drawing.Point(36, 57);
+            this.btnNewDevice.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewDevice.Name = "btnNewDevice";
-            this.btnNewDevice.Size = new System.Drawing.Size(334, 81);
+            this.btnNewDevice.Size = new System.Drawing.Size(223, 53);
             this.btnNewDevice.TabIndex = 0;
-            this.btnNewDevice.Text = "Uj gepjarmu";
+            this.btnNewDevice.Text = "Új gépjármű";
             this.btnNewDevice.UseVisualStyleBackColor = true;
             this.btnNewDevice.Click += new System.EventHandler(this.btnNewDevice_Click);
             // 
             // btnEditDevice
             // 
-            this.btnEditDevice.Location = new System.Drawing.Point(73, 161);
+            this.btnEditDevice.Location = new System.Drawing.Point(36, 114);
+            this.btnEditDevice.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditDevice.Name = "btnEditDevice";
-            this.btnEditDevice.Size = new System.Drawing.Size(334, 81);
+            this.btnEditDevice.Size = new System.Drawing.Size(223, 53);
             this.btnEditDevice.TabIndex = 1;
-            this.btnEditDevice.Text = "Gepjarmu adatainak szerkesztes";
+            this.btnEditDevice.Text = "Gépjármű adatainak szerkesztése";
             this.btnEditDevice.UseVisualStyleBackColor = true;
             this.btnEditDevice.Click += new System.EventHandler(this.btnEditDevice_Click);
             // 
             // btnDeleteDevice
             // 
-            this.btnDeleteDevice.Location = new System.Drawing.Point(73, 248);
+            this.btnDeleteDevice.Location = new System.Drawing.Point(36, 171);
+            this.btnDeleteDevice.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteDevice.Name = "btnDeleteDevice";
-            this.btnDeleteDevice.Size = new System.Drawing.Size(334, 81);
+            this.btnDeleteDevice.Size = new System.Drawing.Size(223, 53);
             this.btnDeleteDevice.TabIndex = 2;
-            this.btnDeleteDevice.Text = "Gepjarmu torlese";
+            this.btnDeleteDevice.Text = "Gépjármű törlése";
             this.btnDeleteDevice.UseVisualStyleBackColor = true;
             this.btnDeleteDevice.Click += new System.EventHandler(this.btnDeleteDevice_Click);
             // 
             // btnCloseWindow
             // 
             this.btnCloseWindow.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCloseWindow.Location = new System.Drawing.Point(73, 385);
+            this.btnCloseWindow.Location = new System.Drawing.Point(36, 283);
+            this.btnCloseWindow.Margin = new System.Windows.Forms.Padding(2);
             this.btnCloseWindow.Name = "btnCloseWindow";
-            this.btnCloseWindow.Size = new System.Drawing.Size(334, 81);
+            this.btnCloseWindow.Size = new System.Drawing.Size(223, 53);
             this.btnCloseWindow.TabIndex = 3;
-            this.btnCloseWindow.Text = "Bezar";
+            this.btnCloseWindow.Text = "Bezár";
             this.btnCloseWindow.UseVisualStyleBackColor = true;
             this.btnCloseWindow.Click += new System.EventHandler(this.btnCloseWindow_Click);
             // 
@@ -116,48 +120,49 @@
             this.Kategoria,
             this.Id,
             this.Picture});
-            this.dgvDeviceList.Location = new System.Drawing.Point(21, 87);
+            this.dgvDeviceList.Location = new System.Drawing.Point(21, 81);
+            this.dgvDeviceList.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDeviceList.Name = "dgvDeviceList";
             this.dgvDeviceList.ReadOnly = true;
             this.dgvDeviceList.RowHeadersVisible = false;
             this.dgvDeviceList.RowHeadersWidth = 62;
             this.dgvDeviceList.RowTemplate.Height = 28;
             this.dgvDeviceList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDeviceList.Size = new System.Drawing.Size(780, 559);
+            this.dgvDeviceList.Size = new System.Drawing.Size(520, 363);
             this.dgvDeviceList.TabIndex = 4;
             this.dgvDeviceList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDeviceList_RowEnter);
             // 
             // Rendszam
             // 
-            this.Rendszam.HeaderText = "Rendszam";
+            this.Rendszam.HeaderText = "Rendszám";
             this.Rendszam.MinimumWidth = 8;
             this.Rendszam.Name = "Rendszam";
             this.Rendszam.ReadOnly = true;
             // 
             // Gyartmany
             // 
-            this.Gyartmany.HeaderText = "Gyartmany";
+            this.Gyartmany.HeaderText = "Gyártmány";
             this.Gyartmany.MinimumWidth = 8;
             this.Gyartmany.Name = "Gyartmany";
             this.Gyartmany.ReadOnly = true;
             // 
             // Tipus
             // 
-            this.Tipus.HeaderText = "Tipus";
+            this.Tipus.HeaderText = "Típus";
             this.Tipus.MinimumWidth = 8;
             this.Tipus.Name = "Tipus";
             this.Tipus.ReadOnly = true;
             // 
             // Alvaszam
             // 
-            this.Alvaszam.HeaderText = "Alvaszam";
+            this.Alvaszam.HeaderText = "Alvázszám";
             this.Alvaszam.MinimumWidth = 8;
             this.Alvaszam.Name = "Alvaszam";
             this.Alvaszam.ReadOnly = true;
             // 
             // Kategoria
             // 
-            this.Kategoria.HeaderText = "Kategoria";
+            this.Kategoria.HeaderText = "Kategória";
             this.Kategoria.MinimumWidth = 8;
             this.Kategoria.Name = "Kategoria";
             this.Kategoria.ReadOnly = true;
@@ -185,68 +190,75 @@
             this.groupBox1.Controls.Add(this.cbCategories);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dgvDeviceList);
-            this.groupBox1.Location = new System.Drawing.Point(637, 74);
+            this.groupBox1.Location = new System.Drawing.Point(299, 57);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(837, 676);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(558, 481);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Gepjarmuvek listaja";
+            this.groupBox1.Text = "Gépjárművek listája";
             // 
             // tbSearchByType
             // 
-            this.tbSearchByType.Location = new System.Drawing.Point(544, 30);
+            this.tbSearchByType.Location = new System.Drawing.Point(370, 43);
+            this.tbSearchByType.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearchByType.Name = "tbSearchByType";
-            this.tbSearchByType.Size = new System.Drawing.Size(257, 26);
+            this.tbSearchByType.Size = new System.Drawing.Size(173, 20);
             this.tbSearchByType.TabIndex = 6;
             this.tbSearchByType.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearchByType_KeyUp);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 33);
+            this.label2.Location = new System.Drawing.Point(18, 45);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 20);
+            this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Kategoria:";
+            this.label2.Text = "Kategória:";
             // 
             // cbCategories
             // 
             this.cbCategories.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategories.FormattingEnabled = true;
-            this.cbCategories.Location = new System.Drawing.Point(104, 30);
+            this.cbCategories.Location = new System.Drawing.Point(76, 43);
+            this.cbCategories.Margin = new System.Windows.Forms.Padding(2);
             this.cbCategories.Name = "cbCategories";
-            this.cbCategories.Size = new System.Drawing.Size(160, 28);
+            this.cbCategories.Size = new System.Drawing.Size(152, 21);
             this.cbCategories.TabIndex = 7;
             this.cbCategories.DropDownClosed += new System.EventHandler(this.cbCategories_DropDownClosed);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(364, 33);
+            this.label1.Location = new System.Drawing.Point(250, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 20);
+            this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Kereses tipus szerint:";
+            this.label1.Text = "Keresés típus szerint:";
             // 
             // pbCarPicture
             // 
-            this.pbCarPicture.Location = new System.Drawing.Point(73, 534);
+            this.pbCarPicture.Location = new System.Drawing.Point(36, 398);
+            this.pbCarPicture.Margin = new System.Windows.Forms.Padding(2);
             this.pbCarPicture.Name = "pbCarPicture";
-            this.pbCarPicture.Size = new System.Drawing.Size(334, 216);
+            this.pbCarPicture.Size = new System.Drawing.Size(223, 140);
             this.pbCarPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbCarPicture.TabIndex = 6;
             this.pbCarPicture.TabStop = false;
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.opciokToolStripMenuItem,
             this.bezarasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1539, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(891, 24);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -257,43 +269,43 @@
             this.szerkesztesToolStripMenuItem,
             this.kivalastottTorleseToolStripMenuItem});
             this.opciokToolStripMenuItem.Name = "opciokToolStripMenuItem";
-            this.opciokToolStripMenuItem.Size = new System.Drawing.Size(85, 29);
-            this.opciokToolStripMenuItem.Text = "Opciok";
+            this.opciokToolStripMenuItem.Size = new System.Drawing.Size(57, 22);
+            this.opciokToolStripMenuItem.Text = "Opciók";
             // 
             // ujGepjarmuToolStripMenuItem
             // 
             this.ujGepjarmuToolStripMenuItem.Name = "ujGepjarmuToolStripMenuItem";
-            this.ujGepjarmuToolStripMenuItem.Size = new System.Drawing.Size(254, 34);
-            this.ujGepjarmuToolStripMenuItem.Text = "Uj gepjarmu";
+            this.ujGepjarmuToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.ujGepjarmuToolStripMenuItem.Text = "Új gépjármű";
             this.ujGepjarmuToolStripMenuItem.Click += new System.EventHandler(this.btnNewDevice_Click);
             // 
             // szerkesztesToolStripMenuItem
             // 
             this.szerkesztesToolStripMenuItem.Name = "szerkesztesToolStripMenuItem";
-            this.szerkesztesToolStripMenuItem.Size = new System.Drawing.Size(254, 34);
-            this.szerkesztesToolStripMenuItem.Text = "Szerkesztes";
+            this.szerkesztesToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.szerkesztesToolStripMenuItem.Text = "Szerkesztés";
             this.szerkesztesToolStripMenuItem.Click += new System.EventHandler(this.btnEditDevice_Click);
             // 
             // kivalastottTorleseToolStripMenuItem
             // 
             this.kivalastottTorleseToolStripMenuItem.Name = "kivalastottTorleseToolStripMenuItem";
-            this.kivalastottTorleseToolStripMenuItem.Size = new System.Drawing.Size(254, 34);
-            this.kivalastottTorleseToolStripMenuItem.Text = "Kivalastott torlese";
+            this.kivalastottTorleseToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.kivalastottTorleseToolStripMenuItem.Text = "Kiválasztott szerkesztése";
             this.kivalastottTorleseToolStripMenuItem.Click += new System.EventHandler(this.btnDeleteDevice_Click);
             // 
             // bezarasToolStripMenuItem
             // 
             this.bezarasToolStripMenuItem.Name = "bezarasToolStripMenuItem";
-            this.bezarasToolStripMenuItem.Size = new System.Drawing.Size(87, 29);
-            this.bezarasToolStripMenuItem.Text = "Bezaras";
+            this.bezarasToolStripMenuItem.Size = new System.Drawing.Size(58, 22);
+            this.bezarasToolStripMenuItem.Text = "Bezárás";
             this.bezarasToolStripMenuItem.Click += new System.EventHandler(this.btnCloseWindow_Click);
             // 
             // frmDevicesAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCloseWindow;
-            this.ClientSize = new System.Drawing.Size(1539, 805);
+            this.ClientSize = new System.Drawing.Size(891, 580);
             this.ControlBox = false;
             this.Controls.Add(this.pbCarPicture);
             this.Controls.Add(this.groupBox1);
@@ -302,8 +314,9 @@
             this.Controls.Add(this.btnEditDevice);
             this.Controls.Add(this.btnNewDevice);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDevicesAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gepjarmuvek listaja";
@@ -332,6 +345,12 @@
         private System.Windows.Forms.ComboBox cbCategories;
         private System.Windows.Forms.TextBox tbSearchByType;
         private System.Windows.Forms.PictureBox pbCarPicture;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem opciokToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ujGepjarmuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem szerkesztesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kivalastottTorleseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bezarasToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rendszam;
         private System.Windows.Forms.DataGridViewTextBoxColumn Gyartmany;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipus;
@@ -339,11 +358,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Kategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Picture;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem opciokToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ujGepjarmuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem szerkesztesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kivalastottTorleseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem bezarasToolStripMenuItem;
     }
 }

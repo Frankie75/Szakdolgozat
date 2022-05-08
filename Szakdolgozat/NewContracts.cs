@@ -23,9 +23,6 @@ namespace Szakdolgozat
             public string Brand { get; set; }
             public string Type { get; set; }
             public string IdentityPlate { get; set; }
-
-
-
         }
      
 
@@ -38,7 +35,6 @@ namespace Szakdolgozat
         {
             InitializeComponent();
             ConnectionString = cs;
-         
         }
 
         private void frmNewContract_Load(object sender, EventArgs e)
@@ -51,8 +47,6 @@ namespace Szakdolgozat
             dtpStop.Value= DateTime.Now;
             dtpStop.MinDate = DateTime.Now;
             ActualiseFormData();
-
-
         }
 
         private void ActualiseFormData()
@@ -75,7 +69,6 @@ namespace Szakdolgozat
                 {
                     tbCustomerName.Text = sor[1].ToString();
                     tbCustomerAddress.Text = sor[2].ToString() + " " + sor[3].ToString() + " " + sor[4].ToString();
-
                 }
 
             }
@@ -120,10 +113,7 @@ namespace Szakdolgozat
                     cbSelectVehicles.Items.Add(item.Brand + " " + item.Type + " (" + item.IdentityPlate + ")");
                     BusyIndex.Add(item.Id);
                 }
-
-            }     
-       
-
+            }    
         }
 
         private void btnSelectCustomer_Click(object sender, EventArgs e)
@@ -131,7 +121,6 @@ namespace Szakdolgozat
             var f = new frmCustomerAdmin(ConnectionString);
             f.ShowDialog();
             ActualiseFormData();
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -142,10 +131,10 @@ namespace Szakdolgozat
         private void btnSave_Click(object sender, EventArgs e)
         {
             string ErrorString = "";
-            if (tbDeposit.Text.Length == 0 || !Int32.TryParse(tbDeposit.Text,out _ )) ErrorString += "Hibas a 'Deposit' mezo kitoltese\n";
-            if (tbRentalFee.Text.Length == 0 || !Int32.TryParse(tbRentalFee.Text, out _)) ErrorString += "Hibas a 'Berleti dij' mezo kitoltese\n";
-            if (cbSelectVehicles.Text.Length == 0) ErrorString += "Nincs kivalasztott gepjarmu\n";
-            if (tbOdometerStart.Text.Length == 0 || !Int32.TryParse(tbOdometerStart.Text, out _)) ErrorString += "Hibas a 'Kilometer allasa' mezo kitoltese\n";
+            if (tbDeposit.Text.Length == 0 || !Int32.TryParse(tbDeposit.Text,out _ )) ErrorString += "Hibás a 'Deposit' mező kitöltése\n";
+            if (tbRentalFee.Text.Length == 0 || !Int32.TryParse(tbRentalFee.Text, out _)) ErrorString += "Hibás a 'Berleti dij'  mező kitöltése\n";
+            if (cbSelectVehicles.Text.Length == 0) ErrorString += "Nincs kivalasztott gépjármű\n";
+            if (tbOdometerStart.Text.Length == 0 || !Int32.TryParse(tbOdometerStart.Text, out _)) ErrorString += "Hibás a 'Kilometer allasa'  mező kitöltése\n";
 
             if (ErrorString != "")
             {
@@ -176,8 +165,7 @@ namespace Szakdolgozat
 
 
                 command.ExecuteNonQuery();
-                MessageBox.Show("Uj szerzodes elmentve");
-
+                MessageBox.Show("Új szerződés elmentve");
             }
             this.Close();
 

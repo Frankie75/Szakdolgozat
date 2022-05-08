@@ -19,9 +19,9 @@ namespace Szakdolgozat
 
         private void btnRed_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.ColorFore=Color.Brown;
-            Properties.Settings.Default.ColorBack = Color.IndianRed;
-            Properties.Settings.Default.ColorButton = Color.DarkGray;
+            Properties.Settings.Default.ColorFore=Color.DarkRed;
+            Properties.Settings.Default.ColorBack = Color.LightGray;
+            Properties.Settings.Default.ColorButton = Color.WhiteSmoke;
             this.Close();
         }
 
@@ -51,8 +51,8 @@ namespace Szakdolgozat
         private void btnGreen_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.ColorFore = Color.DarkGreen;
-            Properties.Settings.Default.ColorBack = Color.LightGreen;
-            Properties.Settings.Default.ColorButton = Color.GreenYellow;
+            Properties.Settings.Default.ColorBack = Color.Silver;
+            Properties.Settings.Default.ColorButton = Color.LightGray;
             this.Close();
         }
     }
