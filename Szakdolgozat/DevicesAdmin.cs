@@ -71,11 +71,9 @@ namespace Szakdolgozat
             refreshDgv(tbSearchByType.Text, cbCategories.SelectedIndex);
         }
 
-     
-
         private void btnDeleteDevice_Click(object sender, EventArgs e)
         {
-         
+            if (dgvDeviceList.Rows.Count < 1) return;
 
             DialogResult dr = MessageBox.Show("Biztos torolni akarod?", "Megerosites", MessageBoxButtons.OKCancel);
             if(dr == DialogResult.Cancel)
@@ -121,6 +119,7 @@ namespace Szakdolgozat
 
         private void btnEditDevice_Click(object sender, EventArgs e)
         {
+            if (dgvDeviceList.Rows.Count < 1) return;
             var f = new frmDevicesDataInputTable((int)dgvDeviceList.SelectedRows[0].Cells[5].Value, ConnectionString);
             f.ShowDialog();
             refreshDgv("", cbCategories.SelectedIndex);
