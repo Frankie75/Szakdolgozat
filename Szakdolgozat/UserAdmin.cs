@@ -35,7 +35,7 @@ namespace Szakdolgozat
             newUser,
             deleteUser,
             changePassword
-        };
+        }
 
         actions action;
 
@@ -76,9 +76,6 @@ namespace Szakdolgozat
         
         
         }
-
-
-
 
         private void btnClose_Click(object sender, EventArgs e)
         {
@@ -264,9 +261,7 @@ namespace Szakdolgozat
             }
         }
 
-         
-
-            private void Felhasznalok_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void Felhasznalok_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             tbUserName.Text = Felhasznalok.Text;
             tbPassword.Text = "";

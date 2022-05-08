@@ -22,9 +22,10 @@ namespace Szakdolgozat
             InitializeComponent();
             ConnectionString = c;
 
-            //delete
+            //delete!!!
             tbUsername.Text = "admin";
             tbPassword.Text = "admin";
+            //delete!!!
         }
 
         public class user
@@ -32,8 +33,6 @@ namespace Szakdolgozat
             public string user_id { get; set; } 
             public string username { get; set; }
             public string password { get; set; }
-
-
 
         }
 

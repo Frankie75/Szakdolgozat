@@ -46,13 +46,11 @@ namespace Szakdolgozat
 
 
             InitiateForm(Id);
-
         }
 
         private void frmDevicesDataInputTable_Load(object sender, EventArgs e)
         {
             SetColor();
-
 
         }
 
@@ -76,8 +74,6 @@ namespace Szakdolgozat
             chkbJack.Checked = false;
             chkbNavigation.Checked = false;
             chkbWarningSuit.Checked = false;
-
-
 
             using (var conn = new MySqlConnection(ConnectionString))
             {
@@ -186,7 +182,6 @@ namespace Szakdolgozat
                     command.ExecuteNonQuery();
                 }
             }
-            //InitiateForm(Id);
         }
 
         private void btnNewType_Click(object sender, EventArgs e)
@@ -258,8 +253,6 @@ namespace Szakdolgozat
                 }
             }
             cbType.Text = "";
-            //InitiateForm(Id);
-
         }
 
         private void btnRemoveColour_Click(object sender, EventArgs e)
@@ -283,9 +276,6 @@ namespace Szakdolgozat
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-         
-
             string ErrorMessage = "";
             if (cbBrand.Text == "") ErrorMessage += "A 'Gyarto' mezo ures\n";
             if (cbType.Text == "") ErrorMessage += "A 'Tipus' mezo ures\n";
@@ -296,14 +286,12 @@ namespace Szakdolgozat
             if (cbManufacturingDate.Text == "" || int.TryParse(cbManufacturingDate.Text, out _) == false) ErrorMessage += "A 'Gyartasi ev' mezo hibas\n";
             if (cbDoorsNumber.Text == "" || int.TryParse(cbDoorsNumber.Text, out _) == false) ErrorMessage += "Az 'Ajtok Szama' mezo hibas\n";
             
-
             if(ErrorMessage != "")
             {
                 MessageBox.Show(ErrorMessage);
                 return;
             }
             
-
             int [] b = new int[10];
 
             b[0] = chkbDocuments.Checked ? 1 : 0;
@@ -422,10 +410,7 @@ namespace Szakdolgozat
             {
                 lblFileName.Text = fileDialog.FileName;
                 pbCarPhoto.ImageLocation = fileDialog.FileName;
-
-                
             }
-
         }
 
         private void SetColor()
@@ -441,8 +426,6 @@ namespace Szakdolgozat
             this.btnRemoveColour.BackColor = Properties.Settings.Default.ColorButton;
             this.btnRemoveType.BackColor = Properties.Settings.Default.ColorButton;
             this.btnSave.BackColor = Properties.Settings.Default.ColorButton;
-
-   
         }
     }
 }

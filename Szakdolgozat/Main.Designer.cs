@@ -58,6 +58,7 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.btnCloseContract = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
+            this.btnOnline = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -288,7 +289,7 @@
             // 
             // btnCustomers
             // 
-            this.btnCustomers.Location = new System.Drawing.Point(651, 637);
+            this.btnCustomers.Location = new System.Drawing.Point(797, 637);
             this.btnCustomers.Name = "btnCustomers";
             this.btnCustomers.Size = new System.Drawing.Size(196, 62);
             this.btnCustomers.TabIndex = 10;
@@ -298,7 +299,7 @@
             // 
             // btnVehicles
             // 
-            this.btnVehicles.Location = new System.Drawing.Point(651, 711);
+            this.btnVehicles.Location = new System.Drawing.Point(797, 707);
             this.btnVehicles.Name = "btnVehicles";
             this.btnVehicles.Size = new System.Drawing.Size(196, 62);
             this.btnVehicles.TabIndex = 11;
@@ -308,9 +309,9 @@
             // 
             // btnUsers
             // 
-            this.btnUsers.Location = new System.Drawing.Point(895, 637);
+            this.btnUsers.Location = new System.Drawing.Point(999, 637);
             this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(337, 62);
+            this.btnUsers.Size = new System.Drawing.Size(233, 62);
             this.btnUsers.TabIndex = 12;
             this.btnUsers.Text = "Felhsznalok";
             this.btnUsers.UseVisualStyleBackColor = true;
@@ -318,9 +319,9 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.Location = new System.Drawing.Point(895, 707);
+            this.btnSettings.Location = new System.Drawing.Point(999, 707);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(337, 62);
+            this.btnSettings.Size = new System.Drawing.Size(233, 62);
             this.btnSettings.TabIndex = 13;
             this.btnSettings.Text = "Beallitasok";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -345,6 +346,16 @@
             this.btnPrint.Text = "Nyomtatas";
             this.btnPrint.UseVisualStyleBackColor = true;
             // 
+            // btnOnline
+            // 
+            this.btnOnline.Location = new System.Drawing.Point(505, 637);
+            this.btnOnline.Name = "btnOnline";
+            this.btnOnline.Size = new System.Drawing.Size(224, 132);
+            this.btnOnline.TabIndex = 16;
+            this.btnOnline.Text = "Online felulet";
+            this.btnOnline.UseVisualStyleBackColor = true;
+            this.btnOnline.Click += new System.EventHandler(this.btnOnline_Click);
+            // 
             // formMain
             // 
             this.AcceptButton = this.btnNewContract;
@@ -354,6 +365,7 @@
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(1575, 864);
             this.ControlBox = false;
+            this.Controls.Add(this.btnOnline);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnCloseContract);
             this.Controls.Add(this.btnSettings);
@@ -374,7 +386,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CarRent-All Ugyviteli rendszer";
             this.Load += new System.EventHandler(this.formMain_Load);
-            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.formMain_MouseClick);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -415,6 +426,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Button btnOnline;
     }
 }
 

@@ -18,7 +18,6 @@ namespace Szakdolgozat
         private void DevicesAdmin_Load(object sender, EventArgs e)
         {
             SetColor();
-
             cbCategories.Items.Add("Szemelyauto");
             cbCategories.Items.Add("Teherauto");
             cbCategories.Items.Add("Motorkerekpar");
@@ -34,8 +33,7 @@ namespace Szakdolgozat
             dgvDeviceList.Rows.Clear();
             using (var conn = new MySqlConnection(ConnectionString))
             {
-                
-               
+       
                 conn.Open();
                 var command = new MySqlCommand(
                     "SELECT rendszam, gyarto, tipus, alvazszam, kategoria, gk_id, picture " +
@@ -118,7 +116,6 @@ namespace Szakdolgozat
             var f = new frmDevicesDataInputTable(-1,ConnectionString);
             f.ShowDialog();
             refreshDgv("", cbCategories.SelectedIndex);
-
 
         }
 

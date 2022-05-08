@@ -44,7 +44,6 @@ namespace Szakdolgozat
                         tbEmail.Text = sor[6].ToString();
                     }
 
-
                 }
     
             }
@@ -54,8 +53,6 @@ namespace Szakdolgozat
                 btnOK.Text = "Uj letrehozasa";
             }
 
-
-         
         }
         private void frmCutomerDataInputForm_Load(object sender, EventArgs e)
         {

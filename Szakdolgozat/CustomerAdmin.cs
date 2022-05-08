@@ -99,12 +99,7 @@ namespace Szakdolgozat
             f.ShowDialog();
             refreshDGV("");
 
-
-
-
         }
-
-
 
         private void tbSearchName_KeyUp(object sender, KeyEventArgs e)
         {
@@ -158,8 +153,6 @@ namespace Szakdolgozat
 
             }
 
-
-            
         }
 
         private void SetColor()
@@ -172,7 +165,6 @@ namespace Szakdolgozat
             this.btnDeleteCustomer.BackColor = Properties.Settings.Default.ColorButton;
 
         }
-
 
     }
 }

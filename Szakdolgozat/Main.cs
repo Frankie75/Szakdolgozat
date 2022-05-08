@@ -81,7 +81,6 @@ namespace Szakdolgozat
                 "szerzodesek.uf_id = uf_torzs.uf_id and " +
                 "szerzodesek.gk_id = gk_torzs.gk_id and " +
                 $"{InsertedString} "+
-     //         $"szerzodesek.visszavet_datum is {isActive} null and " +
                 $"unev like '{name_filter + '%'}';",conn);
             var rows = command.ExecuteReader();
             while (rows.Read())
@@ -96,11 +95,6 @@ namespace Szakdolgozat
 
             conn.Close();
 
-        }
-
-        private void formMain_MouseClick(object sender, MouseEventArgs e)
-        {
-      
         }
 
         private void tbSearchName_KeyUp(object sender, KeyEventArgs e)
@@ -145,8 +139,6 @@ namespace Szakdolgozat
             var f = new frmNewContract(ConnectionString);
             f.ShowDialog();
             refreshDGV("");
-           
-
         }
 
         private void cbFilter_DropDownClosed(object sender, EventArgs e)
@@ -165,8 +157,6 @@ namespace Szakdolgozat
             var f= new frmContractCloser(ConnectionString, ContractId);
             f.ShowDialog();
             refreshDGV("");
-
-
         }
         private void SetColor()
         {
@@ -182,6 +172,7 @@ namespace Szakdolgozat
             this.btnVehicles.BackColor = Properties.Settings.Default.ColorButton;
             this.btnCloseContract.BackColor = Properties.Settings.Default.ColorButton;
             this.btnSettings.BackColor = Properties.Settings.Default.ColorButton;
+            this.btnOnline.BackColor = Properties.Settings.Default.ColorButton;
 
         }
 
@@ -191,6 +182,10 @@ namespace Szakdolgozat
             f.ShowDialog();
             SetColor();
         }
+
+        private void btnOnline_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://carrent-all.azurewebsites.net/");
+        }
     }
 }
-;

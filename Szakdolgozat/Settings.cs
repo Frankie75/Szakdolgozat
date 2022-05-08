@@ -33,13 +33,11 @@ namespace Szakdolgozat
             this.btnGreen.BackColor = Properties.Settings.Default.ColorButton;  
             this.btnRed.BackColor = Properties.Settings.Default.ColorButton;
 
-         
         }
 
         private void frmSettings_Load(object sender, EventArgs e)
         {
             SetColor();
-
         }
 
         private void btnDefault_Click(object sender, EventArgs e)
@@ -56,7 +54,6 @@ namespace Szakdolgozat
             Properties.Settings.Default.ColorBack = Color.LightGreen;
             Properties.Settings.Default.ColorButton = Color.GreenYellow;
             this.Close();
-
         }
     }
 }

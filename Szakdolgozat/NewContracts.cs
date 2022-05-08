@@ -17,9 +17,6 @@ namespace Szakdolgozat
         static string ConnectionString;
         static int SelectedCar = 0;
 
-   
-
-     
         public class Vehicle
         {
             public int Id { get; set; }
@@ -156,8 +153,6 @@ namespace Szakdolgozat
                 return;
             }
 
-   
-
             using (var conn = new MySqlConnection(ConnectionString))
             {
                 conn.Open();
@@ -212,8 +207,7 @@ namespace Szakdolgozat
             this.btnCancel.BackColor = Properties.Settings.Default.ColorButton;
             this.btnSave.BackColor = Properties.Settings.Default.ColorButton;
             this.btnSelectCustomer.BackColor = Properties.Settings.Default.ColorButton;
-
-            
+  
         }
     }
 }
